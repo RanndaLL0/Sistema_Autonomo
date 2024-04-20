@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace lobby
         public string RetornoIniciar { get; set; }
         public int RetornoIdPartida { get; set; }
         public string[] RetornoDados { get; set; }
+        private string diretorioAtual = Directory.GetCurrentDirectory();
 
 
 
@@ -166,7 +168,7 @@ namespace lobby
                         carta.Width = jogador[i].Width;
                         carta.Height = jogador[i].Height;
                         carta.BackgroundImageLayout = ImageLayout.Stretch;
-                        string[] diretorios = { $@"C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\Cards\{naipeCarta}.png", $@"C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\Cards\{naipeCarta}invertido.png", $@"C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\Cards\{naipeCarta}dir.png", $@"C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\Cards\{naipeCarta}esq.png" };
+                        string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
                         carta.BackgroundImage = Image.FromFile(diretorios[i]);
 
 
@@ -244,15 +246,14 @@ namespace lobby
                 string[] rodadas = jogada.Split(',');
                 if (rodadas[0] == ultimaRodada[0])
                 {
-                    string cartaChar = rodadas[2];
+                    string naipeCarta = rodadas[2];
                     string numeroCarta = rodadas[3];
 
-                    string caminhoImagem = $@"C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\Cards\numeros\{numeroCarta}{cartaChar}.png";
+                    string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
                     lblJogada.Text = jogadas;
                     lblJogada.Visible = true;
 
                     Panel carta = new Panel();
-
                     carta.BackgroundImage = Image.FromFile(caminhoImagem);
                     carta.Height = 231;
                     carta.Width = 143;
