@@ -1,0 +1,26 @@
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\bin\Debug\lobby.exe.config
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\bin\Debug\lobby.exe
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\bin\Debug\lobby.pdb
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.dll
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.xml
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.csproj.AssemblyReference.cache
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.Form1.resources
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.Properties.Resources.resources
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.csproj.GenerateResource.cache
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.csproj.CoreCompileInputs.cache
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.csproj.Up2Date
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.exe
+C:\Users\lethy\OneDrive\Área de Trabalho\pilobby\lobby\lobby\obj\Debug\lobby.pdb
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\lobby.exe.config
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\lobby.exe
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\lobby.pdb
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.dll
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.xml
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.csproj.AssemblyReference.cache
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.Form1.resources
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.Properties.Resources.resources
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.csproj.GenerateResource.cache
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.csproj.Up2Date
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.exe
+C:\Users\Matheus\Source\Repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.pdb

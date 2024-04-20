@@ -1,0 +1,28 @@
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.dll
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\MagicTrickServer.xml
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema Autonomo.csproj.AssemblyReference.cache
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.Lobby.resources
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema Autonomo.csproj.GenerateResource.cache
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema Autonomo.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema .14FF1509.Up2Date
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\lobby.Game.resources
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\SistemaAutonomo.Properties.Resources.resources
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\Sistema Autonomo.pdb
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema Autonomo.pdb
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\Sistema Autonomo.exe.config
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\bin\Debug\Sistema Autonomo.exe
+C:\Users\Matheus\source\repos\lobbysepa\pilobby\lobby\lobby\obj\Debug\Sistema Autonomo.exe
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\bin\Debug\Sistema Autonomo.exe.config
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\bin\Debug\Sistema Autonomo.exe
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\bin\Debug\Sistema Autonomo.pdb
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\bin\Debug\MagicTrickServer.dll
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\bin\Debug\MagicTrickServer.xml
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.AssemblyReference.cache
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\lobby.Game.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\lobby.Lobby.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.Properties.Resources.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.GenerateResource.cache
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema .14FF1509.Up2Date
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema Autonomo.exe
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\Sistema Autonomo.pdb
