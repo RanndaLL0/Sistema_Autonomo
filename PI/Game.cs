@@ -19,6 +19,7 @@ namespace lobby
         public string RetornoIniciar { get; set; }
         public int RetornoIdPartida { get; set; }
         public string[] RetornoDados { get; set; }
+
         private string diretorioAtual = Directory.GetCurrentDirectory();
 
 
@@ -27,7 +28,6 @@ namespace lobby
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-
         }
 
         private void AtualizarCartas()
@@ -243,11 +243,11 @@ namespace lobby
             
             foreach (string jogada in listaJogada)
             {
-                string[] rodadas = jogada.Split(',');
-                if (rodadas[0] == ultimaRodada[0])
+                string[] rodada = jogada.Split(',');
+                if (rodada[0] == ultimaRodada[0])
                 {
-                    string naipeCarta = rodadas[2];
-                    string numeroCarta = rodadas[3];
+                    string naipeCarta = rodada[2];
+                    string numeroCarta = rodada[3];
 
                     string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
                     lblJogada.Text = jogadas;
@@ -259,9 +259,16 @@ namespace lobby
                     carta.Width = 143;
                     carta.Left = x;
                     carta.Top = 367;
+                    Label cartaJogada = new Label();
+                    cartaJogada.Text = rodada[1];
+                    cartaJogada.AutoSize = true;
+                    cartaJogada.Left = x + carta.Width / 2 - 15;
+                    cartaJogada.Top = 608;
+
 
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
                     Controls.Add(carta);
+                    Controls.Add(cartaJogada);
                     x -= 164;
                 }
             }
@@ -278,10 +285,7 @@ namespace lobby
             lblTexto.Text = "Carta Jogada:";
             lblCartaJogada.Text = retornoJogada;
             lblCartaJogada.Visible = true;
-            AtualizarCartas();
-            MostrarCartas();
-            MostrarJogada();
-            VerificarVez();
+
         }
 
 
@@ -320,9 +324,44 @@ namespace lobby
             VerificarVez();
         }
 
-        private void lstCartas_SelectedIndexChanged(object sender, EventArgs e)
+        private void Jogar()
         {
+            if(lblIDVez.Text == RetornoDados[0])
+            {
+                foreach (string carta in lstCartas.Items)
+                {
+                    string[] pedacoCarta = carta.ToString().Split(',');
+                    txtIdCarta.Text = pedacoCarta[1];
+                    string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+                    if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+                    {
+                        continue;
+                    }
+                    lblTexto.Text = "Carta Jogada:";
+                    lblCartaJogada.Text = retornoJogada;
+                    lblCartaJogada.Visible = true;
+                    break;
+                }
+                string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+                AtualizarCartas();
+                MostrarCartas();
+                MostrarJogada();
+            }
+        }
+        private void tmrTimer_Tick(object sender, EventArgs e)
+        {
+            tmrTimer.Enabled = false;
+            AtualizarCartas();
+            MostrarCartas();
+            MostrarJogada();
+            VerificarVez();
+            Jogar();
+            tmrTimer.Enabled = true;
+        }
 
+        private void btnStartTimer_Click(object sender, EventArgs e)
+        {
+            tmrTimer.Enabled = true;
         }
     }
 }

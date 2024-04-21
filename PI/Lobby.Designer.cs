@@ -107,9 +107,9 @@
             this.lblHelsinque.AutoSize = true;
             this.lblHelsinque.Location = new System.Drawing.Point(362, 9);
             this.lblHelsinque.Name = "lblHelsinque";
-            this.lblHelsinque.Size = new System.Drawing.Size(54, 13);
+            this.lblHelsinque.Size = new System.Drawing.Size(58, 13);
             this.lblHelsinque.TabIndex = 5;
-            this.lblHelsinque.Text = "Helsinque";
+            this.lblHelsinque.Text = "Budapeste";
             this.lblHelsinque.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblId

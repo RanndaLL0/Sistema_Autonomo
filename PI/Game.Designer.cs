@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstCartas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblIDVez = new System.Windows.Forms.Label();
@@ -53,6 +54,8 @@
             this.lblHelsinque = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersao = new System.Windows.Forms.Label();
+            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnStartTimer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstCartas
@@ -62,7 +65,6 @@
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(185, 394);
             this.lstCartas.TabIndex = 0;
-            this.lstCartas.SelectedIndexChanged += new System.EventHandler(this.lstCartas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -245,7 +247,7 @@
             // 
             // btnAtualizarCartas
             // 
-            this.btnAtualizarCartas.Location = new System.Drawing.Point(273, 412);
+            this.btnAtualizarCartas.Location = new System.Drawing.Point(277, 412);
             this.btnAtualizarCartas.Name = "btnAtualizarCartas";
             this.btnAtualizarCartas.Size = new System.Drawing.Size(99, 34);
             this.btnAtualizarCartas.TabIndex = 20;
@@ -269,9 +271,9 @@
             this.lblHelsinque.AutoSize = true;
             this.lblHelsinque.Location = new System.Drawing.Point(513, 9);
             this.lblHelsinque.Name = "lblHelsinque";
-            this.lblHelsinque.Size = new System.Drawing.Size(54, 13);
+            this.lblHelsinque.Size = new System.Drawing.Size(58, 13);
             this.lblHelsinque.TabIndex = 22;
-            this.lblHelsinque.Text = "Helsinque";
+            this.lblHelsinque.Text = "Budapeste";
             this.lblHelsinque.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblVersion
@@ -291,12 +293,28 @@
             this.lblVersao.Size = new System.Drawing.Size(0, 13);
             this.lblVersao.TabIndex = 27;
             // 
+            // tmrTimer
+            // 
+            this.tmrTimer.Interval = 7000;
+            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
+            // 
+            // btnStartTimer
+            // 
+            this.btnStartTimer.Location = new System.Drawing.Point(236, 452);
+            this.btnStartTimer.Name = "btnStartTimer";
+            this.btnStartTimer.Size = new System.Drawing.Size(185, 53);
+            this.btnStartTimer.TabIndex = 29;
+            this.btnStartTimer.Text = "Iniciar Timer";
+            this.btnStartTimer.UseVisualStyleBackColor = true;
+            this.btnStartTimer.Click += new System.EventHandler(this.btnStartTimer_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1133, 648);
+            this.ClientSize = new System.Drawing.Size(1465, 759);
+            this.Controls.Add(this.btnStartTimer);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.lblHelsinque);
@@ -322,7 +340,6 @@
             this.Controls.Add(this.lblIDVez);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstCartas);
-            this.MinimumSize = new System.Drawing.Size(1149, 687);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
@@ -358,5 +375,7 @@
         private System.Windows.Forms.Label lblHelsinque;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label lblVersao;
+        private System.Windows.Forms.Timer tmrTimer;
+        private System.Windows.Forms.Button btnStartTimer;
     }
 }
