@@ -182,7 +182,7 @@ namespace lobby
 
                 }
 
-                
+
             }
 
 
@@ -297,13 +297,13 @@ namespace lobby
                 MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoAposta.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            lblTexto.Text = "Carta Apostada:";
+            lblTexto.Text = "Carta A:";
             lblCartaJogada.Text = retornoAposta;
-            lblCartaJogada.Visible = true;
+
+
+            VerificarVez();
             AtualizarCartas();
             MostrarCartas();
-            MostrarJogada();
-            VerificarVez();
 
         }
 
@@ -324,36 +324,73 @@ namespace lobby
             VerificarVez();
         }
 
-        private void Jogar()
+
+        private bool JogarCopas()
         {
-            if(lblIDVez.Text == RetornoDados[0])
+            foreach (string carta in lstCartas.Items)
             {
-                foreach (string carta in lstCartas.Items)
+                string[] pedacoCarta = carta.ToString().Split(',');
+
+                if (pedacoCarta[2] == "C")
                 {
-                    string[] pedacoCarta = carta.ToString().Split(',');
                     txtIdCarta.Text = pedacoCarta[1];
                     string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+
                     if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
                     {
                         continue;
                     }
+
                     lblTexto.Text = "Carta Jogada:";
                     lblCartaJogada.Text = retornoJogada;
                     lblCartaJogada.Visible = true;
-                    break;
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+                    return true;
+                    
                 }
-                string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-                AtualizarCartas();
-                MostrarCartas();
-                MostrarJogada();
+                else
+                {
+                    continue;
+                }
             }
+            return false;
+        }
+
+        private void Jogar()
+        {
+            if(lblIDVez.Text == RetornoDados[0]) // compara o Id da vez com o do jogador que esta na maquina
+            {
+                bool jogouCopas = JogarCopas();
+                if (!jogouCopas)
+                {
+                    foreach (string carta in lstCartas.Items)
+                    {
+
+                        string[] pedacoCarta = carta.ToString().Split(',');
+
+                        txtIdCarta.Text = pedacoCarta[1];
+                        string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+
+
+                        if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+                        {
+                            continue;
+                        }
+                        lblTexto.Text = "Carta Jogada:";
+                        lblCartaJogada.Text = retornoJogada;
+                        lblCartaJogada.Visible = true;
+                        break;
+                    }
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+                }
+            }
+            AtualizarCartas();
+            MostrarCartas();
+            MostrarJogada();
         }
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             tmrTimer.Enabled = false;
-            AtualizarCartas();
-            MostrarCartas();
-            MostrarJogada();
             VerificarVez();
             Jogar();
             tmrTimer.Enabled = true;
@@ -363,5 +400,7 @@ namespace lobby
         {
             tmrTimer.Enabled = true;
         }
+
+
     }
 }
