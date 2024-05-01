@@ -124,20 +124,21 @@ namespace lobby
             }
 
 
-            int contadorDeCartas = 1;
+            
             for (int i = 0; i < numeroDeJogadores; i++)
             {
-
+                int contadorDeCartas = 1;
                 for (int j = 0; j < lstCartas.Items.Count; j++)
                 {
                     
-                    Panel carta = new Panel();
                     string[] pedacoCarta = lstCartas.Items[j].ToString().Split(',');
                     string naipeCarta = pedacoCarta[2];
+                    if (pedacoCarta[0] != idJogadores[i]) continue;
+                    Panel carta = new Panel();
 
-                    if (pedacoCarta[0] == idJogadores[i] && contadorDeCartas != int.Parse(pedacoCarta[1]))
+                    if (contadorDeCartas != int.Parse(pedacoCarta[1]))
                     {
-                        while (contadorDeCartas != int.Parse(pedacoCarta[1]))
+                        while (contadorDeCartas != int.Parse(pedacoCarta[1]) && contadorDeCartas < 12)
                         {
                             if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
                             {
@@ -152,32 +153,26 @@ namespace lobby
                         }
                     }
 
-                    if (pedacoCarta[0] == idJogadores[i])
+                    if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
                     {
-                        if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
-                        {
-                            jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
-                            jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
-                        }
-                        carta.Left = jogador[i].X;
-                        carta.Top = jogador[i].Y;
-                        jogador[i].X += jogador[i].DeslocamentoX;
-                        jogador[i].Y += jogador[i].DeslocamentoY;
-                        jogador[i].Count++;
-
-                        carta.Width = jogador[i].Width;
-                        carta.Height = jogador[i].Height;
-                        carta.BackgroundImageLayout = ImageLayout.Stretch;
-                        string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
-                        carta.BackgroundImage = Image.FromFile(diretorios[i]);
-
-
-                        Controls.Add(carta);
+                        jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
+                        jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
                     }
-                    if (numeroDeJogadores == 2 && int.Parse(pedacoCarta[1]) == 12 || numeroDeJogadores > 2 && int.Parse(pedacoCarta[1]) == 14)
-                    {
-                        contadorDeCartas = 0;
-                    }
+                    carta.Left = jogador[i].X;
+                    carta.Top = jogador[i].Y;
+                    jogador[i].X += jogador[i].DeslocamentoX;
+                    jogador[i].Y += jogador[i].DeslocamentoY;
+                    jogador[i].Count++;
+
+                    carta.Width = jogador[i].Width;
+                    carta.Height = jogador[i].Height;
+                    carta.BackgroundImageLayout = ImageLayout.Stretch;
+                    string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
+                    carta.BackgroundImage = Image.FromFile(diretorios[i]);
+
+
+                    Controls.Add(carta);
+                    
                     contadorDeCartas++;
 
                 }
@@ -331,10 +326,10 @@ namespace lobby
             {
                 string[] pedacoCarta = carta.ToString().Split(',');
 
-                if (pedacoCarta[2] == "C")
+                if (pedacoCarta[2] == "C" && pedacoCarta[0] == RetornoDados[0]) // Verifica se o jogador ques esta na maquina tem a carta de Copas
                 {
                     txtIdCarta.Text = pedacoCarta[1];
-                    string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+                    string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
 
                     if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
                     {
@@ -345,12 +340,7 @@ namespace lobby
                     lblCartaJogada.Text = retornoJogada;
                     lblCartaJogada.Visible = true;
                     string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-                    return true;
-                    
-                }
-                else
-                {
-                    continue;
+                    return true;   
                 }
             }
             return false;
@@ -369,7 +359,7 @@ namespace lobby
                         string[] pedacoCarta = carta.ToString().Split(',');
 
                         txtIdCarta.Text = pedacoCarta[1];
-                        string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+                        string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
 
 
                         if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
