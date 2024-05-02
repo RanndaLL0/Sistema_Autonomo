@@ -135,7 +135,7 @@ namespace lobby
                     string[] pedacoCarta = lstCartas.Items[j].ToString().Split(',');
                     string naipeCarta = pedacoCarta[2];
 
-                    if (pedacoCarta[0] == idJogadores[i] && contadorDeCartas != int.Parse(pedacoCarta[1]))
+ /*                   if (pedacoCarta[0] == idJogadores[i] && contadorDeCartas != int.Parse(pedacoCarta[1]))
                     {
                         while (contadorDeCartas != int.Parse(pedacoCarta[1]))
                         {
@@ -150,7 +150,7 @@ namespace lobby
 
                             contadorDeCartas++;
                         }
-                    }
+                    }*/
 
                     if (pedacoCarta[0] == idJogadores[i])
                     {
@@ -331,7 +331,7 @@ namespace lobby
             {
                 string[] pedacoCarta = carta.ToString().Split(',');
 
-                if (pedacoCarta[2] == "C")
+                if (pedacoCarta[2] == "C" && pedacoCarta[0] == RetornoDados[0])
                 {
                     txtIdCarta.Text = pedacoCarta[1];
                     string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
