@@ -12,10 +12,11 @@ namespace SistemaAutonomo.Entidades
         private List<Jogador> player;
         private Baralho baralho;
         private Tabuleiro tabuleiro;
+        private int Pontuacao;
 
         public Mesa()
         {
-            player = new List<Jogador>;
+            player = new List<Jogador>();
             baralho = new Baralho();
             tabuleiro = new Tabuleiro();
         }
@@ -28,6 +29,11 @@ namespace SistemaAutonomo.Entidades
         private void Distribuir()
         {
 
+        }
+
+        public void Vencedor()
+        {
+            tabuleiro.Vencedor();   
         }
     }
 }

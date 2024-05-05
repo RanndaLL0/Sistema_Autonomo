@@ -23,7 +23,14 @@ namespace SistemaAutonomo.Entidades
 
         public void Vencedor()
         {
-
+            int max = 0;
+            foreach(Carta c in CartasJogadas)
+            {
+                if(c.Valor > max)
+                {
+                    max = c.Valor;
+                }
+            }
         }
     }
 }
