@@ -35,7 +35,7 @@ namespace lobby
             string CartasList = Jogo.ConsultarMao(RetornoIdPartida);
             if (CartasList.Length > 4 && CartasList.Substring(0, 4) == "ERRO")
             {
-                MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             CartasList = CartasList.Replace("\r", "");
@@ -155,7 +155,7 @@ namespace lobby
                         string[] diretoriosCartasVazias = { Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padrao.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padrao.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padraodir.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padraodir.png") };
                         cartaVazia.BackgroundImage = Image.FromFile(diretoriosCartasVazias[i]);
 
-                        Controls.Add(cartaVazia);
+                        //Controls.Add(cartaVazia);
                         contadorDeCartas++;
                     }
                     
@@ -213,17 +213,18 @@ namespace lobby
             retornoVez = retornoVez.Replace("\r", "");
             if (retornoVez.Length > 0)
                 retornoVez = retornoVez.Substring(0, retornoVez.Length - 1);
-            string[] dadosVez = retornoVez.Split('\n');
+            string[] dadosVez = retornoVez.Split(',');
+            string[] dadosTodosVez = retornoVez.Split('\n');
 
             lstStatus.Items.Clear();
-            foreach(string s in dadosVez)
+            foreach(string s in dadosTodosVez)
             {
                 lstStatus.Items.Add(s);
             }
-            //lblPartidaStatus.Text = dadosVez[0];
-            //lblIDVez.Text = dadosVez[1];
-            //lblRodadaVez.Text = dadosVez[2];
-            //lblStatusVez.Text = dadosVez[3];
+            lblPartidaStatus.Text = dadosVez[0];
+            lblIDVez.Text = dadosVez[1];
+            lblRodadaVez.Text = dadosVez[2];
+            lblStatusVez.Text = dadosVez[3];
 
         }
 
@@ -275,7 +276,7 @@ namespace lobby
                     carta.Left = x;
                     carta.Top = 367;
                     Label cartaJogada = new Label();
-                    cartaJogada.Text = rodada[1];
+                    //cartaJogada.Text = rodada[1];
                     cartaJogada.AutoSize = true;
                     cartaJogada.Left = x + carta.Width / 2 - 15;
                     cartaJogada.Top = 608;
@@ -359,7 +360,7 @@ namespace lobby
                     lblTexto.Text = "Carta Jogada:";
                     lblCartaJogada.Text = retornoJogada;
                     lblCartaJogada.Visible = true;
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("8"));
                     return true;   
                 }
             }
@@ -368,7 +369,8 @@ namespace lobby
 
         private void Jogar()
         {
-            if(lblIDVez.Text == RetornoDados[0]) // compara o Id da vez com o do jogador que esta na maquina
+            
+            if (lblIDVez.Text == RetornoDados[0]) // compara o Id da vez com o do jogador que esta na maquina
             {
                 bool jogouCopas = JogarCopas();
                 if (!jogouCopas)
@@ -391,19 +393,27 @@ namespace lobby
                         lblCartaJogada.Visible = true;
                         break;
                     }
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("12"));
                 }
+                AtualizarCartas();
+                MostrarCartas();
+                MostrarJogada();
             }
-            AtualizarCartas();
-            MostrarCartas();
-            MostrarJogada();
         }
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
+ 
             tmrTimer.Enabled = false;
             VerificarVez();
             Jogar();
             tmrTimer.Enabled = true;
+            if (lblPartidaStatus.Text != "J")
+            {
+                tmrTimer.Enabled = false;
+                string statusFinal = lstStatus.Items[0].ToString();
+                string[] ganhador = statusFinal.Split(',');
+                MessageBox.Show($"O VENCEDOR FOI {ganhador[1]}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
         }
 
         private void btnStartTimer_Click(object sender, EventArgs e)
