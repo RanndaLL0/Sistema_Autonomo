@@ -136,22 +136,29 @@ namespace lobby
                     if (pedacoCarta[0] != idJogadores[i]) continue;
                     Panel carta = new Panel();
 
-                    if (contadorDeCartas != int.Parse(pedacoCarta[1]))
+                    while (contadorDeCartas != int.Parse(pedacoCarta[1]))
                     {
-                        while (contadorDeCartas != int.Parse(pedacoCarta[1]) && contadorDeCartas < 12)
+                        Panel cartaVazia = new Panel();
+                        if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
                         {
-                            if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
-                            {
-                                jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
-                                jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
-                            }
-                            jogador[i].X += jogador[i].DeslocamentoX;
-                            jogador[i].Y += jogador[i].DeslocamentoY;
-                            jogador[i].Count++;
-
-                            contadorDeCartas++;
+                            jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
+                            jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
                         }
+                        cartaVazia.Left = jogador[i].X;
+                        cartaVazia.Top = jogador[i].Y;
+                        jogador[i].X += jogador[i].DeslocamentoX;
+                        jogador[i].Y += jogador[i].DeslocamentoY;
+                        jogador[i].Count++;
+                        cartaVazia.Width = jogador[i].Width;
+                        cartaVazia.Height = jogador[i].Height;
+                        cartaVazia.BackgroundImageLayout = ImageLayout.Stretch;
+                        string[] diretoriosCartasVazias = { Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padrao.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padrao.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padraodir.png"), Path.Combine(diretorioAtual, "../../Cards/cartasVazias/", $"Padraodir.png") };
+                        cartaVazia.BackgroundImage = Image.FromFile(diretoriosCartasVazias[i]);
+
+                        Controls.Add(cartaVazia);
+                        contadorDeCartas++;
                     }
+                    
 
                     if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
                     {
@@ -167,7 +174,7 @@ namespace lobby
                     carta.Width = jogador[i].Width;
                     carta.Height = jogador[i].Height;
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
-                    string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
+                    string[] diretorios = { Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}esq.png") };
                     carta.BackgroundImage = Image.FromFile(diretorios[i]);
 
 
@@ -203,11 +210,20 @@ namespace lobby
                 return;
             }
 
-            string[] dadosVez = retornoVez.Split(',');
-            lblPartidaStatus.Text = dadosVez[0];
-            lblIDVez.Text = dadosVez[1];
-            lblRodadaVez.Text = dadosVez[2];
-            lblStatusVez.Text = dadosVez[3];
+            retornoVez = retornoVez.Replace("\r", "");
+            if (retornoVez.Length > 0)
+                retornoVez = retornoVez.Substring(0, retornoVez.Length - 1);
+            string[] dadosVez = retornoVez.Split('\n');
+
+            lstStatus.Items.Clear();
+            foreach(string s in dadosVez)
+            {
+                lstStatus.Items.Add(s);
+            }
+            //lblPartidaStatus.Text = dadosVez[0];
+            //lblIDVez.Text = dadosVez[1];
+            //lblRodadaVez.Text = dadosVez[2];
+            //lblStatusVez.Text = dadosVez[3];
 
         }
 
@@ -230,7 +246,12 @@ namespace lobby
 
             
             string[] listaJogada = jogadas.Split('\n');
+            lstJogadas.Items.Clear();
 
+            for (int i = 0; i < listaJogada.Length; i++)
+            {
+                lstJogadas.Items.Add(listaJogada[i]);
+            }
             string[] ultimaRodada = listaJogada[listaJogada.Length-1].Split(',');
 
             int x = 1300;
@@ -245,8 +266,7 @@ namespace lobby
                     string numeroCarta = rodada[3];
 
                     string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
-                    lblJogada.Text = jogadas;
-                    lblJogada.Visible = true;
+                    
 
                     Panel carta = new Panel();
                     carta.BackgroundImage = Image.FromFile(caminhoImagem);
