@@ -132,15 +132,11 @@ namespace lobby
                 {
                     
                     string[] pedacoCarta = lstCartas.Items[j].ToString().Split(',');
-                    string naipeCarta = pedacoCarta[2];
+                    char naipeCarta = char.Parse(pedacoCarta[2]);
                     if (pedacoCarta[0] != idJogadores[i]) continue;
                     Panel carta = new Panel();
 
-<<<<<<< HEAD
- /*                   if (pedacoCarta[0] == idJogadores[i] && contadorDeCartas != int.Parse(pedacoCarta[1]))
-=======
                     if (contadorDeCartas != int.Parse(pedacoCarta[1]))
->>>>>>> 8b236a6bf31166b8d9b9799dc8bba89925deba33
                     {
                         while (contadorDeCartas != int.Parse(pedacoCarta[1]) && contadorDeCartas < 12)
                         {
@@ -155,7 +151,7 @@ namespace lobby
 
                             contadorDeCartas++;
                         }
-                    }*/
+                    }
 
                     if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
                     {
@@ -330,11 +326,7 @@ namespace lobby
             {
                 string[] pedacoCarta = carta.ToString().Split(',');
 
-<<<<<<< HEAD
                 if (pedacoCarta[2] == "C" && pedacoCarta[0] == RetornoDados[0])
-=======
-                if (pedacoCarta[2] == "C" && pedacoCarta[0] == RetornoDados[0]) // Verifica se o jogador ques esta na maquina tem a carta de Copas
->>>>>>> 8b236a6bf31166b8d9b9799dc8bba89925deba33
                 {
                     txtIdCarta.Text = pedacoCarta[1];
                     string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
