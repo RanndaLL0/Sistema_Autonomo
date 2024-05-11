@@ -54,9 +54,12 @@
   <ItemGroup>
     <Compile Include="Entidades\Baralho.cs" />
     <Compile Include="Entidades\Carta.cs" />
+    <Compile Include="Entidades\GerenciadorDeStrings.cs" />
+    <Compile Include="Entidades\Jogador.cs" />
     <Compile Include="Entidades\Mesa.cs" />
     <Compile Include="Entidades\Tabuleiro.cs" />
-    <Compile Include="Jogador.cs" />
+    <Compile Include="Entidades\Mao.cs" />
+    <Compile Include="Entidades\Configuracao.cs" />
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>

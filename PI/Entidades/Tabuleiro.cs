@@ -9,11 +9,13 @@ namespace SistemaAutonomo.Entidades
     public class Tabuleiro
     {
         private List<Carta> CartasJogadas;
+        private Dictionary<int,Jogador> Jogadores;
         private int Pontuacao;
 
-        public Tabuleiro()
+        public Tabuleiro(Dictionary<int,Jogador> jogadores)
         {
             CartasJogadas = new List<Carta>();
+            Jogadores = jogadores;
         }
 
         public void JogarCarta(Carta carta)
@@ -21,16 +23,16 @@ namespace SistemaAutonomo.Entidades
             CartasJogadas.Add(carta);
         }   
 
-        public void Vencedor()
+
+        public Carta RemoverCarta()
         {
-            int max = 0;
-            foreach(Carta c in CartasJogadas)
-            {
-                if(c.Valor > max)
-                {
-                    max = c.Valor;
-                }
-            }
+            return null;
         }
+
+        public void AtualizarPontuacaoJogadores()
+        {
+
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿public class Jogador
+﻿public class Mao
 {
     public int X { get; set; }
     public int XInicial { get; set; }
@@ -13,7 +13,7 @@
     public int PulaLinhaY { get; set; }
 
 
-    public Jogador(int x, int xInicial, int y, int yInicial, int count, int width, int height, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY)
+    public Mao(int x, int xInicial, int y, int yInicial, int count, int width, int height, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY)
     {
         X = x;
         XInicial = xInicial;

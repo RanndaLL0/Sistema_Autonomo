@@ -13,12 +13,11 @@ namespace SistemaAutonomo.Entidades
         public Baralho()
         {
             cartas = new List<Carta>();
-            InicializarBaralho();
         }
 
-        private void InicializarBaralho() 
+        public void AdicionarCarta(char naipe,int idCarta)
         {
-
+            cartas.Add(new Carta(naipe, idCarta));
         }
 
         public Carta RemoverCarta()

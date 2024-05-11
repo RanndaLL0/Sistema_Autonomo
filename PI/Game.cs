@@ -108,19 +108,19 @@ namespace lobby
             idJogadores[indice] = temp;
 
 
-            List<Jogador> jogador = new List<Jogador>();
+            List<Mao> jogador = new List<Mao>();
 
             if (numeroDeJogadores == 2)
             {
-                jogador.Add(new Jogador(850, 850, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-                jogador.Add(new Jogador(1335, 1335, 155, 155, 0, 91, 137, -97, 0, 0, -143));
+                jogador.Add(new Mao(850, 850, 690, 690, 0, 91, 137, 97, 0, 0, 143));
+                jogador.Add(new Mao(1335, 1335, 155, 155, 0, 91, 137, -97, 0, 0, -143));
             }
             else
             {
-                jogador.Add(new Jogador(800, 800, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-                jogador.Add(new Jogador(1382, 1382, 155, 155, 0, 91, 137, -97, 0, 0, -143));
-                jogador.Add(new Jogador(620, 620, 147, 147, 0, 137, 91, 0, 97, -143, 0));
-                jogador.Add(new Jogador(1516, 1516, 730, 730, 0, 137, 91, 0, -97, 143, 0));
+                jogador.Add(new Mao(800, 800, 690, 690, 0, 91, 137, 97, 0, 0, 143));
+                jogador.Add(new Mao(1382, 1382, 155, 155, 0, 91, 137, -97, 0, 0, -143));
+                jogador.Add(new Mao(620, 620, 147, 147, 0, 137, 91, 0, 97, -143, 0));
+                jogador.Add(new Mao(1516, 1516, 730, 730, 0, 137, 91, 0, -97, 143, 0));
             }
 
 
