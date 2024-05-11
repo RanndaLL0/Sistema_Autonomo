@@ -172,7 +172,7 @@ namespace lobby
             {
                 Game game = new Game();
                 game.RetornoIdPartida = idPartida;
-                game.RetornoDados = dados;
+                game.JogadorNaMaquina = dados;
                 game.IniciarGame();
                 game.ShowDialog();
             }

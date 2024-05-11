@@ -12,16 +12,18 @@ namespace SistemaAutonomo.Entidades
     public class Mesa
     {
         private Dictionary<int, Jogador> Jogadores;
-        private List<Mao> Maos;
+        private List<ConfiguracaoMao> Maos;
         private Baralho baralho;
         private Tabuleiro tabuleiro;
         private int IdPartida;
+        private string[] JogadorNaMaquina;
 
-        public Mesa()
+        public Mesa(string[] jogadorNaMaquina)
         {
-            Maos = new List<Mao>();
+            Maos = new List<ConfiguracaoMao>();
             baralho = new Baralho();
             tabuleiro = new Tabuleiro(Jogadores);
+            JogadorNaMaquina = jogadorNaMaquina;
         }
 
         public void Inicio()
@@ -45,11 +47,6 @@ namespace SistemaAutonomo.Entidades
         }
 
         public void ExibirCartas()
-        {
-
-        }
-
-        private void InicializarBaralho()
         {
 
         }

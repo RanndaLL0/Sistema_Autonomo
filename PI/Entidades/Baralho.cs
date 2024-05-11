@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace SistemaAutonomo.Entidades
 {
     public class Baralho
     {
-        private List<Carta> cartas;
+        private Dictionary<int,Carta> cartas;
 
         public Baralho()
         {
-            cartas = new List<Carta>();
+            cartas = new Dictionary<int, Carta>();
         }
 
         public void AdicionarCarta(char naipe,int idCarta)
         {
-            cartas.Add(new Carta(naipe, idCarta));
+            cartas.Add(idCarta, new Carta(naipe, idCarta));
         }
 
-        public Carta RemoverCarta()
+        public void RemoverCarta(int idCarta)
         {
-            return null;
+            cartas.Remove(idCarta);
         }
     }
 }

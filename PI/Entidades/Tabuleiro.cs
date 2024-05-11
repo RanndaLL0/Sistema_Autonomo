@@ -23,7 +23,6 @@ namespace SistemaAutonomo.Entidades
             CartasJogadas.Add(carta);
         }   
 
-
         public Carta RemoverCarta()
         {
             return null;

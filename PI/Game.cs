@@ -18,7 +18,7 @@ namespace lobby
     {
         public string RetornoIniciar { get; set; }
         public int RetornoIdPartida { get; set; }
-        public string[] RetornoDados { get; set; }
+        public string[] JogadorNaMaquina { get; set; }
 
         private string diretorioAtual = Directory.GetCurrentDirectory();
 
@@ -86,7 +86,7 @@ namespace lobby
             string[] listaJogadores = conjuntoDeJogadores.Split('\n');
             int numeroDeJogadores = listaJogadores.Length;
 
-            string idJogadorInicial = RetornoDados[0];
+            string idJogadorInicial = JogadorNaMaquina[0];
             string[] idJogadores = new string[4]; 
 
             int indice = 0;
@@ -108,19 +108,19 @@ namespace lobby
             idJogadores[indice] = temp;
 
 
-            List<Mao> jogador = new List<Mao>();
+            List<ConfiguracaoMao> jogador = new List<ConfiguracaoMao>();
 
             if (numeroDeJogadores == 2)
             {
-                jogador.Add(new Mao(850, 850, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-                jogador.Add(new Mao(1335, 1335, 155, 155, 0, 91, 137, -97, 0, 0, -143));
+                jogador.Add(new ConfiguracaoMao(850, 850, 690, 690, 0, 91, 137, 97, 0, 0, 143));
+                jogador.Add(new ConfiguracaoMao(1335, 1335, 155, 155, 0, 91, 137, -97, 0, 0, -143));
             }
             else
             {
-                jogador.Add(new Mao(800, 800, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-                jogador.Add(new Mao(1382, 1382, 155, 155, 0, 91, 137, -97, 0, 0, -143));
-                jogador.Add(new Mao(620, 620, 147, 147, 0, 137, 91, 0, 97, -143, 0));
-                jogador.Add(new Mao(1516, 1516, 730, 730, 0, 137, 91, 0, -97, 143, 0));
+                jogador.Add(new ConfiguracaoMao(800, 800, 690, 690, 0, 91, 137, 97, 0, 0, 143));
+                jogador.Add(new ConfiguracaoMao(1382, 1382, 155, 155, 0, 91, 137, -97, 0, 0, -143));
+                jogador.Add(new ConfiguracaoMao(620, 620, 147, 147, 0, 137, 91, 0, 97, -143, 0));
+                jogador.Add(new ConfiguracaoMao(1516, 1516, 730, 730, 0, 137, 91, 0, -97, 143, 0));
             }
 
 
@@ -140,20 +140,20 @@ namespace lobby
                     {
                         while (contadorDeCartas != int.Parse(pedacoCarta[1]) && contadorDeCartas < 12)
                         {
-                            if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
+                            if (numeroDeJogadores == 2 && jogador[i].Contador == 6 || numeroDeJogadores > 2 && jogador[i].Contador == 7)
                             {
                                 jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
                                 jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
                             }
                             jogador[i].X += jogador[i].DeslocamentoX;
                             jogador[i].Y += jogador[i].DeslocamentoY;
-                            jogador[i].Count++;
+                            jogador[i].Contador++;
 
                             contadorDeCartas++;
                         }
                     }
 
-                    if (numeroDeJogadores == 2 && jogador[i].Count == 6 || numeroDeJogadores > 2 && jogador[i].Count == 7)
+                    if (numeroDeJogadores == 2 && jogador[i].Contador == 6 || numeroDeJogadores > 2 && jogador[i].Contador == 7)
                     {
                         jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
                         jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
@@ -162,10 +162,10 @@ namespace lobby
                     carta.Top = jogador[i].Y;
                     jogador[i].X += jogador[i].DeslocamentoX;
                     jogador[i].Y += jogador[i].DeslocamentoY;
-                    jogador[i].Count++;
+                    jogador[i].Contador++;
 
-                    carta.Width = jogador[i].Width;
-                    carta.Height = jogador[i].Height;
+                    carta.Width = jogador[i].Largura;
+                    carta.Height = jogador[i].Altura;
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
                     string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
                     carta.BackgroundImage = Image.FromFile(diretorios[i]);
@@ -189,8 +189,8 @@ namespace lobby
             VerificarVez();
             AtualizarCartas();
             MostrarCartas();
-            txtIdJogador.Text = RetornoDados[0];
-            txtSenhaJogador.Text = RetornoDados[1];
+            txtIdJogador.Text = JogadorNaMaquina[0];
+            txtSenhaJogador.Text = JogadorNaMaquina[1];
             lblVersao.Text = Jogo.Versao;
         }
 
@@ -326,7 +326,7 @@ namespace lobby
             {
                 string[] pedacoCarta = carta.ToString().Split(',');
 
-                if (pedacoCarta[2] == "C" && pedacoCarta[0] == RetornoDados[0])
+                if (pedacoCarta[2] == "C" && pedacoCarta[0] == JogadorNaMaquina[0])
                 {
                     txtIdCarta.Text = pedacoCarta[1];
                     string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
@@ -348,7 +348,7 @@ namespace lobby
 
         private void Jogar()
         {
-            if(lblIDVez.Text == RetornoDados[0]) // compara o Id da vez com o do jogador que esta na maquina
+            if(lblIDVez.Text == JogadorNaMaquina[0]) // compara o Id da vez com o do jogador que esta na maquina
             {
                 bool jogouCopas = JogarCopas();
                 if (!jogouCopas)

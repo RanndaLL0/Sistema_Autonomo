@@ -1,27 +1,27 @@
-﻿public class Mao
+﻿public class ConfiguracaoMao
 {
     public int X { get; set; }
     public int XInicial { get; set; }
     public int Y { get; set; }
     public int YInicial { get; set; }
-    public int Count { get; set; }
-    public int Width { get; set; }
-    public int Height { get; set; }
+    public int Contador { get; set; }
+    public int Largura { get; set; }
+    public int Altura { get; set; }
     public int DeslocamentoX { get; set; }
     public int DeslocamentoY { get; set; }
     public int PulaLinhaX { get; set; }
     public int PulaLinhaY { get; set; }
 
 
-    public Mao(int x, int xInicial, int y, int yInicial, int count, int width, int height, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY)
+    public ConfiguracaoMao(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY)
     {
         X = x;
         XInicial = xInicial;
         Y = y;
         YInicial = yInicial;
-        Count = count;
-        Width = width;
-        Height = height;
+        Contador = contador;
+        Largura = largura;
+        Altura = altura;
         DeslocamentoX = deslocamentoX;
         DeslocamentoY = deslocamentoY;
         PulaLinhaX = pulaLinhaX;

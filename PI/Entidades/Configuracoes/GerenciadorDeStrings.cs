@@ -26,7 +26,7 @@ namespace SistemaAutonomo.Entidades
             return CartasList.Split('\n');
         }
 
-        public string[] ObterInformacaoDosJogadores(int idPartida)
+        public static string[] ObterInformacaoDosJogadores(int idPartida)
         {
             string retornoBruto = Jogo.ListarJogadores(idPartida);
             if (retornoBruto.Length > 4 && retornoBruto.Substring(0, 4) == "ERRO")
