@@ -57,9 +57,9 @@
     <Compile Include="Entidades\Configuracoes\GerenciadorDeStrings.cs" />
     <Compile Include="Entidades\Jogador.cs" />
     <Compile Include="Entidades\Mesa.cs" />
-    <Compile Include="Entidades\Tabuleiro.cs" />
+    <Compile Include="Entidades\Partida.cs" />
     <Compile Include="Entidades\Configuracoes\ConfiguracaoMao.cs" />
-    <Compile Include="Entidades\Configuracoes\Configuracao.cs" />
+    <Compile Include="Entidades\Configuracoes\ConfiguracaoPartida.cs" />
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>

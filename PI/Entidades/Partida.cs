@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SistemaAutonomo.Entidades
 {
-    public class Tabuleiro
+    public class Partida
     {
         private List<Carta> CartasJogadas;
         private Dictionary<int,Jogador> Jogadores;
         private int Pontuacao;
 
-        public Tabuleiro(Dictionary<int,Jogador> jogadores)
+        public Partida(Dictionary<int,Jogador> jogadores)
         {
             CartasJogadas = new List<Carta>();
             Jogadores = jogadores;

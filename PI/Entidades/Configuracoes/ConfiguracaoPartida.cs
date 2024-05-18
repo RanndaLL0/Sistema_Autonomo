@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SistemaAutonomo.Entidades
 {
-    public class Configuracao
+    public class ConfiguracaoPartida
     {
 
         public static int ContarJogadores(int idPartida)
