@@ -47,7 +47,8 @@ namespace SistemaAutonomo.Entidades
 
             foreach (string jogador in retornoBruto)
             {
-                int id = int.Parse(jogador.Substring(0, ','));
+                string retornoTratado = jogador.Split(',')[0];
+                int id = int.Parse(retornoTratado);
                 IdJogadores.Add(id);
             }
 

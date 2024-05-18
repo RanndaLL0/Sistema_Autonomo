@@ -11,13 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MagicTrickServer;
+using SistemaAutonomo.Entidades;
 
 namespace lobby
 {
     public partial class Game : Form
     {
         public string RetornoIniciar { get; set; }
-        public int RetornoIdPartida { get; set; }
+        public int IdPartida { get; set; }
         public string[] JogadorNaMaquina { get; set; }
 
         private string diretorioAtual = Directory.GetCurrentDirectory();
@@ -28,11 +29,25 @@ namespace lobby
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+            //Mesa mesa = new Mesa(JogadorNaMaquina,IdPartida);
+        }
+
+        public void IniciarGame(int idPartida, string[] jogadorNaMaquina)
+        {
+            JogadorNaMaquina = jogadorNaMaquina;
+            IdPartida = idPartida;
+            VerificarVez();
+            Mesa mesa = new Mesa(JogadorNaMaquina, IdPartida);
+            AtualizarCartas();
+            MostrarCartas();
+            txtIdJogador.Text = JogadorNaMaquina[0];
+            txtSenhaJogador.Text = JogadorNaMaquina[1];
+            lblVersao.Text = Jogo.Versao;
         }
 
         private void AtualizarCartas()
         {
-            string CartasList = Jogo.ConsultarMao(RetornoIdPartida);
+            string CartasList = Jogo.ConsultarMao(IdPartida);
             if (CartasList.Length > 4 && CartasList.Substring(0, 4) == "ERRO")
             {
                 MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -77,7 +92,7 @@ namespace lobby
         {
             RemoverPanels();
 
-            string conjuntoDeJogadores = Jogo.ListarJogadores(RetornoIdPartida);
+            string conjuntoDeJogadores = Jogo.ListarJogadores(IdPartida);
 
             conjuntoDeJogadores = conjuntoDeJogadores.Replace("\r", "");
             if (conjuntoDeJogadores.Length > 0)
@@ -184,19 +199,9 @@ namespace lobby
         }
 
 
-        public void IniciarGame()
-        {
-            VerificarVez();
-            AtualizarCartas();
-            MostrarCartas();
-            txtIdJogador.Text = JogadorNaMaquina[0];
-            txtSenhaJogador.Text = JogadorNaMaquina[1];
-            lblVersao.Text = Jogo.Versao;
-        }
-
         private void VerificarVez()
         {
-            string retornoVez = Jogo.VerificarVez(RetornoIdPartida);
+            string retornoVez = Jogo.VerificarVez(IdPartida);
             if (retornoVez.Length > 4 && retornoVez.Substring(0, 4) == "ERRO")
             {
                 MessageBox.Show($"Ocorreu um erro ao verificar a vez:\n{retornoVez.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -213,7 +218,7 @@ namespace lobby
 
         private void MostrarJogada()
         {
-            string jogadas = Jogo.ExibirJogadas(RetornoIdPartida);
+            string jogadas = Jogo.ExibirJogadas(IdPartida);
             if (jogadas.Length > 4 && jogadas.Substring(0, 4) == "ERRO")
             {
                 MessageBox.Show($"Ocorreu um erro ao verificar a rodada:\n{jogadas.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);

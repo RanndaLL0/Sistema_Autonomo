@@ -153,8 +153,8 @@ namespace lobby
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            //idPartida = 4384;
-            //dados[0] = "5773";
+            idPartida = 3032;
+            dados[0] = "3061";
             //dados[1] = "585C41";
 
             //dados[0] = "4158";
@@ -171,9 +171,7 @@ namespace lobby
             if (idPartida != 0 && dados != null)
             {
                 Game game = new Game();
-                game.RetornoIdPartida = idPartida;
-                game.JogadorNaMaquina = dados;
-                game.IniciarGame();
+                game.IniciarGame(idPartida,dados);
                 game.ShowDialog();
             }
             else

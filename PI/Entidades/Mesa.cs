@@ -18,8 +18,9 @@ namespace SistemaAutonomo.Entidades
         private int IdPartida;
         private string[] JogadorNaMaquina;
 
-        public Mesa(string[] jogadorNaMaquina)
+        public Mesa(string[] jogadorNaMaquina,int idPartida)
         {
+            IdPartida = idPartida;
             JogadorNaMaquina = jogadorNaMaquina;
             Maos = new List<ConfiguracaoMao>();
             baralho = new Baralho();
@@ -32,14 +33,15 @@ namespace SistemaAutonomo.Entidades
         {
             Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             CriarJogadores();
-            DistribuirCartas();
 
+            DistribuirCartas();
             tabuleiro = new Partida(Jogadores);
         }
 
         public void CriarJogadores()
         {
             string[] retornoBruto = GerenciadorDeStrings.ObterInformacaoDosJogadores(IdPartida);
+
             List<int> IdJogadores = new List<int>();
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
 
@@ -57,8 +59,8 @@ namespace SistemaAutonomo.Entidades
             {
                 string[] informacoesDaCarta = carta.Split(',');
                 int idJogador = int.Parse(informacoesDaCarta[0]);
-                char naipe = char.Parse(informacoesDaCarta[1]);
-                int idCarta = int.Parse(informacoesDaCarta[2]);
+                int idCarta = int.Parse(informacoesDaCarta[1]);
+                char naipe = char.Parse(informacoesDaCarta[2]);
 
                 Jogadores[idJogador].Baralho.AdicionarCarta(naipe,idCarta);
             }

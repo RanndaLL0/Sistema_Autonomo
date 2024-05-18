@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\configuracoes\\gerenciadordestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\configuracoes\\gerenciadordestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +15,16 @@
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\jogador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\configuracoes\\gerenciadordestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\configuracoes\\gerenciadordestrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\configuracoes\\configuracaopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\configuracoes\\configuracaopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\configuracoes\\configuracaopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\configuracoes\\configuracaomao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\configuracoes\\configuracaomao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\baralho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +35,8 @@
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,6 +45,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,71 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs",
-              "RelativeDocumentMoniker": "PI\\Game.cs",
-              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs",
-              "RelativeToolTip": "PI\\Game.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAqwOoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T22:39:13.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GerenciadorDeStrings.cs",
-              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
-              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
-              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
-              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAABwAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T21:43:20.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ConfiguracaoMao.cs",
-              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
-              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
-              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
-              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAAAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T20:32:50.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConfiguracaoPartida.cs",
-              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
-              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
-              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
-              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwCoAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T20:22:57.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Jogador.cs",
-              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
-              "RelativeDocumentMoniker": "PI\\Entidades\\Jogador.cs",
-              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
-              "RelativeToolTip": "PI\\Entidades\\Jogador.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T19:42:58.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Carta.cs",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Carta.cs",
               "RelativeDocumentMoniker": "PI\\Entidades\\Carta.cs",
@@ -147,20 +87,97 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Game.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs",
+              "RelativeDocumentMoniker": "PI\\Game.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs [Design]",
+              "RelativeToolTip": "PI\\Game.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T20:36:28.789Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs",
+              "RelativeDocumentMoniker": "PI\\Game.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Game.cs",
+              "RelativeToolTip": "PI\\Game.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAlwCQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T22:39:13.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GerenciadorDeStrings.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
+              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\GerenciadorDeStrings.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAjwCoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T21:43:20.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConfiguracaoMao.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
+              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\ConfiguracaoMao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T20:32:50.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConfiguracaoPartida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
+              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\ConfiguracaoPartida.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAjwEQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T20:22:57.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Jogador.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Jogador.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
+              "RelativeToolTip": "PI\\Entidades\\Jogador.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T19:42:58.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Baralho.cs",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Baralho.cs",
               "RelativeDocumentMoniker": "PI\\Entidades\\Baralho.cs",
               "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Baralho.cs",
               "RelativeToolTip": "PI\\Entidades\\Baralho.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBQAAAApAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAD4vxIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-11T19:16:36.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Partida.cs",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Partida.cs",
               "RelativeDocumentMoniker": "PI\\Entidades\\Partida.cs",
@@ -179,14 +196,14 @@
               "RelativeDocumentMoniker": "PI\\Entidades\\Mesa.cs",
               "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Mesa.cs",
               "RelativeToolTip": "PI\\Entidades\\Mesa.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAwwD8AAAANAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwDEAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-11T18:58:16.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Program.cs",
               "RelativeDocumentMoniker": "PI\\Program.cs",
@@ -198,26 +215,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Lobby.cs",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Lobby.cs",
               "RelativeDocumentMoniker": "PI\\Lobby.cs",
               "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Lobby.cs",
               "RelativeToolTip": "PI\\Lobby.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAK4AAAAuAAAA",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAYwJwAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T21:29:30.586Z"
+              "WhenOpened": "2024-04-20T21:29:30.586Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Lobby.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Lobby.cs",
               "RelativeDocumentMoniker": "PI\\Lobby.cs",
               "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Lobby.cs [Design]",
               "RelativeToolTip": "PI\\Lobby.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T20:32:47.309Z"
+              "WhenOpened": "2024-04-20T20:32:47.309Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },

@@ -30,6 +30,7 @@ namespace SistemaAutonomo.Entidades
         {
             Id = id;
             Posicao = posicao;
+            Baralho = new Baralho();
             PontuacaoDaPartida = 0;
             PontuacaoDoTurno = 0;
         }
