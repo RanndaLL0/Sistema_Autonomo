@@ -41,5 +41,20 @@ namespace SistemaAutonomo.Entidades
             return retornoBruto.Split('\n');
 
         }
+
+        public static string ObterNomeDoJogador(int idJogador, int idPartida)
+        {
+            string[] retornoBruto = ObterInformacaoDosJogadores(idPartida);
+
+            foreach(string jogador in retornoBruto)
+            {
+                string[] retornoTratado = jogador.Split(',');
+                if (idJogador == int.Parse(retornoTratado[0]))
+                {
+                    return retornoTratado[1];
+                }
+            }
+            return null;
+        }
     }
 }

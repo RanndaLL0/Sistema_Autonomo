@@ -40,12 +40,17 @@ namespace SistemaAutonomo.Entidades
 
         public void CriarJogadores()
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 028721dc0bf648f92f471b8b728eb2fbfd2c8838
             List<int> IdJogadores = new List<int>();
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
 
             for (int i = 0;i < IdJogadores.Count; i++)
             {
-                Jogadores.Add(IdJogadores[i], new Jogador(IdJogadores[i], Maos[i]));
+                string nomeJogador = GerenciadorDeStrings.ObterNomeDoJogador(IdJogadores[i],IdPartida);
+                Jogadores.Add(IdJogadores[i], new Jogador(IdJogadores[i], Maos[i], nomeJogador));
             }
         }
 
