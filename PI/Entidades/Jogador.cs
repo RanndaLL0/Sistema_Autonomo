@@ -26,10 +26,11 @@ namespace SistemaAutonomo.Entidades
             PontuacaoDoTurno = 0;
         }
 
-        public Jogador(int id,ConfiguracaoMao posicao)
+        public Jogador(int id,ConfiguracaoMao posicao, string nome)
         {
             Id = id;
             Posicao = posicao;
+            Nome = nome;
             Baralho = new Baralho();
             PontuacaoDaPartida = 0;
             PontuacaoDoTurno = 0;
