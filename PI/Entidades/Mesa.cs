@@ -40,8 +40,6 @@ namespace SistemaAutonomo.Entidades
 
         public void CriarJogadores()
         {
-            string[] retornoBruto = GerenciadorDeStrings.ObterInformacaoDosJogadores(IdPartida);
-
             List<int> IdJogadores = new List<int>();
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
 
