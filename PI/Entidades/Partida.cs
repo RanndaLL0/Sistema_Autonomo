@@ -10,12 +10,14 @@ namespace SistemaAutonomo.Entidades
     {
         private List<Carta> CartasJogadas;
         private Dictionary<int,Jogador> Jogadores;
+        private List<int> IdJogadores;
         private int Pontuacao;
 
-        public Partida(Dictionary<int,Jogador> jogadores)
+        public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores)
         {
             CartasJogadas = new List<Carta>();
             Jogadores = jogadores;
+            IdJogadores = idJogadores;
         }
 
         public void JogarCarta(Carta carta)
@@ -30,7 +32,11 @@ namespace SistemaAutonomo.Entidades
 
         public void AtualizarPontuacaoJogadores()
         {
-
+            foreach(int Id in IdJogadores)
+            {
+                Jogadores[Id].ObterPontuacaoPartida();
+                Jogadores[Id].ObterPontuacaoTurno();
+            }
         }
 
     }

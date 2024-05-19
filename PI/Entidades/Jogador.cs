@@ -14,8 +14,8 @@ namespace SistemaAutonomo.Entidades
         private string Nome { get; set; }
         private int PontuacaoDaPartida { get; set; }
         private int PontuacaoDoTurno { get; set; }
-        private Baralho Baralho { get; set; }
-        private ConfiguracaoMao Posicao { get; set; }
+        public Baralho Baralho { get; set; }
+        public ConfiguracaoMao Posicao { get; set; }
 
         public Jogador(int id,string nome) 
         {

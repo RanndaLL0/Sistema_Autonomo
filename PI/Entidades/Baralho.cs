@@ -9,7 +9,7 @@ namespace SistemaAutonomo.Entidades
 {
     public class Baralho
     {
-        private Dictionary<int,Carta> cartas;
+        public Dictionary<int,Carta> cartas;
 
         public Baralho()
         {

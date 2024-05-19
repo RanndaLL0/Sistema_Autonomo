@@ -27,15 +27,15 @@ namespace SistemaAutonomo.Entidades
 
             if(quantidadeDeJogadores == 2)
             {
-                configuracoes.Add(new ConfiguracaoMao(x:850, xInicial:850, y:690, yInicial:690, contador:0, largura:91, altura:137, deslocamentoX:97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:143));
-                configuracoes.Add(new ConfiguracaoMao(x:1335, xInicial:1335, y:155, yInicial:155, contador:0, largura:91, altura:137, deslocamentoX :- 97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:- 143));
+                configuracoes.Add(new ConfiguracaoMao(x:850, xInicial:850, y:690, yInicial:690, contador:0, largura:91, altura:137, deslocamentoX:97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:143, $"|.png"));
+                configuracoes.Add(new ConfiguracaoMao(x:1335, xInicial:1335, y:155, yInicial:155, contador:0, largura:91, altura:137, deslocamentoX :- 97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:- 143, $"|invertido.png"));
             }
             else 
             {
-                configuracoes.Add(new ConfiguracaoMao(x: 800, xInicial: 800, y: 690, yInicial: 690, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143));
-                configuracoes.Add(new ConfiguracaoMao(x: 1516, xInicial: 1516, y: 730, yInicial: 730, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0));
-                configuracoes.Add(new ConfiguracaoMao(x: 1382, xInicial: 1382, y: 155, yInicial: 155, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143));
-                configuracoes.Add(new ConfiguracaoMao(x: 620, xInicial: 620, y: 147, yInicial: 147, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0));
+                configuracoes.Add(new ConfiguracaoMao(x: 800, xInicial: 800, y: 690, yInicial: 690, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, $"|.png"));
+                configuracoes.Add(new ConfiguracaoMao(x: 1516, xInicial: 1516, y: 730, yInicial: 730, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0, $"|esq.png"));
+                configuracoes.Add(new ConfiguracaoMao(x: 1382, xInicial: 1382, y: 155, yInicial: 155, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, $"|invertido.png"));
+                configuracoes.Add(new ConfiguracaoMao(x: 620, xInicial: 620, y: 147, yInicial: 147, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0, $"|dir.png"));
             }
             return configuracoes;
         }

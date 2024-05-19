@@ -22,7 +22,7 @@ namespace SistemaAutonomo.Entidades
 
         public void ExibirCarta() 
         {
-
+           
         }
 
     }

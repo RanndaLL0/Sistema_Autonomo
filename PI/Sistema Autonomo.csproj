@@ -60,6 +60,7 @@
     <Compile Include="Entidades\Partida.cs" />
     <Compile Include="Entidades\Configuracoes\ConfiguracaoMao.cs" />
     <Compile Include="Entidades\Configuracoes\ConfiguracaoPartida.cs" />
+    <Compile Include="Entidades\Renderizador.cs" />
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>

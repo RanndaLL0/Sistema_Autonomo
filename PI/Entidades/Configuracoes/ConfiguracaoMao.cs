@@ -11,9 +11,10 @@
     public int DeslocamentoY { get; set; }
     public int PulaLinhaX { get; set; }
     public int PulaLinhaY { get; set; }
+    public string DesenhoCarta { get; set; }
 
 
-    public ConfiguracaoMao(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY)
+    public ConfiguracaoMao(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY, string desenhoCarta)
     {
         X = x;
         XInicial = xInicial;
@@ -26,5 +27,6 @@
         DeslocamentoY = deslocamentoY;
         PulaLinhaX = pulaLinhaX;
         PulaLinhaY = pulaLinhaY;
+        DesenhoCarta = desenhoCarta;
     }
 }

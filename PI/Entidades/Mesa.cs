@@ -14,37 +14,35 @@ namespace SistemaAutonomo.Entidades
         private Dictionary<int, Jogador> Jogadores;
         private List<ConfiguracaoMao> Maos;
         private Baralho baralho;
-        private Partida tabuleiro;
+        private Partida Partida;
         private int IdPartida;
         private string[] JogadorNaMaquina;
+        private List<int> IdJogadores;
+        private Renderizador renderizador;
 
-        public Mesa(string[] jogadorNaMaquina,int idPartida)
+        public Mesa(string[] jogadorNaMaquina,int idPartida,Form game)
         {
             IdPartida = idPartida;
             JogadorNaMaquina = jogadorNaMaquina;
             Maos = new List<ConfiguracaoMao>();
             baralho = new Baralho();
             Jogadores = new Dictionary<int, Jogador>();
+            IdJogadores = new List<int>();
 
             Iniciar();
+            renderizador = new Renderizador(game,IdJogadores,Jogadores);
         }
 
         public void Iniciar()
         {
             Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             CriarJogadores();
-
             DistribuirCartas();
-            tabuleiro = new Partida(Jogadores);
+            Partida = new Partida(Jogadores,IdJogadores);
         }
 
         public void CriarJogadores()
-        {
-<<<<<<< HEAD
-=======
-
->>>>>>> 028721dc0bf648f92f471b8b728eb2fbfd2c8838
-            List<int> IdJogadores = new List<int>();
+        {            
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
 
             for (int i = 0;i < IdJogadores.Count; i++)
@@ -67,10 +65,6 @@ namespace SistemaAutonomo.Entidades
 
                 Jogadores[idJogador].Baralho.AdicionarCarta(naipe,idCarta);
             }
-        }
-
-        public void ExibirCartas()
-        {
         }
     }
 }
