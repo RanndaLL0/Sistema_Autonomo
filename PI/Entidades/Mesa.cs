@@ -32,8 +32,8 @@ namespace SistemaAutonomo.Entidades
             Iniciar();
             renderizador = new Renderizador(game,IdJogadores,Jogadores);
         }
-
-        public void Iniciar()
+            
+        private void Iniciar()
         {
             Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             CriarJogadores();
@@ -41,7 +41,7 @@ namespace SistemaAutonomo.Entidades
             Partida = new Partida(Jogadores,IdJogadores);
         }
 
-        public void CriarJogadores()
+        private void CriarJogadores()
         {            
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
 

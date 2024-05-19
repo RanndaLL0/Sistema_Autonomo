@@ -153,8 +153,8 @@ namespace lobby
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            idPartida = 3032;
-            dados[0] = "3061";
+            //idPartida = 3032;
+            //dados[0] = "3061";
             //dados[1] = "585C41";
 
             //dados[0] = "4158";

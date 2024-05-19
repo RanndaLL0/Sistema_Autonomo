@@ -59,7 +59,7 @@ namespace SistemaAutonomo.Entidades
             {
                 return IdJogadores;
             }
-            List<int> ListaMenorParte = IdJogadores.GetRange(0, indexJogadorMaquina - 1);
+            List<int> ListaMenorParte = IdJogadores.GetRange(0, indexJogadorMaquina);
             List<int> ListaMaiorParte = IdJogadores.GetRange(indexJogadorMaquina, IdJogadores.Count - indexJogadorMaquina);
 
             foreach(int id in ListaMenorParte)

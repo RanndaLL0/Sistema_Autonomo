@@ -23,6 +23,17 @@ namespace SistemaAutonomo.Entidades
             Renderizar();
         }
 
+        private void QuebraLinha(Jogador jogador)
+        {
+            int numeroDeJogadores = IdJogadores.Count;
+
+            if (jogador.Posicao.Contador == 6 && numeroDeJogadores == 2 || jogador.Posicao.Contador == 7 && numeroDeJogadores == 4)
+            {
+                jogador.Posicao.X = jogador.Posicao.XInicial + jogador.Posicao.PulaLinhaX;
+                jogador.Posicao.Y = jogador.Posicao.YInicial + jogador.Posicao.PulaLinhaY;
+            }
+        }
+
         public void Renderizar()
         {
             foreach(int Id in  IdJogadores)
@@ -30,6 +41,7 @@ namespace SistemaAutonomo.Entidades
                 Jogador jogador = Jogadores[Id];
                 for(int i = 1; i <= jogador.Baralho.cartas.Count; i++)
                 {
+                    QuebraLinha(jogador);
                     Panel carta = new Panel();
                     carta.Left = jogador.Posicao.X;
                     carta.Top = jogador.Posicao.Y;
