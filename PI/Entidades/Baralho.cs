@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace SistemaAutonomo.Entidades
 {
@@ -22,11 +25,11 @@ namespace SistemaAutonomo.Entidades
             cartas.Add(idCarta, new Carta(naipe, idCarta));
         }
 
-        public void RemoverCarta(int idCarta,Form game)
+        public void RemoverCarta(int idCarta,Form game,string path,char naipeCarta)
         {
-            Panel cartaRemovida = cartas[idCarta].ImagemDaCarta;
-            cartas.Remove(idCarta);
-            game.Controls.Remove(cartaRemovida);
+            string diretorioAtual = Directory.GetCurrentDirectory();
+            string caminhoCarta = path.Replace('|', naipeCarta);
+            cartas[idCarta].ImagemDaCarta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminhoCarta));
         }
     }
 }

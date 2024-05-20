@@ -49,12 +49,15 @@ namespace SistemaAutonomo.Entidades
             string[] CartasJogadas = GerenciadorDeStrings.ObterJogadas(IdPartida);
             foreach(string carta in CartasJogadas)
             {
-                string idJogador = carta.Split(',')[1];
-                string idCarta = carta.Split(',')[4];
+                int idJogador = int.Parse(carta.Split(',')[1]);
+                int idCarta = int.Parse(carta.Split(',')[4]);
+                char naipeCarta = char.Parse(carta.Split(',')[2]);
 
-                if (Jogadores[int.Parse(idJogador)].Baralho.cartas[int.Parse(idCarta)] != null)
+                if (Jogadores[idJogador].Baralho.cartas[idCarta] != null)
                 {
-                    Jogadores[int.Parse(idJogador)].Baralho.RemoverCarta(int.Parse(idCarta),Game);
+                    Jogador jogador = Jogadores[idJogador];
+                    string path = jogador.Posicao.SilhuetaCarta;
+                    Jogadores[idJogador].Baralho.RemoverCarta(idCarta,Game,path,naipeCarta);
                 }
             }
         }
