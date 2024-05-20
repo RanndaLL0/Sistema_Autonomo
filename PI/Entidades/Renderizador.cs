@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace SistemaAutonomo.Entidades
         public List<int> IdJogadores { get; set; }
         private string diretorioAtual = Directory.GetCurrentDirectory();
         public Form Game;
-        public Renderizador(Form game, List<int> idJogadores,Dictionary<int,Jogador> jogadores) 
+        private  int IdPartida;
+        public Renderizador(Form game, List<int> idJogadores,Dictionary<int,Jogador> jogadores, int idPartida) 
         {
             Jogadores = jogadores;
             IdJogadores = idJogadores;
+            IdPartida = idPartida;
             Game = game;
             Renderizar();
         }
@@ -52,8 +55,30 @@ namespace SistemaAutonomo.Entidades
                     carta.Width = jogador.Posicao.Largura;
                     carta.Height = jogador.Posicao.Altura;
 
-                    string caminho = jogador.Posicao.DesenhoCarta.Replace('|', jogador.Baralho.cartas[i].Naipe);
-                    carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/", caminho));
+                    
+                    if (jogador.Baralho.cartas.ContainsKey(i))
+                    {
+                        string caminho = jogador.Posicao.DesenhoCarta.Replace('|', jogador.Baralho.cartas[i].Naipe);
+                        carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/", caminho));
+                    }
+                    else
+                    {
+                        string[] CartasJogadas = GerenciadorDeStrings.ObterJogadas(IdPartida);
+                        foreach (string Carta in CartasJogadas)
+                        {
+                            int idJogador = int.Parse(Carta.Split(',')[1]);
+                            int idCarta = int.Parse(Carta.Split(',')[4]);
+                            char naipeCarta = char.Parse(Carta.Split(',')[2]);
+
+                            if (Id == idJogador && idCarta == i)
+                            {
+                                Jogador Jogador = Jogadores[idJogador];
+                                Jogador.Baralho.AdicionarCarta(naipeCarta, idCarta);
+                                string caminho = Jogador.Posicao.SilhuetaCarta.Replace('|', naipeCarta);
+                                carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminho));
+                            }
+                        }
+                    }
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
 
                     jogador.Baralho.cartas[i].ImagemDaCarta = carta;

@@ -32,7 +32,7 @@ namespace SistemaAutonomo.Entidades
 
             Game = game;
             Iniciar();
-            renderizador = new Renderizador(Game,IdJogadores,Jogadores);
+            renderizador = new Renderizador(Game,IdJogadores,Jogadores,IdPartida);
         }
             
         private void Iniciar()

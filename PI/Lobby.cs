@@ -156,7 +156,7 @@ namespace lobby
             idPartida = 3092;
             dados[0] = "3201";
             dados[1] = "40A010";
-            
+
             //dados[0] = "4158";
             //dados[1] = "F93034";
 
