@@ -56,5 +56,24 @@ namespace SistemaAutonomo.Entidades
             }
             return null;
         }
+
+        public static string[] ObterJogadas(int idPartida)
+        {
+            string retornoBruto = Jogo.ExibirJogadas2(idPartida);
+            if (retornoBruto.Length > 4 && retornoBruto.Substring(0, 4) == "ERRO")
+            {
+                MessageBox.Show($"Ocorreu um erro ao obter as jogadas:\n{retornoBruto.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else if(retornoBruto == "")
+            {
+                return null;
+            }
+            retornoBruto = retornoBruto.Replace("\r", "");
+            if (retornoBruto.Length > 0)
+                retornoBruto = retornoBruto.Substring(0, retornoBruto.Length - 1); 
+
+            return retornoBruto.Split('\n');
+        }
     }
 }

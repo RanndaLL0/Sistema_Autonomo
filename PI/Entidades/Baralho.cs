@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace SistemaAutonomo.Entidades
@@ -21,9 +22,11 @@ namespace SistemaAutonomo.Entidades
             cartas.Add(idCarta, new Carta(naipe, idCarta));
         }
 
-        public void RemoverCarta(int idCarta)
+        public void RemoverCarta(int idCarta,Form game)
         {
+            Panel cartaRemovida = cartas[idCarta].ImagemDaCarta;
             cartas.Remove(idCarta);
+            game.Controls.Remove(cartaRemovida);
         }
     }
 }

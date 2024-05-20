@@ -30,8 +30,8 @@ namespace SistemaAutonomo.Entidades
             Jogadores = new Dictionary<int, Jogador>();
             IdJogadores = new List<int>();
 
-            Iniciar();
             Game = game;
+            Iniciar();
             renderizador = new Renderizador(Game,IdJogadores,Jogadores);
         }
             
@@ -40,7 +40,7 @@ namespace SistemaAutonomo.Entidades
             Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             CriarJogadores();
             DistribuirCartas();
-            Partida = new Partida(Jogadores,IdJogadores,Game);
+            Partida = new Partida(Jogadores,IdJogadores,Game,IdPartida);
         }
 
         private void CriarJogadores()

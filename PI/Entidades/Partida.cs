@@ -14,10 +14,12 @@ namespace SistemaAutonomo.Entidades
         private Dictionary<int,Jogador> Jogadores;
         private List<int> IdJogadores;
         private int Pontuacao;
+        private int IdPartida;
         private Form Game;
 
-        public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form game)
+        public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form game,int idPartida)
         {
+            IdPartida = idPartida;
             CartasJogadas = new List<Carta>();
             Jogadores = jogadores;
             IdJogadores = idJogadores;
@@ -38,12 +40,23 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
+            RemoverCarta();
             //CartasJogadas.Add(carta);
         }   
 
-        public Carta RemoverCarta()
+        public void RemoverCarta()
         {
-            return null;
+            string[] CartasJogadas = GerenciadorDeStrings.ObterJogadas(IdPartida);
+            foreach(string carta in CartasJogadas)
+            {
+                string idJogador = carta.Split(',')[1];
+                string idCarta = carta.Split(',')[4];
+
+                if (Jogadores[int.Parse(idJogador)].Baralho.cartas[int.Parse(idCarta)] != null)
+                {
+                    Jogadores[int.Parse(idJogador)].Baralho.RemoverCarta(int.Parse(idCarta),Game);
+                }
+            }
         }
 
         public void AtualizarPontuacaoJogadores()
