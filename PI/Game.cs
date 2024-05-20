@@ -20,6 +20,7 @@ namespace lobby
         public string RetornoIniciar { get; set; }
         public int IdPartida { get; set; }
         public string[] JogadorNaMaquina { get; set; }
+        public Mesa mesa;
 
         private string diretorioAtual = Directory.GetCurrentDirectory();
 
@@ -37,7 +38,7 @@ namespace lobby
             JogadorNaMaquina = jogadorNaMaquina;
             IdPartida = idPartida;
             VerificarVez();
-            Mesa mesa = new Mesa(JogadorNaMaquina, IdPartida,this); 
+            mesa = new Mesa(JogadorNaMaquina, IdPartida,this);
             AtualizarCartas();
             MostrarCartas();
             txtIdJogador.Text = JogadorNaMaquina[0];
@@ -249,8 +250,6 @@ namespace lobby
                     string numeroCarta = rodada[3];
 
                     string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
-                    lblJogada.Text = jogadas;
-                    lblJogada.Visible = true;
 
                     Panel carta = new Panel();
                     carta.BackgroundImage = Image.FromFile(caminhoImagem);
@@ -275,16 +274,7 @@ namespace lobby
         }
         private void btnJogar_Click(object sender, EventArgs e)
         {
-            string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
-            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao jogar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            lblTexto.Text = "Carta Jogada:";
-            lblCartaJogada.Text = retornoJogada;
-            lblCartaJogada.Visible = true;
-
+            mesa.Partida.JogarCarta();
         }
 
 
@@ -296,9 +286,7 @@ namespace lobby
                 MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoAposta.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            lblTexto.Text = "Carta A:";
-            lblCartaJogada.Text = retornoAposta;
-
+            
 
             VerificarVez();
             AtualizarCartas();
@@ -339,10 +327,6 @@ namespace lobby
                     {
                         continue;
                     }
-
-                    lblTexto.Text = "Carta Jogada:";
-                    lblCartaJogada.Text = retornoJogada;
-                    lblCartaJogada.Visible = true;
                     string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
                     return true;   
                 }
@@ -370,9 +354,6 @@ namespace lobby
                         {
                             continue;
                         }
-                        lblTexto.Text = "Carta Jogada:";
-                        lblCartaJogada.Text = retornoJogada;
-                        lblCartaJogada.Visible = true;
                         break;
                     }
                     string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));

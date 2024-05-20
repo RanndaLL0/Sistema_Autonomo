@@ -16,16 +16,28 @@ namespace SistemaAutonomo.Entidades
         private int PontuacaoDoTurno { get; set; }
         public Baralho Baralho { get; set; }
         public ConfiguracaoMao Posicao { get; set; }
+        public string Senha { get; set; }
 
-        public Jogador(int id,string nome) 
+
+        /// <summary>
+        /// Construtor para o jogador na maquina
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="posicao"></param>
+        /// <param name="nome"></param>
+        /// <param name="senha"></param>
+        public Jogador(int id, ConfiguracaoMao posicao, string nome,string senha)
         {
             Id = id;
+            Senha = senha;
+            Posicao = posicao;
             Nome = nome;
+            Baralho = new Baralho();
             PontuacaoDaPartida = 0;
             PontuacaoDoTurno = 0;
         }
-
-        public Jogador(int id,ConfiguracaoMao posicao, string nome)
+   
+        public Jogador(int id, ConfiguracaoMao posicao, string nome)
         {
             Id = id;
             Posicao = posicao;

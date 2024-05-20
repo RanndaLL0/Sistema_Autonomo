@@ -14,11 +14,12 @@ namespace SistemaAutonomo.Entidades
         private Dictionary<int, Jogador> Jogadores;
         private List<ConfiguracaoMao> Maos;
         private Baralho baralho;
-        private Partida Partida;
+        public Partida Partida;
         private int IdPartida;
         private string[] JogadorNaMaquina;
         private List<int> IdJogadores;
         private Renderizador renderizador;
+        private Form Game;
 
         public Mesa(string[] jogadorNaMaquina,int idPartida,Form game)
         {
@@ -30,7 +31,8 @@ namespace SistemaAutonomo.Entidades
             IdJogadores = new List<int>();
 
             Iniciar();
-            renderizador = new Renderizador(game,IdJogadores,Jogadores);
+            Game = game;
+            renderizador = new Renderizador(Game,IdJogadores,Jogadores);
         }
             
         private void Iniciar()
@@ -38,17 +40,27 @@ namespace SistemaAutonomo.Entidades
             Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             CriarJogadores();
             DistribuirCartas();
-            Partida = new Partida(Jogadores,IdJogadores);
+            Partida = new Partida(Jogadores,IdJogadores,Game);
         }
 
         private void CriarJogadores()
         {            
             IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(JogadorNaMaquina, IdPartida);
+            string senhaJogadorMaquina = JogadorNaMaquina[1];
+            int IdJogadorMaquina = int.Parse(JogadorNaMaquina[0]);
+
 
             for (int i = 0;i < IdJogadores.Count; i++)
             {
                 string nomeJogador = GerenciadorDeStrings.ObterNomeDoJogador(IdJogadores[i],IdPartida);
-                Jogadores.Add(IdJogadores[i], new Jogador(IdJogadores[i], Maos[i], nomeJogador));
+                if (IdJogadores[i] == IdJogadorMaquina)
+                {
+                    Jogadores.Add(IdJogadores[i], new Jogador(IdJogadorMaquina, Maos[i], nomeJogador, senhaJogadorMaquina));
+                }
+                else
+                {
+                    Jogadores.Add(IdJogadores[i], new Jogador(IdJogadores[i], Maos[i], nomeJogador));
+                }
             }
         }
 
