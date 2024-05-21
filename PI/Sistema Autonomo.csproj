@@ -52,31 +52,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Baralho.cs" />
+    <Compile Include="Entidades\Cartas.cs" />
     <Compile Include="Entidades\Carta.cs" />
-    <Compile Include="Entidades\Configuracoes\GerenciadorDeStrings.cs" />
+    <Compile Include="Entidades\Configuracoes\GerenciadorStrings.cs" />
     <Compile Include="Entidades\Jogador.cs" />
-    <Compile Include="Entidades\Mesa.cs" />
+    <Compile Include="Entidades\InicializadorPartida.cs" />
     <Compile Include="Entidades\Partida.cs" />
-    <Compile Include="Entidades\Configuracoes\ConfiguracaoMao.cs" />
+    <Compile Include="Entidades\Configuracoes\PosicaoCartas.cs" />
     <Compile Include="Entidades\Configuracoes\ConfiguracaoPartida.cs" />
-    <Compile Include="Entidades\Renderizador.cs" />
+    <Compile Include="Entidades\RenderizadorCartas.cs" />
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Lobby.Designer.cs">
       <DependentUpon>Lobby.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game.cs">
+    <Compile Include="FormularioPartida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Game.Designer.cs">
-      <DependentUpon>Game.cs</DependentUpon>
+    <Compile Include="FormularioPartida.Designer.cs">
+      <DependentUpon>FormularioPartida.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Game.resx">
-      <DependentUpon>Game.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioPartida.resx">
+      <DependentUpon>FormularioPartida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>

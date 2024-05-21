@@ -1,6 +1,6 @@
 ﻿namespace lobby
 {
-    partial class Game
+    partial class FormularioPartida
     {
         /// <summary>
         /// Required designer variable.

@@ -1,4 +1,4 @@
-﻿public class ConfiguracaoMao
+﻿public class PosicaoCartas
 {
     public int X { get; set; }
     public int XInicial { get; set; }
@@ -15,7 +15,7 @@
     public string SilhuetaCarta { get; set; }
 
 
-    public ConfiguracaoMao(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY, string desenhoCarta,string silhuetaCarta)
+    public PosicaoCartas(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY, string desenhoCarta,string silhuetaCarta)
     {
         X = x;
         XInicial = xInicial;

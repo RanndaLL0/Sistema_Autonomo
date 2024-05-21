@@ -9,8 +9,8 @@ namespace SistemaAutonomo.Entidades
 {
     public class Carta
     {
-        public char Naipe { get; set; }
-        public int IdDaCarta { get; set; }
+        public char Naipe { get;}
+        public int IdDaCarta { get;}
         public Panel ImagemDaCarta { get; set; }
 
         public Carta(char naipe, int idDaCarta)

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -10,13 +12,13 @@ namespace SistemaAutonomo.Entidades
 {
     public class Jogador
     {
-        private int Id { get; set; }
-        private string Nome { get; set; }
-        private int PontuacaoDaPartida { get; set; }
-        private int PontuacaoDoTurno { get; set; }
-        public Baralho Baralho { get; set; }
-        public ConfiguracaoMao Posicao { get; set; }
-        public string Senha { get; set; }
+        private int id;
+        private string nome { get; set; }
+        private int pontuacaoDaPartida { get; set; }
+        private int pontuacaoDoTurno { get; set; }
+        public Cartas Cartas { get; set; }
+        public PosicaoCartas Posicao { get; set; }
+        public string senha { get; set; }
 
 
         /// <summary>
@@ -26,25 +28,25 @@ namespace SistemaAutonomo.Entidades
         /// <param name="posicao"></param>
         /// <param name="nome"></param>
         /// <param name="senha"></param>
-        public Jogador(int id, ConfiguracaoMao posicao, string nome,string senha)
+        public Jogador(int id, PosicaoCartas posicao, string nome,string senha)
         {
-            Id = id;
-            Senha = senha;
+            this.id = id;
+            this.senha = senha;
             Posicao = posicao;
-            Nome = nome;
-            Baralho = new Baralho();
-            PontuacaoDaPartida = 0;
-            PontuacaoDoTurno = 0;
+            this.nome = nome;
+            Cartas = new Cartas();
+            pontuacaoDaPartida = 0;
+            pontuacaoDoTurno = 0;
         }
    
-        public Jogador(int id, ConfiguracaoMao posicao, string nome)
+        public Jogador(int id, PosicaoCartas posicao, string nome)
         {
-            Id = id;
+            this.id = id;
             Posicao = posicao;
-            Nome = nome;
-            Baralho = new Baralho();
-            PontuacaoDaPartida = 0;
-            PontuacaoDoTurno = 0;
+            this.nome = nome;
+            Cartas = new Cartas();
+            pontuacaoDaPartida = 0;
+            pontuacaoDoTurno = 0;
         }
 
         public int ObterPontuacaoTurno()
@@ -57,9 +59,11 @@ namespace SistemaAutonomo.Entidades
             return 0;
         }
 
-        public void Jogar()
+        public void JogarCarta(int idCarta,string path, char naipeCarta)
         {
-
+            string diretorioAtual = Directory.GetCurrentDirectory();
+            string caminhoCarta = path.Replace('|', naipeCarta);
+            Cartas.cartas[idCarta].ImagemDaCarta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminhoCarta));
         }
 
         public void Apostar()

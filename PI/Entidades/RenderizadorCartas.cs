@@ -10,25 +10,23 @@ using System.Windows.Forms;
 
 namespace SistemaAutonomo.Entidades
 {
-    public class Renderizador
+    public class RenderizadorCartas
     {
-        public Dictionary<int,Jogador> Jogadores { get; set; }
-        public List<int> IdJogadores { get; set; }
-        private string diretorioAtual = Directory.GetCurrentDirectory();
-        public Form Game;
-        private  int IdPartida;
-        public Renderizador(Form game, List<int> idJogadores,Dictionary<int,Jogador> jogadores, int idPartida) 
+        public Dictionary<int,Jogador> jogadores { get; set; }
+        private GerenciadorStrings gerenciadorDeStrings;
+        public Form formularioPartida;
+
+        public RenderizadorCartas(Form formularioPartida,Dictionary<int,Jogador> jogadores, int idPartida) 
         {
-            Jogadores = jogadores;
-            IdJogadores = idJogadores;
-            IdPartida = idPartida;
-            Game = game;
+            this.jogadores = jogadores;
+            this.gerenciadorDeStrings = new GerenciadorStrings(idPartida);
+            this.formularioPartida = formularioPartida;
             Renderizar();
         }
 
         private void QuebraLinha(Jogador jogador)
         {
-            int numeroDeJogadores = IdJogadores.Count;
+            int numeroDeJogadores = jogadores.Count;
 
             if (jogador.Posicao.Contador == 6 && numeroDeJogadores == 2 || jogador.Posicao.Contador == 7 && numeroDeJogadores == 4)
             {
@@ -39,10 +37,12 @@ namespace SistemaAutonomo.Entidades
 
         public void Renderizar()
         {
-            foreach(int Id in  IdJogadores)
+            string diretorioAtual = Directory.GetCurrentDirectory();
+            List<int> idJogadores = jogadores.Keys.ToList();
+            foreach (int Id in  idJogadores)
             {
-                Jogador jogador = Jogadores[Id];
-                for(int i = 1; i <= jogador.Baralho.cartas.Count; i++)
+                Jogador jogador = jogadores[Id];
+                for(int i = 1; i <= jogador.Cartas.cartas.Count; i++)
                 {
                     QuebraLinha(jogador);
                     Panel carta = new Panel();
@@ -56,14 +56,14 @@ namespace SistemaAutonomo.Entidades
                     carta.Height = jogador.Posicao.Altura;
 
                     
-                    if (jogador.Baralho.cartas.ContainsKey(i))
+                    if (jogador.Cartas.cartas.ContainsKey(i))
                     {
-                        string caminho = jogador.Posicao.DesenhoCarta.Replace('|', jogador.Baralho.cartas[i].Naipe);
+                        string caminho = jogador.Posicao.DesenhoCarta.Replace('|', jogador.Cartas.cartas[i].Naipe);
                         carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/", caminho));
                     }
                     else
                     {
-                        string[] CartasJogadas = GerenciadorDeStrings.ObterJogadas(IdPartida);
+                        string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
                         foreach (string Carta in CartasJogadas)
                         {
                             int idJogador = int.Parse(Carta.Split(',')[1]);
@@ -72,18 +72,16 @@ namespace SistemaAutonomo.Entidades
 
                             if (Id == idJogador && idCarta == i)
                             {
-                                Jogador Jogador = Jogadores[idJogador];
-                                Jogador.Baralho.AdicionarCarta(naipeCarta, idCarta);
+                                Jogador Jogador = jogadores[idJogador];
+                                Jogador.Cartas.AdicionarCarta(naipeCarta, idCarta);
                                 string caminho = Jogador.Posicao.SilhuetaCarta.Replace('|', naipeCarta);
                                 carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminho));
                             }
                         }
                     }
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
-
-                    jogador.Baralho.cartas[i].ImagemDaCarta = carta;
-
-                    Game.Controls.Add(jogador.Baralho.cartas[i].ImagemDaCarta);
+                    jogador.Cartas.cartas[i].ImagemDaCarta = carta;
+                    formularioPartida.Controls.Add(jogador.Cartas.cartas[i].ImagemDaCarta);
                 }
             }
         }

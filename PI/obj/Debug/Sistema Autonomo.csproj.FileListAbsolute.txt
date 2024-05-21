@@ -40,3 +40,17 @@ C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Auto
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema .14FF1509.Up2Date
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.exe
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.pdb
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\bin\Debug\Sistema Autonomo.exe.config
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\bin\Debug\Sistema Autonomo.exe
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\bin\Debug\Sistema Autonomo.pdb
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.dll
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.xml
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.AssemblyReference.cache
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\lobby.Lobby.resources
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.Properties.Resources.resources
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.GenerateResource.cache
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.CoreCompileInputs.cache
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.CopyComplete
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.exe
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.pdb
+C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources

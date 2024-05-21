@@ -11,11 +11,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace SistemaAutonomo.Entidades
 {
-    public class Baralho
+    public class Cartas
     {
         public Dictionary<int,Carta> cartas;
 
-        public Baralho()
+        public Cartas()
         {
             cartas = new Dictionary<int, Carta>();
         }

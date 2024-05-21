@@ -10,28 +10,28 @@ namespace SistemaAutonomo.Entidades
 {
     public class Partida
     {
-        private List<Carta> CartasJogadas;
-        private Dictionary<int,Jogador> Jogadores;
-        private List<int> IdJogadores;
-        private int Pontuacao;
-        private int IdPartida;
-        private Form Game;
+        private List<Carta> cartasJogadas;
+        private Dictionary<int,Jogador> jogadores;
+        private List<int> idJogadores;
+        private int pontuacao;
+        private Form formularioPartida;
+        private GerenciadorStrings gerenciadorDeStrings;
 
-        public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form game,int idPartida)
+        public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
         {
-            IdPartida = idPartida;
-            CartasJogadas = new List<Carta>();
-            Jogadores = jogadores;
-            IdJogadores = idJogadores;
-            Game = game;
+            gerenciadorDeStrings = new GerenciadorStrings(idPartida);
+            cartasJogadas = new List<Carta>();
+            this.jogadores = jogadores;
+            this.idJogadores = idJogadores;
+            this.formularioPartida = formularioPartida;
         }
 
         public void JogarCarta()
         {
 
-            TextBox txtIdJogador = Game.Controls.Find("txtIdJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtSenhaJogador = Game.Controls.Find("txtSenhaJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtIdCarta = Game.Controls.Find("txtIdCarta", true).FirstOrDefault() as TextBox;
+            TextBox txtIdJogador = formularioPartida.Controls.Find("txtIdJogador", true).FirstOrDefault() as TextBox;
+            TextBox txtSenhaJogador = formularioPartida.Controls.Find("txtSenhaJogador", true).FirstOrDefault() as TextBox;
+            TextBox txtIdCarta = formularioPartida.Controls.Find("txtIdCarta", true).FirstOrDefault() as TextBox;
 
             string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
             if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
@@ -40,34 +40,34 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
-            RemoverCarta();
+            RemoverCartaJogada();
             //CartasJogadas.Add(carta);
         }   
 
-        public void RemoverCarta()
+        private void RemoverCartaJogada()
         {
-            string[] CartasJogadas = GerenciadorDeStrings.ObterJogadas(IdPartida);
+            string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
             foreach(string carta in CartasJogadas)
             {
                 int idJogador = int.Parse(carta.Split(',')[1]);
                 int idCarta = int.Parse(carta.Split(',')[4]);
                 char naipeCarta = char.Parse(carta.Split(',')[2]);
 
-                if (Jogadores[idJogador].Baralho.cartas[idCarta] != null)
+                if (jogadores[idJogador].Cartas.cartas[idCarta] != null)
                 {
-                    Jogador jogador = Jogadores[idJogador];
+                    Jogador jogador = jogadores[idJogador];
                     string path = jogador.Posicao.SilhuetaCarta;
-                    Jogadores[idJogador].Baralho.RemoverCarta(idCarta,Game,path,naipeCarta);
+                    jogadores[idJogador].JogarCarta(idCarta,path,naipeCarta);
                 }
             }
         }
 
         public void AtualizarPontuacaoJogadores()
         {
-            foreach(int Id in IdJogadores)
+            foreach(int Id in idJogadores)
             {
-                Jogadores[Id].ObterPontuacaoPartida();
-                Jogadores[Id].ObterPontuacaoTurno();
+                jogadores[Id].ObterPontuacaoPartida();
+                jogadores[Id].ObterPontuacaoTurno();
             }
         }
 

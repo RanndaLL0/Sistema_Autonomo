@@ -15,7 +15,7 @@ namespace lobby
     public partial class Lobby : Form
     {
         //variaveis globais
-        private int idPartida;
+        private int IdPartida;
         private string[] dados = new string[2];
 
         public Lobby()
@@ -54,10 +54,10 @@ namespace lobby
             string[] partidInfo = partidaList.Split(',');
 
             txtID.Text = partidInfo[0];
-            idPartida = Convert.ToInt32(partidInfo[0]);
+            IdPartida = Convert.ToInt32(partidInfo[0]);
         
 
-            string jogadoresList = Jogo.ListarJogadores(idPartida);
+            string jogadoresList = Jogo.ListarJogadores(IdPartida);
             lstJogadores.Items.Clear();
 
             jogadoresList = jogadoresList.Replace("\r", "");
@@ -153,7 +153,7 @@ namespace lobby
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            idPartida = 3092;
+            IdPartida = 3092;
             dados[0] = "3201";
             dados[1] = "40A010";
 
@@ -168,10 +168,10 @@ namespace lobby
 
 
 
-            if (idPartida != 0 && dados != null)
+            if (IdPartida != 0 && dados != null)
             {
-                Game game = new Game();
-                game.IniciarGame(idPartida,dados);
+                FormularioPartida game = new FormularioPartida();
+                game.IniciarGame(IdPartida,dados);
                 game.ShowDialog();
             }
             else

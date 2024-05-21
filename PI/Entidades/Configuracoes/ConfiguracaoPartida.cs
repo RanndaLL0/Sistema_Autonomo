@@ -13,36 +13,44 @@ namespace SistemaAutonomo.Entidades
     public class ConfiguracaoPartida
     {
 
-        public static int ContarJogadores(int idPartida)
+        private int IdPartida { get; set; }
+        private GerenciadorStrings gerenciadorDeStrings;
+        public ConfiguracaoPartida(int idPartida) 
         {
-            string[] listaDeJogadores = GerenciadorDeStrings.ObterInformacaoDosJogadores(idPartida);
+            IdPartida = idPartida;
+            gerenciadorDeStrings = new GerenciadorStrings(idPartida); 
+        }
+
+        public int ContarJogadores()
+        {
+            string[] listaDeJogadores = gerenciadorDeStrings.ObterInformacaoDosJogadores();
             return listaDeJogadores.Length;
         }
 
-        public static List<ConfiguracaoMao>PosicaoCartas(int idPartida)
+        public List<PosicaoCartas>PosicaoCartas()
         {
 
-            List<ConfiguracaoMao> configuracoes = new List<ConfiguracaoMao>();
-            int quantidadeDeJogadores = ContarJogadores(idPartida);
+            List<PosicaoCartas> configuracoes = new List<PosicaoCartas>();
+            int quantidadeDeJogadores = ContarJogadores();
 
             if(quantidadeDeJogadores == 2)
             {
-                configuracoes.Add(new ConfiguracaoMao(x:850, xInicial:850, y:690, yInicial:690, contador:0, largura:91, altura:137, deslocamentoX:97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new ConfiguracaoMao(x:1335, xInicial:1335, y:155, yInicial:155, contador:0, largura:91, altura:137, deslocamentoX :- 97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:- 143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
+                configuracoes.Add(new PosicaoCartas(x:850, xInicial:850, y:690, yInicial:690, contador:0, largura:91, altura:137, deslocamentoX:97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
+                configuracoes.Add(new PosicaoCartas(x:1335, xInicial:1335, y:155, yInicial:155, contador:0, largura:91, altura:137, deslocamentoX :- 97, deslocamentoY:0, pulaLinhaX:0, pulaLinhaY:- 143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
             }
             else 
             {
-                configuracoes.Add(new ConfiguracaoMao(x: 800, xInicial: 800, y: 690, yInicial: 690, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new ConfiguracaoMao(x: 1516, xInicial: 1516, y: 730, yInicial: 730, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0, desenhoCarta: $"|esq.png", silhuetaCarta: $"|dir.png"));
-                configuracoes.Add(new ConfiguracaoMao(x: 1382, xInicial: 1382, y: 155, yInicial: 155, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new ConfiguracaoMao(x: 620, xInicial: 620, y: 147, yInicial: 147, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0, desenhoCarta: $"|dir.png", silhuetaCarta: $"|dir.png"));
+                configuracoes.Add(new PosicaoCartas(x: 800, xInicial: 800, y: 690, yInicial: 690, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
+                configuracoes.Add(new PosicaoCartas(x: 1516, xInicial: 1516, y: 730, yInicial: 730, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0, desenhoCarta: $"|esq.png", silhuetaCarta: $"|dir.png"));
+                configuracoes.Add(new PosicaoCartas(x: 1382, xInicial: 1382, y: 155, yInicial: 155, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
+                configuracoes.Add(new PosicaoCartas(x: 620, xInicial: 620, y: 147, yInicial: 147, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0, desenhoCarta: $"|dir.png", silhuetaCarta: $"|dir.png"));
             }
             return configuracoes;
         }
 
-        public static List<int> ObterOrdemMesa(string[] jogadorNaMaquina, int idPartida)
+        public List<int> ObterOrdemMesa(string[] jogadorNaMaquina)
         {
-            string[] retornoBruto = GerenciadorDeStrings.ObterInformacaoDosJogadores(idPartida);
+            string[] retornoBruto = gerenciadorDeStrings.ObterInformacaoDosJogadores();
             List<int> IdJogadores = new List<int>();
 
             foreach (string jogador in retornoBruto)

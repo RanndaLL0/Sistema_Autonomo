@@ -15,18 +15,18 @@ using SistemaAutonomo.Entidades;
 
 namespace lobby
 {
-    public partial class Game : Form
+    public partial class FormularioPartida : Form
     {
         public string RetornoIniciar { get; set; }
         public int IdPartida { get; set; }
         public string[] JogadorNaMaquina { get; set; }
-        public Mesa mesa;
+        public InicializadorPartida mesa;
 
         private string diretorioAtual = Directory.GetCurrentDirectory();
 
 
 
-        public Game()
+        public FormularioPartida()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -38,9 +38,8 @@ namespace lobby
             JogadorNaMaquina = jogadorNaMaquina;
             IdPartida = idPartida;
             VerificarVez();
-            mesa = new Mesa(JogadorNaMaquina, IdPartida,this);
+            mesa = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
             AtualizarCartas();
-            MostrarCartas();
             txtIdJogador.Text = JogadorNaMaquina[0];
             txtSenhaJogador.Text = JogadorNaMaquina[1];
             lblVersao.Text = Jogo.Versao;
@@ -88,116 +87,6 @@ namespace lobby
             }
 
         }
-
-        private void MostrarCartas()
-        {
-            //RemoverPanels();
-
-            //string conjuntoDeJogadores = Jogo.ListarJogadores(IdPartida);
-
-            //conjuntoDeJogadores = conjuntoDeJogadores.Replace("\r", "");
-            //if (conjuntoDeJogadores.Length > 0)
-            //    conjuntoDeJogadores = conjuntoDeJogadores.Substring(0, conjuntoDeJogadores.Length - 1);
-
-            //string[] listaJogadores = conjuntoDeJogadores.Split('\n');
-            //int numeroDeJogadores = listaJogadores.Length;
-
-            //string idJogadorInicial = JogadorNaMaquina[0];
-            //string[] idJogadores = new string[4]; 
-
-            //int indice = 0;
-
-            //for (int i = 0; i < numeroDeJogadores; i++)
-            //{
-            //    string[] partesJogadores = listaJogadores[i].Split(',');
-            //    idJogadores[i] = partesJogadores[0];
-
-            //    if (idJogadores[i] == idJogadorInicial)
-            //    {
-            //        indice = i; 
-            //    }
-                
-            //}
-
-            //string temp = idJogadores[0];
-            //idJogadores[0] = idJogadorInicial;
-            //idJogadores[indice] = temp;
-
-
-            //List<ConfiguracaoMao> jogador = new List<ConfiguracaoMao>();
-
-            //if (numeroDeJogadores == 2)
-            //{
-            //    jogador.Add(new ConfiguracaoMao(850, 850, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-            //    jogador.Add(new ConfiguracaoMao(1335, 1335, 155, 155, 0, 91, 137, -97, 0, 0, -143));
-            //}
-            //else
-            //{
-            //    jogador.Add(new ConfiguracaoMao(800, 800, 690, 690, 0, 91, 137, 97, 0, 0, 143));
-            //    jogador.Add(new ConfiguracaoMao(1382, 1382, 155, 155, 0, 91, 137, -97, 0, 0, -143));
-            //    jogador.Add(new ConfiguracaoMao(620, 620, 147, 147, 0, 137, 91, 0, 97, -143, 0));
-            //    jogador.Add(new ConfiguracaoMao(1516, 1516, 730, 730, 0, 137, 91, 0, -97, 143, 0));
-            //}
-
-
-            
-            //for (int i = 0; i < numeroDeJogadores; i++)
-            //{
-            //    int contadorDeCartas = 1;
-            //    for (int j = 0; j < lstCartas.Items.Count; j++)
-            //    {
-                    
-            //        string[] pedacoCarta = lstCartas.Items[j].ToString().Split(',');
-            //        char naipeCarta = char.Parse(pedacoCarta[2]);
-            //        if (pedacoCarta[0] != idJogadores[i]) continue;
-            //        Panel carta = new Panel();
-
-            //        if (contadorDeCartas != int.Parse(pedacoCarta[1]))
-            //        {
-            //            while (contadorDeCartas != int.Parse(pedacoCarta[1]) && contadorDeCartas < 12)
-            //            {
-            //                if (numeroDeJogadores == 2 && jogador[i].Contador == 6 || numeroDeJogadores > 2 && jogador[i].Contador == 7)
-            //                {
-            //                    jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
-            //                    jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
-            //                }
-            //                jogador[i].X += jogador[i].DeslocamentoX;
-            //                jogador[i].Y += jogador[i].DeslocamentoY;
-            //                jogador[i].Contador++;
-
-            //                contadorDeCartas++;
-            //            }
-            //        }
-
-            //        if (numeroDeJogadores == 2 && jogador[i].Contador == 6 || numeroDeJogadores > 2 && jogador[i].Contador == 7)
-            //        {
-            //            jogador[i].X = jogador[i].XInicial + jogador[i].PulaLinhaX;
-            //            jogador[i].Y = jogador[i].YInicial + jogador[i].PulaLinhaY;
-            //        }
-            //        carta.Left = jogador[i].X;
-            //        carta.Top = jogador[i].Y;
-            //        jogador[i].X += jogador[i].DeslocamentoX;
-            //        jogador[i].Y += jogador[i].DeslocamentoY;
-            //        jogador[i].Contador++;
-
-            //        carta.Width = jogador[i].Largura;
-            //        carta.Height = jogador[i].Altura;
-            //        carta.BackgroundImageLayout = ImageLayout.Stretch;
-            //        string[] diretorios = {Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}invertido.png"), Path.Combine(diretorioAtual, "../../Cards/", $"{naipeCarta}dir.png"), Path.Combine(diretorioAtual,"../../Cards/", $"{naipeCarta}esq.png") };
-            //        carta.BackgroundImage = Image.FromFile(diretorios[i]);
-
-
-            //        Controls.Add(carta);
-                    
-            //        contadorDeCartas++;
-            //   }
-
-
-            //}
-
-
-        }
-
 
         private void VerificarVez()
         {
@@ -274,7 +163,7 @@ namespace lobby
         }
         private void btnJogar_Click(object sender, EventArgs e)
         {
-            mesa.Partida.JogarCarta();
+            mesa.partida.JogarCarta();
         }
 
 
@@ -290,7 +179,6 @@ namespace lobby
 
             VerificarVez();
             AtualizarCartas();
-            MostrarCartas();
 
         }
 
@@ -298,7 +186,6 @@ namespace lobby
         {
             VerificarVez();
             AtualizarCartas();
-            MostrarCartas();
             MostrarJogada();
             
         }
@@ -306,7 +193,6 @@ namespace lobby
         private void btnAtualizarCartas_Click(object sender, EventArgs e)
         {
             AtualizarCartas();
-            MostrarCartas();
             MostrarJogada();
             VerificarVez();
         }
@@ -360,7 +246,6 @@ namespace lobby
                 }
             }
             AtualizarCartas();
-            MostrarCartas();
             MostrarJogada();
         }
         private void tmrTimer_Tick(object sender, EventArgs e)
