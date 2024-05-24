@@ -104,63 +104,6 @@ namespace lobby
             lblStatusVez.Text = dadosVez[3];
 
         }
-
-        private void MostrarJogada()
-        {
-            string jogadas = Jogo.ExibirJogadas(IdPartida);
-            if (jogadas.Length > 4 && jogadas.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao verificar a rodada:\n{jogadas.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (jogadas == "")
-            {
-                return;
-            }
-
-            jogadas = jogadas.Replace("\r", "");
-            if (jogadas.Length > 0)
-                jogadas = jogadas.Substring(0, jogadas.Length - 1);
-
-            
-            string[] listaJogada = jogadas.Split('\n');
-
-            string[] ultimaRodada = listaJogada[listaJogada.Length-1].Split(',');
-
-            int x = 1300;
-
-            
-            foreach (string jogada in listaJogada)
-            {
-                string[] rodada = jogada.Split(',');
-                if (rodada[0] == ultimaRodada[0])
-                {
-                    string naipeCarta = rodada[2];
-                    string numeroCarta = rodada[3];
-
-                    string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
-
-                    Panel carta = new Panel();
-                    carta.BackgroundImage = Image.FromFile(caminhoImagem);
-                    carta.Height = 231;
-                    carta.Width = 143;
-                    carta.Left = x;
-                    carta.Top = 367;
-                    Label cartaJogada = new Label();
-                    cartaJogada.Text = rodada[1];
-                    cartaJogada.AutoSize = true;
-                    cartaJogada.Left = x + carta.Width / 2 - 15;
-                    cartaJogada.Top = 608;
-
-
-                    carta.BackgroundImageLayout = ImageLayout.Stretch;
-                    Controls.Add(carta);
-                    Controls.Add(cartaJogada);
-                    x -= 164;
-                }
-            }
-
-        }
         private void btnJogar_Click(object sender, EventArgs e)
         {
             mesa.partida.JogarCarta();
@@ -186,14 +129,11 @@ namespace lobby
         {
             VerificarVez();
             AtualizarCartas();
-            MostrarJogada();
-            
         }
 
         private void btnAtualizarCartas_Click(object sender, EventArgs e)
         {
             AtualizarCartas();
-            MostrarJogada();
             VerificarVez();
         }
 
@@ -246,7 +186,6 @@ namespace lobby
                 }
             }
             AtualizarCartas();
-            MostrarJogada();
         }
         private void tmrTimer_Tick(object sender, EventArgs e)
         {

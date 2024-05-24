@@ -1,6 +1,8 @@
 ﻿using MagicTrickServer;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace SistemaAutonomo.Entidades
         private List<int> idJogadores;
         private int pontuacao;
         private Form formularioPartida;
+        private int idPartida;
         private GerenciadorStrings gerenciadorDeStrings;
 
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
@@ -23,6 +26,7 @@ namespace SistemaAutonomo.Entidades
             cartasJogadas = new List<Carta>();
             this.jogadores = jogadores;
             this.idJogadores = idJogadores;
+            this.idPartida = idPartida;
             this.formularioPartida = formularioPartida;
         }
 
@@ -41,6 +45,7 @@ namespace SistemaAutonomo.Entidades
             }
 
             RemoverCartaJogada();
+            ExibirCartaJogada();
             //CartasJogadas.Add(carta);
         }   
 
@@ -58,6 +63,47 @@ namespace SistemaAutonomo.Entidades
                     Jogador jogador = jogadores[idJogador];
                     string path = jogador.Posicao.SilhuetaCarta;
                     jogadores[idJogador].JogarCarta(idCarta,path,naipeCarta);
+                }
+            }
+        }
+
+        private void ExibirCartaJogada()
+        {
+            string[] jogadas = gerenciadorDeStrings.ObterJogadas();
+            string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
+
+            int x = 1300;
+
+
+            foreach (string jogada in jogadas)
+            {
+                string[] rodada = jogada.Split(',');
+                if (rodada[0] == ultimaRodada[0])
+                {
+                    string naipeCarta = rodada[2];
+                    string numeroCarta = rodada[3];
+
+
+                    string diretorioAtual = Directory.GetCurrentDirectory();
+                    string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
+
+                    Panel carta = new Panel();
+                    carta.BackgroundImage = Image.FromFile(caminhoImagem);
+                    carta.Height = 231;
+                    carta.Width = 143;
+                    carta.Left = x;
+                    carta.Top = 367;
+                    Label cartaJogada = new Label();
+                    cartaJogada.Text = rodada[1];
+                    cartaJogada.AutoSize = true;
+                    cartaJogada.Left = x + carta.Width / 2 - 15;
+                    cartaJogada.Top = 608;
+
+
+                    carta.BackgroundImageLayout = ImageLayout.Stretch;
+                    formularioPartida.Controls.Add(carta);
+                    formularioPartida.Controls.Add(cartaJogada);
+                    x -= 164;
                 }
             }
         }

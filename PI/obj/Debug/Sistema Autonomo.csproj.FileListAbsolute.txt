@@ -32,7 +32,6 @@ C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\Sistema Auto
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.dll
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.xml
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.AssemblyReference.cache
-C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\lobby.Game.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\lobby.Lobby.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.Properties.Resources.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.GenerateResource.cache
@@ -54,3 +53,4 @@ C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Auton
 C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.exe
 C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.pdb
 C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources
+C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources
