@@ -66,8 +66,8 @@ namespace SistemaAutonomo.Entidades
                 }
             }
         }
-        
 
+        string numeroRodada = "";
         public void ExibirCartaJogada()
         {
             string[] jogadas = gerenciadorDeStrings.ObterJogadas();
@@ -84,6 +84,11 @@ namespace SistemaAutonomo.Entidades
                 string[] rodada = jogada.Split(',');
                 if (rodada[0] == ultimaRodada[0])
                 {
+                    if(numeroRodada != ultimaRodada[0])
+                    {
+                        numeroRodada = ultimaRodada[0];
+                        LimparCartasJogadas(cartasJogadas);
+                    }
                     string naipeCarta = rodada[2];
                     string numeroCarta = rodada[3];
 
@@ -109,21 +114,17 @@ namespace SistemaAutonomo.Entidades
                     formularioPartida.Controls.Add(cartaJogada);
                     x -= 164;
                     cartasJogadas.Add(carta);
-                    LimparCartasJogadas(cartasJogadas);
                 }
             }
         }
 
         public void LimparCartasJogadas(List<Panel> cartasJogadas)
         {
-            if (cartasJogadas.Count == idJogadores.Count)
-            {
                 foreach (Panel carta in cartasJogadas)
                 {
                     formularioPartida.Controls.Remove(carta);
                 }
                 cartasJogadas.Clear();
-            }
         }
 
         private void AtualizarEstadoPartida()
