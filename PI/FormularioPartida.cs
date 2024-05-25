@@ -118,8 +118,6 @@ namespace lobby
                 MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoAposta.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-
             VerificarVez();
             AtualizarCartas();
 
@@ -133,8 +131,8 @@ namespace lobby
 
         private void btnAtualizarCartas_Click(object sender, EventArgs e)
         {
-            AtualizarCartas();
-            VerificarVez();
+            mesa.partida.RemoverCartaJogada();
+            mesa.partida.ExibirCartaJogada();
         }
 
 

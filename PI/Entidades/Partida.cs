@@ -12,7 +12,7 @@ namespace SistemaAutonomo.Entidades
 {
     public class Partida
     {
-        private List<Carta> cartasJogadas;
+        private List<Panel> cartasJogadas;
         private Dictionary<int,Jogador> jogadores;
         private List<int> idJogadores;
         private int pontuacao;
@@ -23,7 +23,7 @@ namespace SistemaAutonomo.Entidades
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
         {
             gerenciadorDeStrings = new GerenciadorStrings(idPartida);
-            cartasJogadas = new List<Carta>();
+            cartasJogadas = new List<Panel>();
             this.jogadores = jogadores;
             this.idJogadores = idJogadores;
             this.idPartida = idPartida;
@@ -49,9 +49,10 @@ namespace SistemaAutonomo.Entidades
             //CartasJogadas.Add(carta);
         }   
 
-        private void RemoverCartaJogada()
+        public void RemoverCartaJogada()
         {
             string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
+          
             foreach(string carta in CartasJogadas)
             {
                 int idJogador = int.Parse(carta.Split(',')[1]);
@@ -66,10 +67,12 @@ namespace SistemaAutonomo.Entidades
                 }
             }
         }
+        
 
-        private void ExibirCartaJogada()
+        public void ExibirCartaJogada()
         {
             string[] jogadas = gerenciadorDeStrings.ObterJogadas();
+            if (jogadas == null) return;
             string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
 
             int x = 1300;
@@ -77,6 +80,7 @@ namespace SistemaAutonomo.Entidades
 
             foreach (string jogada in jogadas)
             {
+
                 string[] rodada = jogada.Split(',');
                 if (rodada[0] == ultimaRodada[0])
                 {
@@ -104,8 +108,30 @@ namespace SistemaAutonomo.Entidades
                     formularioPartida.Controls.Add(carta);
                     formularioPartida.Controls.Add(cartaJogada);
                     x -= 164;
+                    cartasJogadas.Add(carta);
+                    LimparCartasJogadas(cartasJogadas);
+                    
                 }
             }
+        }
+
+        public void LimparCartasJogadas(List<Panel> cartasJogadas)
+        {
+            if (cartasJogadas.Count == idJogadores.Count)
+            {
+                foreach (Panel carta in cartasJogadas)
+                {
+                    if (formularioPartida.Controls.Contains(carta))
+                    {
+                        formularioPartida.Controls.Remove(carta);
+                    }
+                }
+            }
+        }
+
+        private void AtualizarEstadoPartida()
+        {
+            
         }
 
         public void AtualizarPontuacaoJogadores()
