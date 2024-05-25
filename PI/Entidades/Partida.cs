@@ -12,7 +12,6 @@ namespace SistemaAutonomo.Entidades
 {
     public class Partida
     {
-        private List<Panel> cartasJogadas;
         private Dictionary<int,Jogador> jogadores;
         private List<int> idJogadores;
         private int pontuacao;
@@ -23,7 +22,6 @@ namespace SistemaAutonomo.Entidades
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
         {
             gerenciadorDeStrings = new GerenciadorStrings(idPartida);
-            cartasJogadas = new List<Panel>();
             this.jogadores = jogadores;
             this.idJogadores = idJogadores;
             this.idPartida = idPartida;
@@ -52,7 +50,8 @@ namespace SistemaAutonomo.Entidades
         public void RemoverCartaJogada()
         {
             string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
-          
+            if (CartasJogadas[0] == "") return;
+
             foreach(string carta in CartasJogadas)
             {
                 int idJogador = int.Parse(carta.Split(',')[1]);
@@ -72,11 +71,12 @@ namespace SistemaAutonomo.Entidades
         public void ExibirCartaJogada()
         {
             string[] jogadas = gerenciadorDeStrings.ObterJogadas();
-            if (jogadas == null) return;
+            if (jogadas[0] == "") return;
+
             string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
 
             int x = 1300;
-
+            List<Panel> cartasJogadas = new List<Panel>();
 
             foreach (string jogada in jogadas)
             {
@@ -110,7 +110,6 @@ namespace SistemaAutonomo.Entidades
                     x -= 164;
                     cartasJogadas.Add(carta);
                     LimparCartasJogadas(cartasJogadas);
-                    
                 }
             }
         }
@@ -121,11 +120,9 @@ namespace SistemaAutonomo.Entidades
             {
                 foreach (Panel carta in cartasJogadas)
                 {
-                    if (formularioPartida.Controls.Contains(carta))
-                    {
-                        formularioPartida.Controls.Remove(carta);
-                    }
+                    formularioPartida.Controls.Remove(carta);
                 }
+                cartasJogadas.Clear();
             }
         }
 

@@ -27,6 +27,18 @@ namespace SistemaAutonomo.Entidades
             return listaDeJogadores.Length;
         }
 
+        public int QuantidadeCartasJogador()
+        {
+            if(ContarJogadores() == 2)
+            {
+                return 12;
+            }
+            else
+            {
+                return 14;
+            }
+        }
+
         public List<PosicaoCartas>PosicaoCartas()
         {
 

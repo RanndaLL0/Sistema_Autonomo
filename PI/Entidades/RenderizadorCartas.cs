@@ -14,12 +14,14 @@ namespace SistemaAutonomo.Entidades
     {
         public Dictionary<int,Jogador> jogadores { get; set; }
         private GerenciadorStrings gerenciadorDeStrings;
+        private ConfiguracaoPartida configuracaoPartida;
         public Form formularioPartida;
 
         public RenderizadorCartas(Form formularioPartida,Dictionary<int,Jogador> jogadores, int idPartida) 
         {
             this.jogadores = jogadores;
             this.gerenciadorDeStrings = new GerenciadorStrings(idPartida);
+            this.configuracaoPartida = new ConfiguracaoPartida(idPartida);
             this.formularioPartida = formularioPartida;
             Renderizar();
         }
@@ -39,10 +41,13 @@ namespace SistemaAutonomo.Entidades
         {
             string diretorioAtual = Directory.GetCurrentDirectory();
             List<int> idJogadores = jogadores.Keys.ToList();
+
+            int numeroDeCartas = configuracaoPartida.QuantidadeCartasJogador();
+
             foreach (int Id in  idJogadores)
             {
                 Jogador jogador = jogadores[Id];
-                for(int i = 1; i <= jogador.Cartas.cartas.Count; i++)
+                for(int i = 1; i <= numeroDeCartas; i++)
                 {
                     QuebraLinha(jogador);
                     Panel carta = new Panel();
