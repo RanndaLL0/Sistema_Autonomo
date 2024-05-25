@@ -17,6 +17,9 @@ namespace SistemaAutonomo.Entidades
         private int pontuacao;
         private Form formularioPartida;
         private int idPartida;
+        private List<Panel> cartasJogadas;
+        private string numeroRodada = "";
+
         private GerenciadorStrings gerenciadorDeStrings;
 
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
@@ -26,6 +29,7 @@ namespace SistemaAutonomo.Entidades
             this.idJogadores = idJogadores;
             this.idPartida = idPartida;
             this.formularioPartida = formularioPartida;
+            cartasJogadas = new List<Panel>();
         }
 
         public void JogarCarta()
@@ -67,7 +71,7 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        string numeroRodada = "";
+
         public void ExibirCartaJogada()
         {
             string[] jogadas = gerenciadorDeStrings.ObterJogadas();
@@ -76,7 +80,13 @@ namespace SistemaAutonomo.Entidades
             string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
 
             int x = 1300;
-            List<Panel> cartasJogadas = new List<Panel>();
+
+
+            if (numeroRodada != ultimaRodada[0])
+            {
+                numeroRodada = ultimaRodada[0];
+                LimparCartasJogadas(cartasJogadas);
+            }
 
             foreach (string jogada in jogadas)
             {
@@ -84,15 +94,8 @@ namespace SistemaAutonomo.Entidades
                 string[] rodada = jogada.Split(',');
                 if (rodada[0] == ultimaRodada[0])
                 {
-                    if(numeroRodada != ultimaRodada[0])
-                    {
-                        numeroRodada = ultimaRodada[0];
-                        LimparCartasJogadas(cartasJogadas);
-                    }
                     string naipeCarta = rodada[2];
                     string numeroCarta = rodada[3];
-
-
                     string diretorioAtual = Directory.GetCurrentDirectory();
                     string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
 
@@ -102,20 +105,21 @@ namespace SistemaAutonomo.Entidades
                     carta.Width = 143;
                     carta.Left = x;
                     carta.Top = 367;
-                    Label cartaJogada = new Label();
-                    cartaJogada.Text = rodada[1];
-                    cartaJogada.AutoSize = true;
-                    cartaJogada.Left = x + carta.Width / 2 - 15;
-                    cartaJogada.Top = 608;
+                    Label nomeJogador = new Label();
+                    nomeJogador.Text = jogadores[int.Parse(rodada[1])].nome;
+                    nomeJogador.AutoSize = true;
+                    nomeJogador.Left = x + carta.Width / 2 - 15;
+                    nomeJogador.Top = 608;
 
 
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
                     formularioPartida.Controls.Add(carta);
-                    formularioPartida.Controls.Add(cartaJogada);
+                    formularioPartida.Controls.Add(nomeJogador);
                     x -= 164;
                     cartasJogadas.Add(carta);
                 }
             }
+
         }
 
         public void LimparCartasJogadas(List<Panel> cartasJogadas)

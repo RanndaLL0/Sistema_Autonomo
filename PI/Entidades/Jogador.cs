@@ -13,7 +13,7 @@ namespace SistemaAutonomo.Entidades
     public class Jogador
     {
         private int id;
-        private string nome { get; set; }
+        public string nome { get;}
         private int pontuacaoDaPartida { get; set; }
         private int pontuacaoDoTurno { get; set; }
         public Cartas Cartas { get; set; }
