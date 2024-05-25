@@ -38,6 +38,12 @@ namespace SistemaAutonomo.Entidades
             return TratarEntrada(CartasList);
         }
 
+        public string[] ObterVez()
+        {
+            string retornoBruto = Jogo.VerificarVez2(IdPartida);
+            return TratarEntrada(retornoBruto);
+        }
+
         public string[] ObterInformacaoDosJogadores()
         {
             string retornoBruto = Jogo.ListarJogadores(IdPartida);

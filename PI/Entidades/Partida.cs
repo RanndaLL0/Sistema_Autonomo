@@ -18,6 +18,7 @@ namespace SistemaAutonomo.Entidades
         private Form formularioPartida;
         private int idPartida;
         private List<Panel> cartasJogadas;
+        private List<Label> nomes;
         private string numeroRodada = "";
 
         private GerenciadorStrings gerenciadorDeStrings;
@@ -30,6 +31,7 @@ namespace SistemaAutonomo.Entidades
             this.idPartida = idPartida;
             this.formularioPartida = formularioPartida;
             cartasJogadas = new List<Panel>();
+            nomes = new List<Label>();
         }
 
         public void JogarCarta()
@@ -81,11 +83,11 @@ namespace SistemaAutonomo.Entidades
 
             int x = 1300;
 
-
             if (numeroRodada != ultimaRodada[0])
             {
                 numeroRodada = ultimaRodada[0];
                 LimparCartasJogadas(cartasJogadas);
+                LimparLabels(nomes);
             }
 
             foreach (string jogada in jogadas)
@@ -117,23 +119,51 @@ namespace SistemaAutonomo.Entidades
                     formularioPartida.Controls.Add(nomeJogador);
                     x -= 164;
                     cartasJogadas.Add(carta);
+                    nomes.Add(nomeJogador);
                 }
             }
 
         }
 
-        public void LimparCartasJogadas(List<Panel> cartasJogadas)
+        private void LimparCartasJogadas(List<Panel> cartasJogadas)
         {
-                foreach (Panel carta in cartasJogadas)
-                {
-                    formularioPartida.Controls.Remove(carta);
-                }
-                cartasJogadas.Clear();
+            foreach (Panel carta in cartasJogadas)
+            {
+                formularioPartida.Controls.Remove(carta);
+            }
+            cartasJogadas.Clear();
+        }
+
+        private void LimparLabels(List<Label> nomes)
+        {
+            foreach (Label nome in nomes)
+            {
+                formularioPartida.Controls.Remove(nome);
+            }
+            nomes.Clear();
         }
 
         private void AtualizarEstadoPartida()
         {
-            
+            //tentei fazer o role de saber se acabou o turno todo mas nao consegui tenta ai voce consegue :)
+
+            //string[] vez = gerenciadorDeStrings.ObterVez();
+            //string rodada = vez[0].Split(',')[2];
+            //if (rodada == "1")
+            //{
+            //    string[] todasAsCartas = gerenciadorDeStrings.ObterCartasDaPartida();
+
+            //    foreach (string carta in todasAsCartas)
+            //    {
+            //        string[] informacoesDaCarta = carta.Split(',');
+            //        int idJogador = int.Parse(informacoesDaCarta[0]);
+            //        int idCarta = int.Parse(informacoesDaCarta[1]);
+            //        char naipe = char.Parse(informacoesDaCarta[2]);
+
+            //        jogadores[idJogador].Cartas.cartas.Clear();
+            //        jogadores[idJogador].Cartas.AdicionarCarta(naipe, idCarta);
+            //    }
+            //}
         }
 
         public void AtualizarPontuacaoJogadores()

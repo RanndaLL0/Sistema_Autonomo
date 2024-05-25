@@ -58,7 +58,7 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        private void DistribuirCartas()
+        public void DistribuirCartas()
         {
             string[] todasAsCartas = gerenciadorDeStrings.ObterCartasDaPartida();
 
