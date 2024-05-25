@@ -360,7 +360,12 @@ namespace lobby
                     lblTexto.Text = "Carta Jogada:";
                     lblCartaJogada.Text = retornoJogada;
                     lblCartaJogada.Visible = true;
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("8"));
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("6"));
+                    if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+                    {
+                        Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("7"));
+                        continue;
+                    }
                     return true;   
                 }
             }
