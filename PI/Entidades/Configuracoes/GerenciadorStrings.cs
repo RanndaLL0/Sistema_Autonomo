@@ -11,9 +11,6 @@ namespace SistemaAutonomo.Entidades
 {
     public class GerenciadorStrings
     {
-        public int IdPartida { get; set; }
-
-
         public static string[] TratarEntrada(string entrada)
         {
             if (entrada.Length > 4 && entrada.StartsWith("ERRO"))
