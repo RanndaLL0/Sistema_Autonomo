@@ -360,10 +360,10 @@ namespace lobby
                     lblTexto.Text = "Carta Jogada:";
                     lblCartaJogada.Text = retornoJogada;
                     lblCartaJogada.Visible = true;
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("6"));
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("1"));
                     if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
                     {
-                        Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("7"));
+                        Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("2"));
                         continue;
                     }
                     return true;   
@@ -398,7 +398,7 @@ namespace lobby
                         lblCartaJogada.Visible = true;
                         break;
                     }
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("12"));
+                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("1"));
                 }
                 AtualizarCartas();
                 MostrarCartas();
