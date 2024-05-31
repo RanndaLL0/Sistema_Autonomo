@@ -17,7 +17,6 @@ namespace lobby
 {
     public partial class FormularioPartida : Form
     {
-        public string RetornoIniciar { get; set; }
         public int IdPartida { get; set; }
         public string[] JogadorNaMaquina { get; set; }
         public InicializadorPartida inicializadorPartida;
@@ -65,27 +64,6 @@ namespace lobby
             {
                 lstCartas.Items.Add(Cartas[i]);
             }
-        }
-
-
-        private void RemoverPanels()
-        {
-            List<Control> panelsParaRemover = new List<Control>();
-
-            foreach (Control control in Controls)
-            {
-                if (control is Panel)
-                {
-                    panelsParaRemover.Add(control);
-                }
-            }
-
-            foreach (Control panel in panelsParaRemover)
-            {
-                Controls.Remove(panel);
-                panel.Dispose();
-            }
-
         }
 
         private void VerificarVez()
@@ -149,34 +127,6 @@ namespace lobby
                 }
             }
             return false;
-        }
-
-        private void Jogar()
-        {
-            if(lblIDVez.Text == JogadorNaMaquina[0]) // compara o Id da vez com o do jogador que esta na maquina
-            {
-                bool jogouCopas = JogarCopas();
-                if (!jogouCopas)
-                {
-                    foreach (string carta in lstCartas.Items)
-                    {
-
-                        string[] pedacoCarta = carta.ToString().Split(',');
-
-                        txtIdCarta.Text = pedacoCarta[1];
-                        string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
-
-
-                        if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-                        {
-                            continue;
-                        }
-                        break;
-                    }
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-                }
-            }
-            AtualizarCartas();
         }
 
         private void btnStartTimer_Click(object sender, EventArgs e)

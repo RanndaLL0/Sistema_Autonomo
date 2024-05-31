@@ -264,7 +264,7 @@
             // 
             // tmrTimer
             // 
-            this.tmrTimer.Interval = 1500;
+            this.tmrTimer.Interval = 4000;
             this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
             // btnStartTimer

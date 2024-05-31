@@ -34,6 +34,36 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
+        public void ResetarPosicoes()
+        {
+            List<int> IdsJogadores = jogadores.Keys.ToList<int>();
+            List<PosicaoCartas> configuracoes = ConfiguracaoPartida.PosicaoCartas(IdPartida);
+            for(int i = 0; i < IdsJogadores.Count; i ++)
+            {
+                jogadores[IdsJogadores[i]].Posicao = configuracoes[i];
+            }
+        }
+
+        public void RemoverPanels()
+        {
+            List<Control> panelsParaRemover = new List<Control>();
+
+            foreach (Control control in formularioPartida.Controls)
+            {
+                if (control is Panel)
+                {
+                    panelsParaRemover.Add(control);
+                }
+            }
+
+            foreach (Control panel in panelsParaRemover)
+            {
+                formularioPartida.Controls.Remove(panel);
+                panel.Dispose();
+            }
+
+        }
+
         public void Renderizar()
         {
             string diretorioAtual = Directory.GetCurrentDirectory();

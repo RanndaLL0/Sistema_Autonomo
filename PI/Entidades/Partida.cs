@@ -88,9 +88,7 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
-            RemoverCartaJogada();
-            ExibirCartaJogada();
-            //CartasJogadas.Add(carta);
+            RemoverCartaApostada();
         }
 
         public void ApostarCarta(int idJogador, string senhaJogador, int idCarta)
@@ -103,11 +101,28 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
-            RemoverCartaJogada();
-            ExibirCartaJogada();
-            //CartasJogadas.Add(carta);
+            RemoverCartaApostada();
         }
 
+        public void RemoverCartaApostada()
+        {
+            List<string> CartasApostadas = GerenciadorStrings.ObterCartasApostadas(idPartida);
+            if (CartasApostadas == null) return;
+
+            foreach (string carta in CartasApostadas)
+            {
+                int idJogador = int.Parse(carta.Split(',')[0].Substring(2));
+                int idCarta = int.Parse(carta.Split(',')[4]);
+                char naipeCarta = char.Parse(carta.Split(',')[1]);
+
+                if (jogadores[idJogador].Cartas.cartas[idCarta] != null)
+                {
+                    Jogador jogador = jogadores[idJogador];
+                    string path = jogador.Posicao.SilhuetaCarta;
+                    jogadores[idJogador].JogarCarta(idCarta, path, naipeCarta);
+                }
+            }
+        }
 
         public void RemoverCartaJogada()
         {
@@ -218,6 +233,8 @@ namespace SistemaAutonomo.Entidades
                 }
 
                 cartasAtualizadasNaRodada1 = true;
+                Renderizador.RemoverPanels();
+                Renderizador.ResetarPosicoes();
                 Renderizador.Renderizar();
             }
             if(rodada == "2")
