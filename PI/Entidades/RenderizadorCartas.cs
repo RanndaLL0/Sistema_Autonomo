@@ -13,16 +13,14 @@ namespace SistemaAutonomo.Entidades
     public class RenderizadorCartas
     {
         public Dictionary<int,Jogador> jogadores { get; set; }
-        private GerenciadorStrings gerenciadorDeStrings;
-        private ConfiguracaoPartida configuracaoPartida;
         public Form formularioPartida;
+        public int IdPartida { get; set; }
 
         public RenderizadorCartas(Form formularioPartida,Dictionary<int,Jogador> jogadores, int idPartida) 
         {
             this.jogadores = jogadores;
-            this.gerenciadorDeStrings = new GerenciadorStrings(idPartida);
-            this.configuracaoPartida = new ConfiguracaoPartida(idPartida);
             this.formularioPartida = formularioPartida;
+            IdPartida = idPartida;
             Renderizar();
         }
 
@@ -42,7 +40,7 @@ namespace SistemaAutonomo.Entidades
             string diretorioAtual = Directory.GetCurrentDirectory();
             List<int> idJogadores = jogadores.Keys.ToList();
 
-            int numeroDeCartas = configuracaoPartida.QuantidadeCartasJogador();
+            int numeroDeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
             foreach (int Id in  idJogadores)
             {
@@ -68,7 +66,7 @@ namespace SistemaAutonomo.Entidades
                     }
                     else
                     {
-                        string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
+                        string[] CartasJogadas = GerenciadorStrings.ObterJogadas(IdPartida);
                         foreach (string Carta in CartasJogadas)
                         {
                             int idJogador = int.Parse(Carta.Split(',')[1]);

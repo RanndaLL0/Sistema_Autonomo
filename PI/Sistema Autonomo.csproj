@@ -54,7 +54,9 @@
   <ItemGroup>
     <Compile Include="Entidades\Cartas.cs" />
     <Compile Include="Entidades\Carta.cs" />
+    <Compile Include="Entidades\Bot.cs" />
     <Compile Include="Entidades\Configuracoes\GerenciadorStrings.cs" />
+    <Compile Include="Entidades\Estrategias\Estrategia.cs" />
     <Compile Include="Entidades\Jogador.cs" />
     <Compile Include="Entidades\InicializadorPartida.cs" />
     <Compile Include="Entidades\Partida.cs" />

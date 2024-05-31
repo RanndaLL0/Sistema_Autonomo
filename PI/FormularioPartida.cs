@@ -20,7 +20,7 @@ namespace lobby
         public string RetornoIniciar { get; set; }
         public int IdPartida { get; set; }
         public string[] JogadorNaMaquina { get; set; }
-        public InicializadorPartida mesa;
+        public InicializadorPartida inicializadorPartida;
 
         private string diretorioAtual = Directory.GetCurrentDirectory();
 
@@ -38,7 +38,7 @@ namespace lobby
             JogadorNaMaquina = jogadorNaMaquina;
             IdPartida = idPartida;
             VerificarVez();
-            mesa = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
+            inicializadorPartida = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
             AtualizarCartas();
             txtIdJogador.Text = JogadorNaMaquina[0];
             txtSenhaJogador.Text = JogadorNaMaquina[1];
@@ -106,7 +106,7 @@ namespace lobby
         }
         private void btnJogar_Click(object sender, EventArgs e)
         {
-            mesa.partida.JogarCarta();
+            inicializadorPartida.partida.JogarCarta();
         }
 
 
@@ -131,8 +131,8 @@ namespace lobby
 
         private void btnAtualizarCartas_Click(object sender, EventArgs e)
         {
-            mesa.partida.RemoverCartaJogada();
-            mesa.partida.ExibirCartaJogada();
+            inicializadorPartida.partida.RemoverCartaJogada();
+            inicializadorPartida.partida.ExibirCartaJogada();
         }
 
 
@@ -185,16 +185,18 @@ namespace lobby
             }
             AtualizarCartas();
         }
-        private void tmrTimer_Tick(object sender, EventArgs e)
-        {
-            tmrTimer.Enabled = false;
-            VerificarVez();
-            Jogar();
-            tmrTimer.Enabled = true;
-        }
 
         private void btnStartTimer_Click(object sender, EventArgs e)
         {
+            inicializadorPartida.InicializarBot(tmrTimer);
+        }
+
+        private void tmrTimer_Tick(object sender, EventArgs e)
+        {
+            tmrTimer.Enabled = false;
+            inicializadorPartida.Bot.JogarMaiorCarta();
+            VerificarVez();
+            Jogar();
             tmrTimer.Enabled = true;
         }
 

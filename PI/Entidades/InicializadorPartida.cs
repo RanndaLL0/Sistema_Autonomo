@@ -15,14 +15,12 @@ namespace SistemaAutonomo.Entidades
     {
         private Dictionary<int, Jogador> jogadores;
         private Jogador jogadorNaMaquina;
-        private GerenciadorStrings gerenciadorDeStrings;
-        public Partida partida;        
-        private ConfiguracaoPartida configuracaoPartida;
+        public Partida partida;
+        public Bot Bot;
+        public int IdPartida { get; set; }
 
         public InicializadorPartida(string[] jogadorNaMaquinaString,int idPartida,Form game)
         {
-            configuracaoPartida = new ConfiguracaoPartida(idPartida);
-            gerenciadorDeStrings = new GerenciadorStrings(idPartida);
             jogadores = new Dictionary<int, Jogador>();
             IniciarPartida(idPartida, jogadorNaMaquinaString,game);
         }
@@ -37,15 +35,15 @@ namespace SistemaAutonomo.Entidades
 
         private void CriarJogadores(string[] jogadorNaMaquinaString)
         {            
-            List<int>IdJogadores = configuracaoPartida.ObterOrdemMesa(jogadorNaMaquinaString);
-            List<PosicaoCartas> Maos = configuracaoPartida.PosicaoCartas();
+            List<int>IdJogadores = ConfiguracaoPartida.ObterOrdemMesa(jogadorNaMaquinaString, IdPartida);
+            List<PosicaoCartas> Maos = ConfiguracaoPartida.PosicaoCartas(IdPartida);
             string senhaJogadorMaquina = jogadorNaMaquinaString[1];
             int IdJogadorMaquina = int.Parse(jogadorNaMaquinaString[0]);
 
 
             for (int i = 0;i < IdJogadores.Count; i++)
             {
-                string nomeJogador = gerenciadorDeStrings.ObterNomeDoJogador(IdJogadores[i]);
+                string nomeJogador = GerenciadorStrings.ObterNomeDoJogador(IdJogadores[i]);
                 if (IdJogadores[i] == IdJogadorMaquina)
                 {
                     jogadorNaMaquina = new Jogador(IdJogadorMaquina, Maos[i], nomeJogador, senhaJogadorMaquina);
@@ -60,7 +58,7 @@ namespace SistemaAutonomo.Entidades
 
         public void DistribuirCartas()
         {
-            string[] todasAsCartas = gerenciadorDeStrings.ObterCartasDaPartida();
+            string[] todasAsCartas = GerenciadorStrings.ObterCartasDaPartida(IdPartida);
 
             foreach(string carta in todasAsCartas)
             {
@@ -71,6 +69,11 @@ namespace SistemaAutonomo.Entidades
 
                 jogadores[idJogador].Cartas.AdicionarCarta(naipe,idCarta);
             }
+        }
+
+        public void InicializarBot(Timer trmTimer)
+        {
+            Bot = new Bot(partida,IdPartida, trmTimer, jogadores);
         }
     }
 }

@@ -19,13 +19,13 @@ namespace SistemaAutonomo.Entidades
         private int idPartida;
         private List<Panel> cartasJogadas;
         private List<Label> nomes;
-        private string numeroRodada = "";
+        public Bot bot;
+        private string numeroRodada = string.Empty;
 
         private GerenciadorStrings gerenciadorDeStrings;
 
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
         {
-            gerenciadorDeStrings = new GerenciadorStrings(idPartida);
             this.jogadores = jogadores;
             this.idJogadores = idJogadores;
             this.idPartida = idPartida;
@@ -51,11 +51,26 @@ namespace SistemaAutonomo.Entidades
             RemoverCartaJogada();
             ExibirCartaJogada();
             //CartasJogadas.Add(carta);
-        }   
+        }
+
+        public void JogarCarta(int idJogador,string senhaJogador,int idCarta)
+        {
+
+            string retornoJogada = Jogo.Jogar(idJogador, senhaJogador, idCarta);
+            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+            {
+                MessageBox.Show($"Ocorreu um erro ao jogar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            RemoverCartaJogada();
+            ExibirCartaJogada();
+            //CartasJogadas.Add(carta);
+        }
 
         public void RemoverCartaJogada()
         {
-            string[] CartasJogadas = gerenciadorDeStrings.ObterJogadas();
+            string[] CartasJogadas = GerenciadorStrings.ObterJogadas(idPartida);
             if (CartasJogadas[0] == "") return;
 
             foreach(string carta in CartasJogadas)
@@ -76,7 +91,7 @@ namespace SistemaAutonomo.Entidades
 
         public void ExibirCartaJogada()
         {
-            string[] jogadas = gerenciadorDeStrings.ObterJogadas();
+            string[] jogadas = GerenciadorStrings.ObterJogadas(idPartida);
             if (jogadas[0] == "") return;
 
             string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
@@ -145,25 +160,22 @@ namespace SistemaAutonomo.Entidades
 
         private void AtualizarEstadoPartida()
         {
-            //tentei fazer o role de saber se acabou o turno todo mas nao consegui tenta ai voce consegue :)
+            string[] vez = GerenciadorStrings.ObterVez(idPartida);
+            string rodada = vez[0].Split(',')[2];
+            if (rodada == "1")
+            {
+                string[] todasAsCartas = GerenciadorStrings.ObterCartasDaPartida(idPartida);
 
-            //string[] vez = gerenciadorDeStrings.ObterVez();
-            //string rodada = vez[0].Split(',')[2];
-            //if (rodada == "1")
-            //{
-            //    string[] todasAsCartas = gerenciadorDeStrings.ObterCartasDaPartida();
-
-            //    foreach (string carta in todasAsCartas)
-            //    {
-            //        string[] informacoesDaCarta = carta.Split(',');
-            //        int idJogador = int.Parse(informacoesDaCarta[0]);
-            //        int idCarta = int.Parse(informacoesDaCarta[1]);
-            //        char naipe = char.Parse(informacoesDaCarta[2]);
-
-            //        jogadores[idJogador].Cartas.cartas.Clear();
-            //        jogadores[idJogador].Cartas.AdicionarCarta(naipe, idCarta);
-            //    }
-            //}
+                foreach (string carta in todasAsCartas)
+                {
+                    string[] informacoesDaCarta = carta.Split(',');
+                    int idJogador = int.Parse(informacoesDaCarta[0]);
+                    int idCarta = int.Parse(informacoesDaCarta[1]);
+                    char naipe = char.Parse(informacoesDaCarta[2]);
+                    jogadores[idJogador].Cartas.cartas.Clear();
+                    jogadores[idJogador].Cartas.AdicionarCarta(naipe, idCarta);
+                }
+            }
         }
 
         public void AtualizarPontuacaoJogadores()

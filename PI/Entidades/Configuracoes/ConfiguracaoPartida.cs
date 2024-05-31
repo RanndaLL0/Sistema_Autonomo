@@ -13,23 +13,15 @@ namespace SistemaAutonomo.Entidades
     public class ConfiguracaoPartida
     {
 
-        private int IdPartida { get; set; }
-        private GerenciadorStrings gerenciadorDeStrings;
-        public ConfiguracaoPartida(int idPartida) 
+        public static int ContarJogadores(int idPartida)
         {
-            IdPartida = idPartida;
-            gerenciadorDeStrings = new GerenciadorStrings(idPartida); 
-        }
-
-        public int ContarJogadores()
-        {
-            string[] listaDeJogadores = gerenciadorDeStrings.ObterInformacaoDosJogadores();
+            string[] listaDeJogadores = GerenciadorStrings.ObterInformacaoDosJogadores(idPartida);
             return listaDeJogadores.Length;
         }
 
-        public int QuantidadeCartasJogador()
+        public static int QuantidadeCartasJogador(int idPartida)
         {
-            if(ContarJogadores() == 2)
+            if(ContarJogadores(idPartida) == 2)
             {
                 return 12;
             }
@@ -39,11 +31,11 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        public List<PosicaoCartas>PosicaoCartas()
+        public static List<PosicaoCartas>PosicaoCartas(int idPartida)
         {
 
             List<PosicaoCartas> configuracoes = new List<PosicaoCartas>();
-            int quantidadeDeJogadores = ContarJogadores();
+            int quantidadeDeJogadores = ContarJogadores(idPartida);
 
             if(quantidadeDeJogadores == 2)
             {
@@ -60,9 +52,9 @@ namespace SistemaAutonomo.Entidades
             return configuracoes;
         }
 
-        public List<int> ObterOrdemMesa(string[] jogadorNaMaquina)
+        public static List<int> ObterOrdemMesa(string[] jogadorNaMaquina,int idPartida)
         {
-            string[] retornoBruto = gerenciadorDeStrings.ObterInformacaoDosJogadores();
+            string[] retornoBruto = GerenciadorStrings.ObterInformacaoDosJogadores(idPartida);
             List<int> IdJogadores = new List<int>();
 
             foreach (string jogador in retornoBruto)

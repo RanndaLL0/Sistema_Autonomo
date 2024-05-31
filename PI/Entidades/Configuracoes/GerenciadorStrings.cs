@@ -12,14 +12,11 @@ namespace SistemaAutonomo.Entidades
     public class GerenciadorStrings
     {
         public int IdPartida { get; set; }
-        public GerenciadorStrings(int idPartida)
-        {
-            IdPartida = idPartida;
-        }
 
-        public string[] TratarEntrada(string entrada)
+
+        public static string[] TratarEntrada(string entrada)
         {
-            if (entrada.Length > 4 && entrada.Substring(0, 4) == "ERRO")
+            if (entrada.Length > 4 && entrada.StartsWith("ERRO"))
             {
                 MessageBox.Show($"Ocorreu um erro :\n{entrada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
@@ -31,29 +28,29 @@ namespace SistemaAutonomo.Entidades
             return entrada.Split('\n');
         }
 
-        public string[] ObterCartasDaPartida()
+        public static string[] ObterCartasDaPartida(int IdPartida)
         {
 
             string CartasList = Jogo.ConsultarMao(IdPartida);
             return TratarEntrada(CartasList);
         }
 
-        public string[] ObterVez()
+        public static string[] ObterVez(int idPartida)
         {
-            string retornoBruto = Jogo.VerificarVez2(IdPartida);
+            string retornoBruto = Jogo.VerificarVez2(idPartida);
             return TratarEntrada(retornoBruto);
         }
 
-        public string[] ObterInformacaoDosJogadores()
+        public static string[] ObterInformacaoDosJogadores(int idPartida)
         {
-            string retornoBruto = Jogo.ListarJogadores(IdPartida);
+            string retornoBruto = Jogo.ListarJogadores(idPartida);
             return TratarEntrada(retornoBruto);
 
         }
 
-        public string ObterNomeDoJogador(int idJogador)
+        public static string ObterNomeDoJogador(int idJogador)
         {
-            string[] retornoBruto = ObterInformacaoDosJogadores();
+            string[] retornoBruto = ObterInformacaoDosJogadores(idJogador);
 
             foreach(string jogador in retornoBruto)
             {
@@ -66,10 +63,34 @@ namespace SistemaAutonomo.Entidades
             return null;
         }
 
-        public string[] ObterJogadas()
+        public static List<int> ObterJogadasPeloJogador(int idPartida,int idJogador)
         {
-            string retornoBruto = Jogo.ExibirJogadas2(IdPartida);
+            string[] retornoBruto = ObterJogadas(idPartida);
+            List<int> listaDeCartasJogadas = new List<int>();
+
+            foreach(string jogada in retornoBruto)
+            {
+                string[] retornoTratado = jogada.Split(',');
+                if (idJogador == int.Parse(retornoTratado[1]))
+                {
+                    listaDeCartasJogadas.Add(int.Parse(retornoTratado[4]));
+                }
+            }
+            return listaDeCartasJogadas;
+        }
+
+        public static string[] ObterJogadas(int idPartida)
+        {
+            string retornoBruto = Jogo.ExibirJogadas2(idPartida);
             return TratarEntrada(retornoBruto);
+        }
+
+        public static string[] UltimaCartaJogada(int idPartida)
+        {
+            string[] retornoBruto = ObterJogadas(idPartida);
+            string[] ultimaJogada = retornoBruto[retornoBruto.Length - 1].Split(',');
+
+            return ultimaJogada;
         }
     }
 }
