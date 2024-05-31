@@ -21,7 +21,6 @@ namespace SistemaAutonomo.Entidades
             this.jogadores = jogadores;
             this.formularioPartida = formularioPartida;
             IdPartida = idPartida;
-            Renderizar();
         }
 
         private void QuebraLinha(Jogador jogador)

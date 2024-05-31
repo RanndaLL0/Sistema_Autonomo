@@ -31,7 +31,6 @@ namespace SistemaAutonomo.Entidades
             CriarJogadores(jogadorNaMaquinaString);
             DistribuirCartas();
             partida = new Partida(jogadores,jogadores.Keys.ToList(),game,idPartida);
-            new RenderizadorCartas(game, jogadores, idPartida);
         }
 
         private void CriarJogadores(string[] jogadorNaMaquinaString)

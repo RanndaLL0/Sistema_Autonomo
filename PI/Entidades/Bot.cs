@@ -49,7 +49,6 @@ namespace SistemaAutonomo.Entidades
             if (idsTodasCartasJogadas != null && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
             {
                 char ultimaCartaJogada = char.Parse(GerenciadorStrings.UltimaCartaJogada(IdPartida)[2]);
-
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
                 for (int i = quantidadeCartas; i >= 1; i--)

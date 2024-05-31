@@ -20,8 +20,9 @@ namespace SistemaAutonomo.Entidades
         private List<Panel> cartasJogadas;
         private List<Label> nomes;
         public Bot bot;
+        private RenderizadorCartas Renderizador;
         private string numeroRodada = string.Empty;
-        private bool cartasAtualizadasNaRodada1 = false;
+        private bool cartasAtualizadasNaRodada1 = true;
 
         private GerenciadorStrings gerenciadorDeStrings;
 
@@ -33,6 +34,8 @@ namespace SistemaAutonomo.Entidades
             this.formularioPartida = formularioPartida;
             cartasJogadas = new List<Panel>();
             nomes = new List<Label>();
+            Renderizador = new RenderizadorCartas(formularioPartida,jogadores,idPartida);
+            Renderizador.Renderizar();
         }
 
         public void JogarCarta()
@@ -214,10 +217,10 @@ namespace SistemaAutonomo.Entidades
                     jogadores[idJogador].Cartas.AdicionarCarta(naipe, idCarta);
                 }
 
-                cartasAtualizadasNaRodada1 = true; 
+                cartasAtualizadasNaRodada1 = true;
+                Renderizador.Renderizar();
             }
-
-            if(rodada != "1")
+            if(rodada == "2")
             {
                 cartasAtualizadasNaRodada1 = false;
             }
