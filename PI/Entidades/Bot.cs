@@ -35,19 +35,33 @@ namespace SistemaAutonomo.Entidades
 
         public void JogarMaiorCarta()
         {
-            List<int>cartasJogadas = GerenciadorStrings.ObterJogadasPeloJogador(IdPartida, IdJogadores[0]);
-            char ultimaCartaJogada = char.Parse(GerenciadorStrings.UltimaCartaJogada(IdPartida)[2]);
+            List<int>idsCartasJogadas = GerenciadorStrings.ObterJogadasPeloJogador(IdPartida, IdJogadores[0]);
+            List<int>idsCartasApostadas = GerenciadorStrings.ObterIdsCartasApostadas(IdPartida);
 
-            int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
+            if (idsCartasJogadas == null || idsCartasApostadas == null) { return; }
+            List<int> idsTodasCartasJogadas = new List<int>();
+            idsTodasCartasJogadas.AddRange(idsCartasJogadas);
+            idsTodasCartasJogadas.AddRange(idsCartasApostadas);
 
-            for (int i = quantidadeCartas; i >= 1; i--)
+            string[] vez = GerenciadorStrings.ObterVez(IdPartida);
+            string idJogadorRodadaAtual = vez[0].Split(',')[1];
+
+            if (idsTodasCartasJogadas != null && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
             {
-                if (!cartasJogadas.Contains(i) && Jogadores[0].Cartas.cartas[i].Naipe == ultimaCartaJogada)
-                {
-                    partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
-                }      
-            }
+                char ultimaCartaJogada = char.Parse(GerenciadorStrings.UltimaCartaJogada(IdPartida)[2]);
 
+                int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
+
+                for (int i = quantidadeCartas; i >= 1; i--)
+                {
+                    
+                    if (!idsTodasCartasJogadas.Contains(i) && Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == ultimaCartaJogada)
+                    {
+                        partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                        return;
+                    }
+                }
+            }
         }
 
 

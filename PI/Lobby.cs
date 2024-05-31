@@ -57,7 +57,7 @@ namespace lobby
             IdPartida = Convert.ToInt32(partidInfo[0]);
         
 
-            string jogadoresList = Jogo.ListarJogadores(IdPartida);
+            string jogadoresList = Jogo.ListarJogadores2(IdPartida);
             lstJogadores.Items.Clear();
 
             jogadoresList = jogadoresList.Replace("\r", "");
@@ -153,9 +153,9 @@ namespace lobby
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            //IdPartida = 6194;
-            //dados[0] = "6441";
-            //dados[1] = "C8024E";
+            //IdPartida = 1139;
+            //dados[0] = "1383";
+            //dados[1] = "6C51D3";
 
             //dados[0] = "4158";
             //dados[1] = "F93034";

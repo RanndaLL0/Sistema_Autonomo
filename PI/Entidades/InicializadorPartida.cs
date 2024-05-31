@@ -22,6 +22,7 @@ namespace SistemaAutonomo.Entidades
         public InicializadorPartida(string[] jogadorNaMaquinaString,int idPartida,Form game)
         {
             jogadores = new Dictionary<int, Jogador>();
+            IdPartida = idPartida;
             IniciarPartida(idPartida, jogadorNaMaquinaString,game);
         }
             
@@ -43,7 +44,7 @@ namespace SistemaAutonomo.Entidades
 
             for (int i = 0;i < IdJogadores.Count; i++)
             {
-                string nomeJogador = GerenciadorStrings.ObterNomeDoJogador(IdJogadores[i]);
+                string nomeJogador = GerenciadorStrings.ObterNomeDoJogador(IdJogadores[i], IdPartida);
                 if (IdJogadores[i] == IdJogadorMaquina)
                 {
                     jogadorNaMaquina = new Jogador(IdJogadorMaquina, Maos[i], nomeJogador, senhaJogadorMaquina);

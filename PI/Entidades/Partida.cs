@@ -21,6 +21,7 @@ namespace SistemaAutonomo.Entidades
         private List<Label> nomes;
         public Bot bot;
         private string numeroRodada = string.Empty;
+        private bool cartasAtualizadasNaRodada1 = false;
 
         private GerenciadorStrings gerenciadorDeStrings;
 
@@ -65,8 +66,45 @@ namespace SistemaAutonomo.Entidades
 
             RemoverCartaJogada();
             ExibirCartaJogada();
+            AtualizarEstadoPartida();
             //CartasJogadas.Add(carta);
         }
+
+
+        public void ApostarCarta()
+        {
+
+            TextBox txtIdJogador = formularioPartida.Controls.Find("txtIdJogador", true).FirstOrDefault() as TextBox;
+            TextBox txtSenhaJogador = formularioPartida.Controls.Find("txtSenhaJogador", true).FirstOrDefault() as TextBox;
+            TextBox txtIdCarta = formularioPartida.Controls.Find("txtIdCarta", true).FirstOrDefault() as TextBox;
+
+            string retornoJogada = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
+            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+            {
+                MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            RemoverCartaJogada();
+            ExibirCartaJogada();
+            //CartasJogadas.Add(carta);
+        }
+
+        public void ApostarCarta(int idJogador, string senhaJogador, int idCarta)
+        {
+
+            string retornoJogada = Jogo.Apostar(idJogador, senhaJogador, idCarta);
+            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+            {
+                MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            RemoverCartaJogada();
+            ExibirCartaJogada();
+            //CartasJogadas.Add(carta);
+        }
+
 
         public void RemoverCartaJogada()
         {
@@ -158,13 +196,14 @@ namespace SistemaAutonomo.Entidades
             nomes.Clear();
         }
 
-        private void AtualizarEstadoPartida()
+        public void AtualizarEstadoPartida()
         {
             string[] vez = GerenciadorStrings.ObterVez(idPartida);
             string rodada = vez[0].Split(',')[2];
-            if (rodada == "1")
+            if (rodada == "1" && !cartasAtualizadasNaRodada1)
             {
                 string[] todasAsCartas = GerenciadorStrings.ObterCartasDaPartida(idPartida);
+                RemoverCartasDaMao(jogadores);
 
                 foreach (string carta in todasAsCartas)
                 {
@@ -172,9 +211,23 @@ namespace SistemaAutonomo.Entidades
                     int idJogador = int.Parse(informacoesDaCarta[0]);
                     int idCarta = int.Parse(informacoesDaCarta[1]);
                     char naipe = char.Parse(informacoesDaCarta[2]);
-                    jogadores[idJogador].Cartas.cartas.Clear();
                     jogadores[idJogador].Cartas.AdicionarCarta(naipe, idCarta);
                 }
+
+                cartasAtualizadasNaRodada1 = true; 
+            }
+
+            if(rodada != "1")
+            {
+                cartasAtualizadasNaRodada1 = false;
+            }
+        }
+
+        private void RemoverCartasDaMao(Dictionary<int, Jogador> jogadores)
+        {
+            foreach (int chave in jogadores.Keys)
+            {
+                jogadores[chave].Cartas.cartas.Clear();
             }
         }
 

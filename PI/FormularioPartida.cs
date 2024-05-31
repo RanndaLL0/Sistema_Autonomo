@@ -112,15 +112,7 @@ namespace lobby
 
         private void btnApostar_Click(object sender, EventArgs e)
         {
-            string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
-            if (retornoAposta.Length > 4 && retornoAposta.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoAposta.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            VerificarVez();
-            AtualizarCartas();
-
+            inicializadorPartida.partida.ApostarCarta();
         }
 
         private void btnAtualizarVez_Click(object sender, EventArgs e)
@@ -133,6 +125,7 @@ namespace lobby
         {
             inicializadorPartida.partida.RemoverCartaJogada();
             inicializadorPartida.partida.ExibirCartaJogada();
+            inicializadorPartida.partida.AtualizarEstadoPartida();
         }
 
 
@@ -195,8 +188,9 @@ namespace lobby
         {
             tmrTimer.Enabled = false;
             inicializadorPartida.Bot.JogarMaiorCarta();
+            inicializadorPartida.partida.AtualizarEstadoPartida();
             VerificarVez();
-            Jogar();
+            //Jogar();
             tmrTimer.Enabled = true;
         }
 

@@ -42,7 +42,7 @@ namespace SistemaAutonomo.Entidades
 
             int numeroDeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
-            foreach (int Id in  idJogadores)
+            foreach (int Id in idJogadores)
             {
                 Jogador jogador = jogadores[Id];
                 for(int i = 1; i <= numeroDeCartas; i++)
@@ -79,6 +79,23 @@ namespace SistemaAutonomo.Entidades
                                 Jogador.Cartas.AdicionarCarta(naipeCarta, idCarta);
                                 string caminho = Jogador.Posicao.SilhuetaCarta.Replace('|', naipeCarta);
                                 carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminho));
+                                break;
+                            }
+                        }
+                        List<string> cartasApostadas = GerenciadorStrings.ObterCartasApostadas(IdPartida);
+                        foreach(string Carta in  cartasApostadas)
+                        {
+                            int idJogador = int.Parse(Carta.Split(',')[0].Substring(2));
+                            int idCarta = int.Parse(Carta.Split(',')[4]);
+                            char naipeCarta = char.Parse(Carta.Split(',')[1]);
+
+                            if (Id == idJogador && idCarta == i)
+                            {
+                                Jogador Jogador = jogadores[idJogador];
+                                Jogador.Cartas.AdicionarCarta(naipeCarta, idCarta);
+                                string caminho = Jogador.Posicao.SilhuetaCarta.Replace('|', naipeCarta);
+                                carta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminho));
+                                break;
                             }
                         }
                     }
