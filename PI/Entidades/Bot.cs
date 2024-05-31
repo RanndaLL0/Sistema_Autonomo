@@ -36,7 +36,7 @@ namespace SistemaAutonomo.Entidades
         public void JogarMaiorCarta()
         {
             List<int>idsCartasJogadas = GerenciadorStrings.ObterJogadasPeloJogador(IdPartida, IdJogadores[0]);
-            List<int>idsCartasApostadas = GerenciadorStrings.ObterIdsCartasApostadas(IdPartida);
+            List<int>idsCartasApostadas = GerenciadorStrings.ObterIdsCartasApostadasJogador(IdPartida, IdJogadores[0]);
 
             if (idsCartasJogadas == null || idsCartasApostadas == null) { return; }
             List<int> idsTodasCartasJogadas = new List<int>();

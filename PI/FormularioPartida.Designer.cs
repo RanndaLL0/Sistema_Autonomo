@@ -264,7 +264,7 @@
             // 
             // tmrTimer
             // 
-            this.tmrTimer.Interval = 5000;
+            this.tmrTimer.Interval = 1500;
             this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
             // btnStartTimer
@@ -313,7 +313,7 @@
             this.label9.Text = "Status Partida";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Game
+            // FormularioPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,7 +346,7 @@
             this.Controls.Add(this.lblIDVez);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstCartas);
-            this.Name = "Game";
+            this.Name = "FormularioPartida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.ResumeLayout(false);

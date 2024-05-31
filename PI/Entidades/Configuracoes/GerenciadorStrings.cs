@@ -105,21 +105,26 @@ namespace SistemaAutonomo.Entidades
 
         }
 
-        public static List<int> ObterIdsCartasApostadas(int idPartida)
+        public static List<int> ObterIdsCartasApostadasJogador(int idPartida,int idJogadorMaquina)
         {
             List<string> cartasApostadas = ObterCartasApostadas(idPartida);
             if (cartasApostadas == null)
             {
                 return null;
             }
-            List<int> idCartasApostadas = new List<int>();
+            List<int> idCartasApostadasJogador = new List<int>();
             foreach (string Carta in cartasApostadas)
             {
-                int idCarta = int.Parse(Carta.Split(',')[4]);
-                idCartasApostadas.Add(idCarta);
+                int idJogador = int.Parse(Carta.Split(',')[0].Substring(2));
+                if(idJogador == idJogadorMaquina)
+                {
+                    int idCarta = int.Parse(Carta.Split(',')[4]);
+                    idCartasApostadasJogador.Add(idCarta);
+                }
             }
-            return idCartasApostadas;
+            return idCartasApostadasJogador;
         }
+
         public static string[] UltimaCartaJogada(int idPartida)
         {
             string[] retornoBruto = ObterJogadas(idPartida);
