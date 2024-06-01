@@ -25,6 +25,7 @@ namespace SistemaAutonomo.Entidades
         private string numeroRodada = string.Empty;
         public string primeiraCartaRound = string.Empty;
         private bool cartasAtualizadasNaRodada1 = true;
+        bool atribuiuPrimeiraCarta = true;
 
         private GerenciadorStrings gerenciadorDeStrings;
 
@@ -161,6 +162,7 @@ namespace SistemaAutonomo.Entidades
             {
                 numeroRodada = ultimaRodada[0];
                 primeiraCartaRound = string.Empty;
+                atribuiuPrimeiraCarta = true;
                 LimparCartasJogadas(cartasJogadas);
                 LimparLabels(nomes);
             }
@@ -194,7 +196,12 @@ namespace SistemaAutonomo.Entidades
                     formularioPartida.Controls.Add(nomeJogador);
                     x -= 164;
 
-                    primeiraCartaRound = naipeCarta;
+                    if(atribuiuPrimeiraCarta)
+                    {
+                        primeiraCartaRound = naipeCarta;
+                        atribuiuPrimeiraCarta = false;
+                    }
+
                     cartasJogadas.Add(carta);
                     nomes.Add(nomeJogador);
                 }

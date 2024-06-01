@@ -55,7 +55,6 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
-            partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, 12);
             return;
         }
 
@@ -82,7 +81,9 @@ namespace SistemaAutonomo.Entidades
 
             if (IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
             {
+
                 string primeiraCartaJogada = partida.primeiraCartaRound;
+
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
                 if (primeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
