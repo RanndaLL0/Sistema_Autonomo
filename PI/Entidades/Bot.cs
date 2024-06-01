@@ -46,7 +46,7 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        public void ComecarRound()
+        public void ComecarRound(int quantidadeDeCartas,List<int> todasAsCartasJogadas,string primeiraCartaJogada)
         {
             int quantidadeCopas = estrategia.QuantidadeCopas(Jogadores[IdJogadores[0]]);
             if(quantidadeCopas != 0)
@@ -54,21 +54,38 @@ namespace SistemaAutonomo.Entidades
                 JogarCopas();
                 return;
             }
-
-            return;
+            JogarMaiorCarta(quantidadeDeCartas,todasAsCartasJogadas,primeiraCartaJogada);
         }
 
         public void JogarMaiorCarta(int quantidadeDeCartas,List<int> todasAsCartasJogadas,string primeiraCartaJogada)
         {
             for (int i = quantidadeDeCartas; i >= 1; i--)
             {
-
-                if (!todasAsCartasJogadas.Contains(i) && Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == char.Parse(primeiraCartaJogada))
+                if (todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i) && Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == char.Parse(primeiraCartaJogada))
                 {
                     partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
                     return;
                 }
             }
+            JogarQualquerCarta(todasAsCartasJogadas,quantidadeDeCartas);
+        }
+
+        public void JogarQualquerCarta(List<int> todasAsCartasJogadas,int quantidadeDeCartas)
+        {
+            for(int i = quantidadeDeCartas; i >= 1; i --)
+            {
+                if(todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i))
+                {
+                    partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    return;
+                }
+            }
+            return;
+        }
+
+        public void PrimeiraCartaJogada()
+        {
+            string[] informacoesJogada = GerenciadorStrings.ObterJogadas(IdPartida);
         }
 
         public void TomarDecisao()
@@ -83,12 +100,11 @@ namespace SistemaAutonomo.Entidades
             {
 
                 string primeiraCartaJogada = partida.primeiraCartaRound;
-
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
                 if (primeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
                 {
-                    ComecarRound();
+                    ComecarRound(quantidadeCartas, TodasAsCartasJogadas, primeiraCartaJogada);
                     return;
                 }
                 else

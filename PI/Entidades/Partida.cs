@@ -235,7 +235,7 @@ namespace SistemaAutonomo.Entidades
             {
                 string[] todasAsCartas = GerenciadorStrings.ObterCartasDaPartida(idPartida);
                 RemoverCartasDaMao(jogadores);
-
+                primeiraCartaRound = string.Empty;
                 foreach (string carta in todasAsCartas)
                 {
                     string[] informacoesDaCarta = carta.Split(',');
