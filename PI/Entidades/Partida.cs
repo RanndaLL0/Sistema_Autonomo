@@ -14,14 +14,16 @@ namespace SistemaAutonomo.Entidades
     {
         private Dictionary<int,Jogador> jogadores;
         private List<int> idJogadores;
-        private int pontuacao;
         private Form formularioPartida;
-        private int idPartida;
-        private List<Panel> cartasJogadas;
         private List<Label> nomes;
+        private List<Panel> cartasJogadas;
         public Bot bot;
         private RenderizadorCartas Renderizador;
+
+        private int pontuacao;
+        private int idPartida;
         private string numeroRodada = string.Empty;
+        public string primeiraCartaRound = string.Empty;
         private bool cartasAtualizadasNaRodada1 = true;
 
         private GerenciadorStrings gerenciadorDeStrings;
@@ -32,7 +34,9 @@ namespace SistemaAutonomo.Entidades
             this.idJogadores = idJogadores;
             this.idPartida = idPartida;
             this.formularioPartida = formularioPartida;
+
             cartasJogadas = new List<Panel>();
+
             nomes = new List<Label>();
             Renderizador = new RenderizadorCartas(formularioPartida,jogadores,idPartida);
             Renderizador.Renderizar();
@@ -144,7 +148,6 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-
         public void ExibirCartaJogada()
         {
             string[] jogadas = GerenciadorStrings.ObterJogadas(idPartida);
@@ -157,6 +160,7 @@ namespace SistemaAutonomo.Entidades
             if (numeroRodada != ultimaRodada[0])
             {
                 numeroRodada = ultimaRodada[0];
+                primeiraCartaRound = string.Empty;
                 LimparCartasJogadas(cartasJogadas);
                 LimparLabels(nomes);
             }
@@ -189,6 +193,8 @@ namespace SistemaAutonomo.Entidades
                     formularioPartida.Controls.Add(carta);
                     formularioPartida.Controls.Add(nomeJogador);
                     x -= 164;
+
+                    primeiraCartaRound = naipeCarta;
                     cartasJogadas.Add(carta);
                     nomes.Add(nomeJogador);
                 }

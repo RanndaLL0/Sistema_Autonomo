@@ -137,9 +137,9 @@ namespace lobby
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             tmrTimer.Enabled = false;
-            inicializadorPartida.Bot.JogarMaiorCarta();
-            inicializadorPartida.partida.AtualizarEstadoPartida();
             VerificarVez();
+            inicializadorPartida.Bot.TomarDecisao();
+            inicializadorPartida.partida.AtualizarEstadoPartida();
             //Jogar();
             tmrTimer.Enabled = true;
         }
