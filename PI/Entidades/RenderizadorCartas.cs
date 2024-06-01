@@ -78,6 +78,7 @@ namespace SistemaAutonomo.Entidades
                 {
                     QuebraLinha(jogador);
                     Panel carta = new Panel();
+                    carta.BackColor = Color.Transparent;
                     carta.Left = jogador.Posicao.X;
                     carta.Top = jogador.Posicao.Y;
                     jogador.Posicao.X += jogador.Posicao.DeslocamentoX;

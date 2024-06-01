@@ -16,6 +16,8 @@ namespace SistemaAutonomo.Entidades
         private Estrategia estrategia;
         private int IdPartida;
         private Partida partida;
+        private string rodada = string.Empty;
+        private string naipePrimeiraCartaJogada;
 
         public Bot(Partida partida,int idPartida,Timer timer,Dictionary<int,Jogador> jogadores)
         {
@@ -85,7 +87,15 @@ namespace SistemaAutonomo.Entidades
 
         public void PrimeiraCartaJogada()
         {
-            string[] informacoesJogada = GerenciadorStrings.ObterJogadas(IdPartida);
+            string[] retornoBruto = GerenciadorStrings.ObterJogadas(IdPartida);
+            string[] retornoTratado = retornoBruto[retornoBruto.Length - 1].Split(','); 
+            string ultimaRodada = retornoTratado[0];
+
+            if(rodada != ultimaRodada)
+            {
+                rodada = ultimaRodada;
+                naipePrimeiraCartaJogada = retornoTratado[2];
+            }
         }
 
         public void TomarDecisao()
@@ -99,17 +109,17 @@ namespace SistemaAutonomo.Entidades
             if (IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
             {
 
-                string primeiraCartaJogada = partida.primeiraCartaRound;
+                PrimeiraCartaJogada();
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
-                if (primeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
+                if (naipePrimeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
                 {
-                    ComecarRound(quantidadeCartas, TodasAsCartasJogadas, primeiraCartaJogada);
+                    ComecarRound(quantidadeCartas, TodasAsCartasJogadas, naipePrimeiraCartaJogada);
                     return;
                 }
                 else
                 {
-                    JogarMaiorCarta(quantidadeCartas,TodasAsCartasJogadas, primeiraCartaJogada);
+                    JogarMaiorCarta(quantidadeCartas,TodasAsCartasJogadas, naipePrimeiraCartaJogada);
                 }
             }
         }

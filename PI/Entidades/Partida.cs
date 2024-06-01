@@ -180,6 +180,7 @@ namespace SistemaAutonomo.Entidades
 
                     Panel carta = new Panel();
                     carta.BackgroundImage = Image.FromFile(caminhoImagem);
+                    carta.BackColor = Color.Transparent;
                     carta.Height = 231;
                     carta.Width = 143;
                     carta.Left = x;
