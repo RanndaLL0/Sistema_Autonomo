@@ -98,7 +98,7 @@
             // 
             // btnStartTimer
             // 
-            this.btnStartTimer.Location = new System.Drawing.Point(411, 773);
+            this.btnStartTimer.Location = new System.Drawing.Point(137, 497);
             this.btnStartTimer.Name = "btnStartTimer";
             this.btnStartTimer.Size = new System.Drawing.Size(185, 53);
             this.btnStartTimer.TabIndex = 29;
@@ -297,7 +297,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 883);
+            this.label2.Location = new System.Drawing.Point(369, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 5;
@@ -305,7 +305,7 @@
             // 
             // txtIdJogador
             // 
-            this.txtIdJogador.Location = new System.Drawing.Point(498, 880);
+            this.txtIdJogador.Location = new System.Drawing.Point(450, 185);
             this.txtIdJogador.Name = "txtIdJogador";
             this.txtIdJogador.Size = new System.Drawing.Size(78, 20);
             this.txtIdJogador.TabIndex = 4;
@@ -313,7 +313,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 920);
+            this.label3.Location = new System.Drawing.Point(344, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 7;
@@ -321,7 +321,7 @@
             // 
             // txtSenhaJogador
             // 
-            this.txtSenhaJogador.Location = new System.Drawing.Point(498, 917);
+            this.txtSenhaJogador.Location = new System.Drawing.Point(450, 222);
             this.txtSenhaJogador.Name = "txtSenhaJogador";
             this.txtSenhaJogador.Size = new System.Drawing.Size(78, 20);
             this.txtSenhaJogador.TabIndex = 6;
@@ -329,7 +329,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(424, 957);
+            this.label4.Location = new System.Drawing.Point(376, 262);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -337,14 +337,14 @@
             // 
             // txtIdCarta
             // 
-            this.txtIdCarta.Location = new System.Drawing.Point(498, 954);
+            this.txtIdCarta.Location = new System.Drawing.Point(450, 259);
             this.txtIdCarta.Name = "txtIdCarta";
             this.txtIdCarta.Size = new System.Drawing.Size(78, 20);
             this.txtIdCarta.TabIndex = 9;
             // 
             // btnJogar
             // 
-            this.btnJogar.Location = new System.Drawing.Point(395, 995);
+            this.btnJogar.Location = new System.Drawing.Point(347, 300);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(75, 23);
             this.btnJogar.TabIndex = 3;
@@ -354,7 +354,7 @@
             // 
             // btnApostar
             // 
-            this.btnApostar.Location = new System.Drawing.Point(543, 995);
+            this.btnApostar.Location = new System.Drawing.Point(495, 300);
             this.btnApostar.Name = "btnApostar";
             this.btnApostar.Size = new System.Drawing.Size(75, 23);
             this.btnApostar.TabIndex = 10;
@@ -365,14 +365,14 @@
             // lstCartas
             // 
             this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(411, 306);
+            this.lstCartas.Location = new System.Drawing.Point(137, 30);
             this.lstCartas.Name = "lstCartas";
             this.lstCartas.Size = new System.Drawing.Size(185, 394);
             this.lstCartas.TabIndex = 0;
             // 
             // btnAtualizarCartas
             // 
-            this.btnAtualizarCartas.Location = new System.Drawing.Point(451, 725);
+            this.btnAtualizarCartas.Location = new System.Drawing.Point(177, 449);
             this.btnAtualizarCartas.Name = "btnAtualizarCartas";
             this.btnAtualizarCartas.Size = new System.Drawing.Size(99, 34);
             this.btnAtualizarCartas.TabIndex = 20;
