@@ -53,10 +53,22 @@
             this.lblVersao = new System.Windows.Forms.Label();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.btnStartTimer = new System.Windows.Forms.Button();
-            this.lstJogadas = new System.Windows.Forms.ListBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lstStatus = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblNomeJ1 = new System.Windows.Forms.Label();
+            this.lblNomeJ2 = new System.Windows.Forms.Label();
+            this.lblNomeJ4 = new System.Windows.Forms.Label();
+            this.lblNomeJ3 = new System.Windows.Forms.Label();
+            this.lblJogadorVez = new System.Windows.Forms.Label();
+            this.lblRodada = new System.Windows.Forms.Label();
+            this.lblStatusPartida = new System.Windows.Forms.Label();
+            this.lblStatusRodada = new System.Windows.Forms.Label();
+            this.lblPontuacaoTurnoJ3 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTotalJ3 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTotalJ1 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTurnoJ1 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTurnoJ4 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTotalJ4 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTotalJ2 = new System.Windows.Forms.Label();
+            this.lblPontuacaoTurnoJ2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstCartas
@@ -248,9 +260,10 @@
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.Location = new System.Drawing.Point(585, 9);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(42, 13);
+            this.lblVersion.Size = new System.Drawing.Size(45, 14);
             this.lblVersion.TabIndex = 28;
             this.lblVersion.Text = "versão:";
             // 
@@ -277,41 +290,197 @@
             this.btnStartTimer.UseVisualStyleBackColor = true;
             this.btnStartTimer.Click += new System.EventHandler(this.btnStartTimer_Click);
             // 
-            // lstJogadas
+            // lblNomeJ1
             // 
-            this.lstJogadas.FormattingEnabled = true;
-            this.lstJogadas.Location = new System.Drawing.Point(17, 558);
-            this.lstJogadas.Name = "lstJogadas";
-            this.lstJogadas.Size = new System.Drawing.Size(185, 394);
-            this.lstJogadas.TabIndex = 30;
+            this.lblNomeJ1.AutoSize = true;
+            this.lblNomeJ1.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJ1.Font = new System.Drawing.Font("Inter ExtraLight", 13.75F);
+            this.lblNomeJ1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblNomeJ1.Location = new System.Drawing.Point(636, 736);
+            this.lblNomeJ1.Name = "lblNomeJ1";
+            this.lblNomeJ1.Size = new System.Drawing.Size(114, 23);
+            this.lblNomeJ1.TabIndex = 34;
+            this.lblNomeJ1.Text = "Budapeste";
             // 
-            // label8
+            // lblNomeJ2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 542);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Cartas Jogadas";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNomeJ2.AutoSize = true;
+            this.lblNomeJ2.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJ2.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblNomeJ2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblNomeJ2.Location = new System.Drawing.Point(1533, 950);
+            this.lblNomeJ2.Name = "lblNomeJ2";
+            this.lblNomeJ2.Size = new System.Drawing.Size(108, 21);
+            this.lblNomeJ2.TabIndex = 35;
+            this.lblNomeJ2.Text = "Budapeste";
             // 
-            // lstStatus
+            // lblNomeJ4
             // 
-            this.lstStatus.FormattingEnabled = true;
-            this.lstStatus.Location = new System.Drawing.Point(236, 558);
-            this.lstStatus.Name = "lstStatus";
-            this.lstStatus.Size = new System.Drawing.Size(185, 394);
-            this.lstStatus.TabIndex = 32;
+            this.lblNomeJ4.AutoSize = true;
+            this.lblNomeJ4.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJ4.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblNomeJ4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblNomeJ4.Location = new System.Drawing.Point(111, 951);
+            this.lblNomeJ4.Name = "lblNomeJ4";
+            this.lblNomeJ4.Size = new System.Drawing.Size(108, 21);
+            this.lblNomeJ4.TabIndex = 36;
+            this.lblNomeJ4.Text = "Budapeste";
             // 
-            // label9
+            // lblNomeJ3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(285, 542);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "Status Partida";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNomeJ3.AutoSize = true;
+            this.lblNomeJ3.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJ3.Font = new System.Drawing.Font("Inter ExtraLight", 13.75F);
+            this.lblNomeJ3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblNomeJ3.Location = new System.Drawing.Point(636, 320);
+            this.lblNomeJ3.Name = "lblNomeJ3";
+            this.lblNomeJ3.Size = new System.Drawing.Size(114, 23);
+            this.lblNomeJ3.TabIndex = 37;
+            this.lblNomeJ3.Text = "Budapeste";
+            // 
+            // lblJogadorVez
+            // 
+            this.lblJogadorVez.AutoSize = true;
+            this.lblJogadorVez.BackColor = System.Drawing.Color.Transparent;
+            this.lblJogadorVez.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblJogadorVez.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblJogadorVez.Location = new System.Drawing.Point(1685, 150);
+            this.lblJogadorVez.Name = "lblJogadorVez";
+            this.lblJogadorVez.Size = new System.Drawing.Size(123, 21);
+            this.lblJogadorVez.TabIndex = 38;
+            this.lblJogadorVez.Text = "Luxemburgo";
+            // 
+            // lblRodada
+            // 
+            this.lblRodada.AutoSize = true;
+            this.lblRodada.BackColor = System.Drawing.Color.Transparent;
+            this.lblRodada.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblRodada.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblRodada.Location = new System.Drawing.Point(1617, 116);
+            this.lblRodada.Name = "lblRodada";
+            this.lblRodada.Size = new System.Drawing.Size(22, 21);
+            this.lblRodada.TabIndex = 39;
+            this.lblRodada.Text = "2";
+            // 
+            // lblStatusPartida
+            // 
+            this.lblStatusPartida.AutoSize = true;
+            this.lblStatusPartida.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatusPartida.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblStatusPartida.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblStatusPartida.Location = new System.Drawing.Point(1675, 82);
+            this.lblStatusPartida.Name = "lblStatusPartida";
+            this.lblStatusPartida.Size = new System.Drawing.Size(91, 21);
+            this.lblStatusPartida.TabIndex = 40;
+            this.lblStatusPartida.Text = "Jogando";
+            // 
+            // lblStatusRodada
+            // 
+            this.lblStatusRodada.AutoSize = true;
+            this.lblStatusRodada.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatusRodada.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblStatusRodada.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblStatusRodada.Location = new System.Drawing.Point(1676, 183);
+            this.lblStatusRodada.Name = "lblStatusRodada";
+            this.lblStatusRodada.Size = new System.Drawing.Size(79, 21);
+            this.lblStatusRodada.TabIndex = 41;
+            this.lblStatusRodada.Text = "Jogada";
+            // 
+            // lblPontuacaoTurnoJ3
+            // 
+            this.lblPontuacaoTurnoJ3.AutoSize = true;
+            this.lblPontuacaoTurnoJ3.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTurnoJ3.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTurnoJ3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTurnoJ3.Location = new System.Drawing.Point(986, 321);
+            this.lblPontuacaoTurnoJ3.Name = "lblPontuacaoTurnoJ3";
+            this.lblPontuacaoTurnoJ3.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTurnoJ3.TabIndex = 42;
+            this.lblPontuacaoTurnoJ3.Text = "2";
+            // 
+            // lblPontuacaoTotalJ3
+            // 
+            this.lblPontuacaoTotalJ3.AutoSize = true;
+            this.lblPontuacaoTotalJ3.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTotalJ3.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTotalJ3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTotalJ3.Location = new System.Drawing.Point(1245, 321);
+            this.lblPontuacaoTotalJ3.Name = "lblPontuacaoTotalJ3";
+            this.lblPontuacaoTotalJ3.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTotalJ3.TabIndex = 43;
+            this.lblPontuacaoTotalJ3.Text = "2";
+            // 
+            // lblPontuacaoTotalJ1
+            // 
+            this.lblPontuacaoTotalJ1.AutoSize = true;
+            this.lblPontuacaoTotalJ1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTotalJ1.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTotalJ1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTotalJ1.Location = new System.Drawing.Point(1245, 738);
+            this.lblPontuacaoTotalJ1.Name = "lblPontuacaoTotalJ1";
+            this.lblPontuacaoTotalJ1.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTotalJ1.TabIndex = 45;
+            this.lblPontuacaoTotalJ1.Text = "2";
+            // 
+            // lblPontuacaoTurnoJ1
+            // 
+            this.lblPontuacaoTurnoJ1.AutoSize = true;
+            this.lblPontuacaoTurnoJ1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTurnoJ1.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTurnoJ1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTurnoJ1.Location = new System.Drawing.Point(986, 738);
+            this.lblPontuacaoTurnoJ1.Name = "lblPontuacaoTurnoJ1";
+            this.lblPontuacaoTurnoJ1.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTurnoJ1.TabIndex = 44;
+            this.lblPontuacaoTurnoJ1.Text = "2";
+            // 
+            // lblPontuacaoTurnoJ4
+            // 
+            this.lblPontuacaoTurnoJ4.AutoSize = true;
+            this.lblPontuacaoTurnoJ4.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTurnoJ4.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTurnoJ4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTurnoJ4.Location = new System.Drawing.Point(273, 981);
+            this.lblPontuacaoTurnoJ4.Name = "lblPontuacaoTurnoJ4";
+            this.lblPontuacaoTurnoJ4.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTurnoJ4.TabIndex = 46;
+            this.lblPontuacaoTurnoJ4.Text = "2";
+            // 
+            // lblPontuacaoTotalJ4
+            // 
+            this.lblPontuacaoTotalJ4.AutoSize = true;
+            this.lblPontuacaoTotalJ4.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTotalJ4.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTotalJ4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTotalJ4.Location = new System.Drawing.Point(273, 1016);
+            this.lblPontuacaoTotalJ4.Name = "lblPontuacaoTotalJ4";
+            this.lblPontuacaoTotalJ4.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTotalJ4.TabIndex = 47;
+            this.lblPontuacaoTotalJ4.Text = "2";
+            // 
+            // lblPontuacaoTotalJ2
+            // 
+            this.lblPontuacaoTotalJ2.AutoSize = true;
+            this.lblPontuacaoTotalJ2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTotalJ2.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTotalJ2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTotalJ2.Location = new System.Drawing.Point(1697, 1016);
+            this.lblPontuacaoTotalJ2.Name = "lblPontuacaoTotalJ2";
+            this.lblPontuacaoTotalJ2.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTotalJ2.TabIndex = 49;
+            this.lblPontuacaoTotalJ2.Text = "2";
+            // 
+            // lblPontuacaoTurnoJ2
+            // 
+            this.lblPontuacaoTurnoJ2.AutoSize = true;
+            this.lblPontuacaoTurnoJ2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPontuacaoTurnoJ2.Font = new System.Drawing.Font("Inter ExtraLight", 13F);
+            this.lblPontuacaoTurnoJ2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPontuacaoTurnoJ2.Location = new System.Drawing.Point(1697, 981);
+            this.lblPontuacaoTurnoJ2.Name = "lblPontuacaoTurnoJ2";
+            this.lblPontuacaoTurnoJ2.Size = new System.Drawing.Size(22, 21);
+            this.lblPontuacaoTurnoJ2.TabIndex = 48;
+            this.lblPontuacaoTurnoJ2.Text = "2";
             // 
             // FormularioPartida
             // 
@@ -319,11 +488,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::SistemaAutonomo.Properties.Resources.FormularioPartida;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lstStatus);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.lstJogadas);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.lblPontuacaoTotalJ2);
+            this.Controls.Add(this.lblPontuacaoTurnoJ2);
+            this.Controls.Add(this.lblPontuacaoTotalJ4);
+            this.Controls.Add(this.lblPontuacaoTurnoJ4);
+            this.Controls.Add(this.lblPontuacaoTotalJ1);
+            this.Controls.Add(this.lblPontuacaoTurnoJ1);
+            this.Controls.Add(this.lblPontuacaoTotalJ3);
+            this.Controls.Add(this.lblPontuacaoTurnoJ3);
+            this.Controls.Add(this.lblStatusRodada);
+            this.Controls.Add(this.lblStatusPartida);
+            this.Controls.Add(this.lblRodada);
+            this.Controls.Add(this.lblJogadorVez);
+            this.Controls.Add(this.lblNomeJ3);
+            this.Controls.Add(this.lblNomeJ4);
+            this.Controls.Add(this.lblNomeJ2);
+            this.Controls.Add(this.lblNomeJ1);
             this.Controls.Add(this.btnStartTimer);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblVersao);
@@ -347,7 +528,10 @@
             this.Controls.Add(this.lblIDVez);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstCartas);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioPartida";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.ResumeLayout(false);
@@ -381,9 +565,21 @@
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Timer tmrTimer;
         private System.Windows.Forms.Button btnStartTimer;
-        private System.Windows.Forms.ListBox lstJogadas;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox lstStatus;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNomeJ1;
+        private System.Windows.Forms.Label lblNomeJ2;
+        private System.Windows.Forms.Label lblNomeJ4;
+        private System.Windows.Forms.Label lblNomeJ3;
+        private System.Windows.Forms.Label lblJogadorVez;
+        private System.Windows.Forms.Label lblRodada;
+        private System.Windows.Forms.Label lblStatusPartida;
+        private System.Windows.Forms.Label lblStatusRodada;
+        private System.Windows.Forms.Label lblPontuacaoTurnoJ3;
+        private System.Windows.Forms.Label lblPontuacaoTotalJ3;
+        private System.Windows.Forms.Label lblPontuacaoTotalJ1;
+        private System.Windows.Forms.Label lblPontuacaoTurnoJ1;
+        private System.Windows.Forms.Label lblPontuacaoTurnoJ4;
+        private System.Windows.Forms.Label lblPontuacaoTotalJ4;
+        private System.Windows.Forms.Label lblPontuacaoTotalJ2;
+        private System.Windows.Forms.Label lblPontuacaoTurnoJ2;
     }
 }

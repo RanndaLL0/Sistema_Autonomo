@@ -14,6 +14,7 @@ namespace SistemaAutonomo.Entidades
     {
         public Dictionary<int,Jogador> jogadores { get; set; }
         public Form formularioPartida;
+        
         public int IdPartida { get; set; }
 
         public RenderizadorCartas(Form formularioPartida,Dictionary<int,Jogador> jogadores, int idPartida) 
@@ -64,6 +65,20 @@ namespace SistemaAutonomo.Entidades
 
         }
 
+        private List<Label> ListarLabelsNomes()
+        {
+            List<Label> nomesJogadores = new List<Label>();
+            int i = 1;
+            foreach (Label controle in formularioPartida.Controls)
+            {
+                //if (controle.Name == $"lblJ")
+                //{
+                //    Label labelNome = (Label)controle;
+                //    nomesJogadores.Add(labelNome);
+                //}
+            }
+            return nomesJogadores;
+        }
         public void Renderizar()
         {
             string diretorioAtual = Directory.GetCurrentDirectory();
@@ -74,6 +89,8 @@ namespace SistemaAutonomo.Entidades
             foreach (int Id in idJogadores)
             {
                 Jogador jogador = jogadores[Id];
+
+
                 for(int i = 1; i <= numeroDeCartas; i++)
                 {
                     QuebraLinha(jogador);

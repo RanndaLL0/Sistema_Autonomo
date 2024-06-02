@@ -156,7 +156,7 @@ namespace SistemaAutonomo.Entidades
 
             string[] ultimaRodada = jogadas[jogadas.Length - 1].Split(',');
 
-            int x = 1300;
+            int x = 625;
 
             if (numeroRodada != ultimaRodada[0])
             {
@@ -181,21 +181,31 @@ namespace SistemaAutonomo.Entidades
                     Panel carta = new Panel();
                     carta.BackgroundImage = Image.FromFile(caminhoImagem);
                     carta.BackColor = Color.Transparent;
-                    carta.Height = 231;
-                    carta.Width = 143;
+                    carta.Height = 194;
+                    carta.Width = 125;
                     carta.Left = x;
-                    carta.Top = 367;
-                    Label nomeJogador = new Label();
-                    nomeJogador.Text = jogadores[int.Parse(rodada[1])].nome;
-                    nomeJogador.AutoSize = true;
-                    nomeJogador.Left = x + carta.Width / 2 - 15;
-                    nomeJogador.Top = 608;
-
-
+                    carta.Top = 444; 
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
+
+
                     formularioPartida.Controls.Add(carta);
-                    formularioPartida.Controls.Add(nomeJogador);
-                    x -= 164;
+
+
+                    Label nomeJogadorLabel = new Label();
+                    nomeJogadorLabel.Text = jogadores[int.Parse(rodada[1])].nome;
+                    nomeJogadorLabel.ForeColor = Color.White;
+                    nomeJogadorLabel.BackColor = Color.Transparent;
+                    nomeJogadorLabel.Font = new Font("Inter ExtraLight", 15);
+                    nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    nomeJogadorLabel.AutoSize = true;
+
+                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (carta.Width / 4);
+                    nomeJogadorLabel.Top = carta.Top + carta.Height + 16; 
+
+                    
+                    formularioPartida.Controls.Add(nomeJogadorLabel);
+                    
+                    x += 186;
 
                     if(atribuiuPrimeiraCarta)
                     {
@@ -204,7 +214,7 @@ namespace SistemaAutonomo.Entidades
                     }
 
                     cartasJogadas.Add(carta);
-                    nomes.Add(nomeJogador);
+                    nomes.Add(nomeJogadorLabel);
                 }
             }
 
