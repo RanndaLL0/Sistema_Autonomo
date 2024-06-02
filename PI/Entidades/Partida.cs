@@ -196,7 +196,6 @@ namespace SistemaAutonomo.Entidades
                     nomeJogadorLabel.Font = new Font("Inter ExtraLight", 15);
                     nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
                     nomeJogadorLabel.AutoSize = true;
-
                     nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 2);
                     nomeJogadorLabel.Top = carta.Top + carta.Height + 16; 
 

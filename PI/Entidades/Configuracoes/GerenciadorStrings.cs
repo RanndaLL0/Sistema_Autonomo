@@ -86,6 +86,12 @@ namespace SistemaAutonomo.Entidades
             return TratarEntrada(retornoBruto);
         }
 
+        public static string[] ObterJogadas(int idPartida, int round)
+        {
+            string retornoBruto = Jogo.ExibirJogadas2(idPartida, round);
+            return TratarEntrada(retornoBruto);
+        }
+
         public static List<string> ObterCartasApostadas(int idPartida)
         {
             string[] retornoBruto = ObterVez(idPartida);
