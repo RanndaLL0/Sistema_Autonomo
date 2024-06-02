@@ -17,7 +17,7 @@ namespace SistemaAutonomo.Entidades
         private int IdPartida;
         private Partida partida;
         private string rodada = string.Empty;
-        private string naipePrimeiraCartaJogada;
+        private string naipePrimeiraCartaJogada = string.Empty;
 
         public Bot(Partida partida,int idPartida,Timer timer,Dictionary<int,Jogador> jogadores)
         {
@@ -35,6 +35,25 @@ namespace SistemaAutonomo.Entidades
             timer.Enabled = true;
         }
 
+        public void PrimeiraCartaJogada()
+        {
+            string[] retornoBruto = GerenciadorStrings.ObterJogadas(IdPartida);
+
+            if (retornoBruto[0] == "")
+            {
+                return;
+            }
+
+            string[] retornoTratado = retornoBruto[retornoBruto.Length - 1].Split(',');
+            string ultimaRodada = retornoTratado[0];
+
+            if (rodada != ultimaRodada)
+            {
+                rodada = ultimaRodada;
+                naipePrimeiraCartaJogada = retornoTratado[2];
+            }
+        }
+
         public void JogarCopas()
         {
             int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
@@ -43,6 +62,21 @@ namespace SistemaAutonomo.Entidades
                 if(Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == 'C')
                 {
                     partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    naipePrimeiraCartaJogada = string.Empty;
+                    return;
+                }
+            }
+        }
+
+        public void JogarCopas(List<int> todasAsCartasJogadas)
+        {
+            int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
+            for (int i = quantidadeCartas; i >= 1; i--)
+            {
+                if (Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == 'C' && !todasAsCartasJogadas.Contains(i))
+                {
+                    partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    naipePrimeiraCartaJogada = string.Empty;
                     return;
                 }
             }
@@ -59,45 +93,26 @@ namespace SistemaAutonomo.Entidades
                     return;
                 }
             }
+            JogarCopas(todasAsCartasJogadas);
             JogarQualquerCarta(todasAsCartasJogadas, quantidadeDeCartas);
         }
 
-        public void JogarQualquerCarta(List<int> todasAsCartasJogadas,int quantidadeDeCartas)
+        public void JogarMaiorCarta(int quantidadeDeCartas, List<int> todasAsCartasJogadas)
         {
-            for(int i = quantidadeDeCartas; i >= 1; i --)
+            for (int i = quantidadeDeCartas; i >= 1; i--)
             {
-                if(todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i))
+                if (todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i))
                 {
                     partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    naipePrimeiraCartaJogada = string.Empty;
                     return;
                 }
             }
-            return;
+            JogarQualquerCarta(todasAsCartasJogadas, quantidadeDeCartas);
         }
-
-        public void PrimeiraCartaJogada()
-        {
-            string[] retornoBruto = GerenciadorStrings.ObterJogadas(IdPartida);
-
-            if (retornoBruto[0] == "")
-            {
-                return;
-            }
-
-            string[] retornoTratado = retornoBruto[retornoBruto.Length - 1].Split(','); 
-            string ultimaRodada = retornoTratado[0];
-
-            if(rodada != ultimaRodada)
-            {
-                rodada = ultimaRodada;
-                naipePrimeiraCartaJogada = retornoTratado[2];
-            }
-        }
-
 
         public void JogarMaiorCarta(int quantidadeDeCartas)
         {
-
             partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, quantidadeDeCartas);
             naipePrimeiraCartaJogada = string.Empty;
             return;
@@ -114,12 +129,38 @@ namespace SistemaAutonomo.Entidades
             JogarMaiorCarta(quantidadeDeCartas);
         }
 
+        public void ComecarRound(int quantidadeDeCartas,List<int>todasAsCartasJogadas)
+        {
+            int quantidadeCopas = estrategia.QuantidadeCopas(Jogadores[IdJogadores[0]]);
+            if (quantidadeCopas != 0)
+            {
+                JogarCopas(todasAsCartasJogadas);
+                return;
+            }
+            JogarMaiorCarta(quantidadeDeCartas, todasAsCartasJogadas);
+        }
+
+        public void JogarQualquerCarta(List<int> todasAsCartasJogadas, int quantidadeDeCartas)
+        {
+            for (int i = quantidadeDeCartas; i >= 1; i--)
+            {
+                if (todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i))
+                {
+                    partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    naipePrimeiraCartaJogada = string.Empty;
+                    return;
+                }
+            }
+            return;
+        }
+
         public void TomarDecisao()
         {
             List<int> TodasAsCartasJogadas = estrategia.VerificaCartasJogadas();
 
             string[] vez = GerenciadorStrings.ObterVez(IdPartida);
             string idJogadorRodadaAtual = vez[0].Split(',')[1];
+            string rodadaAtual = vez[0].Split(',')[2];
 
 
             if (IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
@@ -128,10 +169,14 @@ namespace SistemaAutonomo.Entidades
                 PrimeiraCartaJogada();
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
-                if (naipePrimeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
+                if (naipePrimeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual) && rodadaAtual == "1")
                 {
                     ComecarRound(quantidadeCartas);
                     return;
+                }
+                else if(naipePrimeiraCartaJogada == string.Empty && IdJogadores[0] == int.Parse(idJogadorRodadaAtual))
+                {
+                    ComecarRound(quantidadeCartas,TodasAsCartasJogadas);
                 }
                 else
                 {
@@ -139,7 +184,5 @@ namespace SistemaAutonomo.Entidades
                 }
             }
         }
-
-
     }
 }
