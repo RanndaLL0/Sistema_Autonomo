@@ -1,4 +1,5 @@
-﻿using MagicTrickServer;
+﻿using lobby;
+using MagicTrickServer;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,14 +21,12 @@ namespace SistemaAutonomo.Entidades
         public Bot bot;
         private RenderizadorCartas Renderizador;
 
-        private int pontuacao;
         private int idPartida;
         private string numeroRodada = string.Empty;
         public string primeiraCartaRound = string.Empty;
         private bool cartasAtualizadasNaRodada1 = true;
         bool atribuiuPrimeiraCarta = true;
 
-        private GerenciadorStrings gerenciadorDeStrings;
 
         public Partida(Dictionary<int,Jogador> jogadores, List<int> idJogadores,Form formularioPartida,int idPartida)
         {
@@ -40,6 +39,7 @@ namespace SistemaAutonomo.Entidades
 
             nomes = new List<Label>();
             Renderizador = new RenderizadorCartas(formularioPartida,jogadores,idPartida);
+            AtualizarTodosOsLabels();
             Renderizador.Renderizar();
         }
 
@@ -59,7 +59,6 @@ namespace SistemaAutonomo.Entidades
 
             RemoverCartaJogada();
             ExibirCartaJogada();
-            //CartasJogadas.Add(carta);
         }
 
         public void JogarCarta(int idJogador,string senhaJogador,int idCarta)
@@ -75,7 +74,6 @@ namespace SistemaAutonomo.Entidades
             RemoverCartaJogada();
             ExibirCartaJogada();
             AtualizarEstadoPartida();
-            //CartasJogadas.Add(carta);
         }
 
 
@@ -199,7 +197,7 @@ namespace SistemaAutonomo.Entidades
                     nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
                     nomeJogadorLabel.AutoSize = true;
 
-                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (carta.Width / 4);
+                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 2);
                     nomeJogadorLabel.Top = carta.Top + carta.Height + 16; 
 
                     
@@ -236,6 +234,151 @@ namespace SistemaAutonomo.Entidades
                 formularioPartida.Controls.Remove(nome);
             }
             nomes.Clear();
+        }
+
+        public void AtualizarPontuacaoJogadores()
+        {
+            foreach(int id in idJogadores)
+            {
+                jogadores[id].ColocarPontuacao(idPartida);
+            }
+            
+        }
+
+        private List<Label> ObterLabelsPontuacaoPartida()
+        {
+            List<Label> labelsPontuacaoPartida = new List<Label>();
+            foreach (Control controle in formularioPartida.Controls)
+            {
+                if (controle.Name.StartsWith("lblPontuacaoTotalJ"))
+                {
+                    Label labePontuacaoTotal = (Label)controle;
+                    labelsPontuacaoPartida.Add(labePontuacaoTotal);
+                }
+            }
+
+            labelsPontuacaoPartida.Sort((a, b) =>
+            {
+                int numeroA = int.Parse(a.Name.Substring("lblPontuacaoTotalJ".Length));
+                int numeroB = int.Parse(b.Name.Substring("lblPontuacaoTotalJ".Length));
+                return numeroA.CompareTo(numeroB);
+            });
+
+            return labelsPontuacaoPartida;
+        }
+
+        private List<Label> ObterLabelsNomes()
+        {
+            List<Label> nomesJogadores = new List<Label>();
+            foreach (Control controle in formularioPartida.Controls)
+            {
+                if (controle.Name.StartsWith("lblNomeJ"))
+                {
+                    Label labelNome = (Label)controle;
+                    nomesJogadores.Add(labelNome);
+                }
+            }
+
+            nomesJogadores.Sort((a, b) =>
+            {
+                int numeroA = int.Parse(a.Name.Substring("lblNomeJ".Length));
+                int numeroB = int.Parse(b.Name.Substring("lblNomeJ".Length));
+                return numeroA.CompareTo(numeroB);
+            });
+
+            return nomesJogadores;
+        }
+
+        private List<Label> ObterLabelsPontuacaoTurno()
+        {
+            List<Label> labelsPontuacaoTurno = new List<Label>();
+            foreach (Control controle in formularioPartida.Controls)
+            {
+                if (controle.Name.StartsWith("lblPontuacaoTurnoJ"))
+                {
+                    Label labePontuacaoTurno = (Label)controle;
+                    labelsPontuacaoTurno.Add(labePontuacaoTurno);
+                }
+            }
+
+            labelsPontuacaoTurno.Sort((a, b) =>
+            {
+                int numeroA = int.Parse(a.Name.Substring("lblPontuacaoTurnoJ".Length));
+                int numeroB = int.Parse(b.Name.Substring("lblPontuacaoTurnoJ".Length));
+                return numeroA.CompareTo(numeroB);
+            });
+
+            return labelsPontuacaoTurno;
+        }
+
+
+        public void AtualizarTodosOsLabels()
+        {
+            AtualizarPontuacaoJogadores();
+            List<Label> labelsNome = ObterLabelsNomes();
+            List<Label> labelsPontuacaoPartida = ObterLabelsPontuacaoPartida();
+            List<Label> labelsPontuacaoTurno = ObterLabelsPontuacaoTurno();
+            string[] vez = GerenciadorStrings.ObterVez(idPartida);
+            foreach (Control controle in formularioPartida.Controls)
+            {
+                switch (controle.Name) {
+                    case "lblRodada":
+                        string rodada = vez[0].Split(',')[2];
+                        Label labelRodada = (Label)controle;
+                        labelRodada.Text = rodada;
+                        break;
+
+                    case "lblJogadorVez":
+                        Label labelJogadorVez = (Label)controle;
+                        int idJogadorDaRodada = int.Parse(vez[0].Split(',')[1]);
+                        string nomeJogador = jogadores[idJogadorDaRodada].nome;
+                        labelJogadorVez.Text = nomeJogador;
+                        break;
+
+                    case "lblStatusPartida":
+                        Label labelStatusPartida = (Label)controle;
+                        string statusPartida = vez[0].Split(',')[0];
+                        if (statusPartida == "J")
+                        {
+                            statusPartida = "Jogando";
+                        }
+                        else if (statusPartida == "F")
+                        {
+                            statusPartida = "Finalizado";
+                        }
+                        else if (statusPartida == "A")
+                        {
+                            statusPartida = "Aguardando";
+                        }
+                        else
+                        {
+                            statusPartida = "Empate";
+                        }
+                        labelStatusPartida.Text = statusPartida;
+                        break;
+
+                    case "lblStatusRodada":
+                        Label labelStatusRodada = (Label)controle;
+                        string statusRodada = vez[0].Split(',')[3];
+                        if (statusRodada == "C")
+                        {
+                            statusRodada = "Jogando";
+                        }
+                        else
+                        {
+                            statusRodada = "Apostando";
+                        }
+                        labelStatusRodada.Text = statusRodada;
+                        break;
+                }
+            }
+
+            for (int i = 0; i < jogadores.Count; i++)
+            {
+            labelsNome[i].Text = jogadores[idJogadores[i]].nome;
+            labelsPontuacaoPartida[i].Text = jogadores[idJogadores[i]].pontuacaoDaPartida.ToString();
+            labelsPontuacaoTurno[i].Text = jogadores[idJogadores[i]].pontuacaoDoTurno.ToString();
+            }
         }
 
         public void AtualizarEstadoPartida()
@@ -275,14 +418,7 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        public void AtualizarPontuacaoJogadores()
-        {
-            foreach(int Id in idJogadores)
-            {
-                jogadores[Id].ObterPontuacaoPartida();
-                jogadores[Id].ObterPontuacaoTurno();
-            }
-        }
+
 
     }
 }

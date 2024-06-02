@@ -38,7 +38,7 @@ namespace lobby
             IdPartida = idPartida;
             VerificarVez();
             inicializadorPartida = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
-            AtualizarCartas();
+            //AtualizarCartas();
             txtIdJogador.Text = JogadorNaMaquina[0];
             txtSenhaJogador.Text = JogadorNaMaquina[1];
             lblVersao.Text = Jogo.Versao;
@@ -76,10 +76,10 @@ namespace lobby
             }
 
             string[] dadosVez = retornoVez.Split(',');
-            lblPartidaStatus.Text = dadosVez[0];
-            lblIDVez.Text = dadosVez[1];
-            lblRodadaVez.Text = dadosVez[2];
-            lblStatusVez.Text = dadosVez[3];
+            //lblPartidaStatus.Text = dadosVez[0];
+            //lblIDVez.Text = dadosVez[1];
+            //lblRodadaVez.Text = dadosVez[2];
+            //lblStatusVez.Text = dadosVez[3];
 
         }
         private void btnJogar_Click(object sender, EventArgs e)
@@ -95,8 +95,8 @@ namespace lobby
 
         private void btnAtualizarVez_Click(object sender, EventArgs e)
         {
-            VerificarVez();
-            AtualizarCartas();
+            //VerificarVez();
+            //AtualizarCartas();
         }
 
         private void btnAtualizarCartas_Click(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace lobby
                         continue;
                     }
                     string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-                    return true;   
+                    return true;
                 }
             }
             return false;
@@ -137,13 +137,20 @@ namespace lobby
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             tmrTimer.Enabled = false;
-            VerificarVez();
+            tmrTimer2.Enabled = true;
             inicializadorPartida.partida.AtualizarEstadoPartida();
             inicializadorPartida.Bot.TomarDecisao();
             //Jogar();
             tmrTimer.Enabled = true;
         }
 
-
+        private void tmrTimer2_Tick(object sender, EventArgs e)
+        {
+            tmrTimer2.Enabled = false;
+            inicializadorPartida.partida.RemoverCartaApostada();
+            inicializadorPartida.partida.RemoverCartaJogada();
+            inicializadorPartida.partida.AtualizarTodosOsLabels();
+            tmrTimer2.Enabled = true;
+        }
     }
 }

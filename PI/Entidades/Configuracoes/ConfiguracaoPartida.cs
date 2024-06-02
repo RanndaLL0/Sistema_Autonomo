@@ -1,4 +1,5 @@
-﻿using MagicTrickServer;
+﻿using lobby;
+using MagicTrickServer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace SistemaAutonomo.Entidades
             string[] listaDeJogadores = GerenciadorStrings.ObterInformacaoDosJogadores(idPartida);
             return listaDeJogadores.Length;
         }
+
+
 
         public static int QuantidadeCartasJogador(int idPartida)
         {

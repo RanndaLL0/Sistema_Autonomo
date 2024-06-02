@@ -14,8 +14,8 @@ namespace SistemaAutonomo.Entidades
     {
         private int id;
         public string nome { get;}
-        private int pontuacaoDaPartida { get; set; }
-        private int pontuacaoDoTurno { get; set; }
+        public int pontuacaoDaPartida { get; set; }
+        public int pontuacaoDoTurno { get; set; }
         public Cartas Cartas { get; set; }
         public PosicaoCartas Posicao { get; set; }
         public string senha { get; set; }
@@ -49,14 +49,18 @@ namespace SistemaAutonomo.Entidades
             pontuacaoDoTurno = 0;
         }
 
-        public int ObterPontuacaoTurno()
+        public void ColocarPontuacao(int idPartida)
         {
-            return 0;
-        }
-
-        public int ObterPontuacaoPartida()
-        {
-            return 0;
+            string[] jogadores = GerenciadorStrings.ObterInformacaoDosJogadores(idPartida);
+            foreach(string jogador in jogadores)
+            {
+                int idJogador = int.Parse(jogador.Split(',')[0]);
+                if (idJogador == id)
+                {
+                    pontuacaoDaPartida = int.Parse(jogador.Split(',')[2]);
+                    pontuacaoDoTurno = int.Parse(jogador.Split(',')[3]);
+                }
+            }
         }
 
         public void JogarCarta(int idCarta,string path, char naipeCarta)

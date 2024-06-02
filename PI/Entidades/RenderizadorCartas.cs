@@ -65,24 +65,12 @@ namespace SistemaAutonomo.Entidades
 
         }
 
-        private List<Label> ListarLabelsNomes()
-        {
-            List<Label> nomesJogadores = new List<Label>();
-            int i = 1;
-            foreach (Label controle in formularioPartida.Controls)
-            {
-                //if (controle.Name == $"lblJ")
-                //{
-                //    Label labelNome = (Label)controle;
-                //    nomesJogadores.Add(labelNome);
-                //}
-            }
-            return nomesJogadores;
-        }
+
         public void Renderizar()
         {
             string diretorioAtual = Directory.GetCurrentDirectory();
             List<int> idJogadores = jogadores.Keys.ToList();
+
 
             int numeroDeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
