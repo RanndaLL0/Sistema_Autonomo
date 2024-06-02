@@ -138,8 +138,8 @@ namespace lobby
         {
             tmrTimer.Enabled = false;
             VerificarVez();
-            inicializadorPartida.Bot.TomarDecisao();
             inicializadorPartida.partida.AtualizarEstadoPartida();
+            inicializadorPartida.Bot.TomarDecisao();
             //Jogar();
             tmrTimer.Enabled = true;
         }
