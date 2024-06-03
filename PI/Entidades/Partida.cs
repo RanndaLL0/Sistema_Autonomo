@@ -16,8 +16,10 @@ namespace SistemaAutonomo.Entidades
         private Dictionary<int,Jogador> jogadores;
         private List<int> idJogadores;
         private Form formularioPartida;
-        private List<Label> nomes;
+        private List<Label> nomesDosJogadores;
+        private List<Label> nomeDosJogadoresApostas;
         private List<Panel> cartasJogadas;
+        private List<Panel> cartasApostadas;
         public Bot bot;
         private RenderizadorCartas Renderizador;
 
@@ -36,8 +38,10 @@ namespace SistemaAutonomo.Entidades
             this.formularioPartida = formularioPartida;
 
             cartasJogadas = new List<Panel>();
+            cartasApostadas = new List<Panel>();
 
-            nomes = new List<Label>();
+            nomesDosJogadores = new List<Label>();
+            nomeDosJogadoresApostas = new List<Label>();
             Renderizador = new RenderizadorCartas(formularioPartida,jogadores,idPartida);
             AtualizarTodosOsLabels();
             Renderizador.Renderizar();
@@ -163,8 +167,8 @@ namespace SistemaAutonomo.Entidades
                 numeroRodada = ultimaRodada[0];
                 primeiraCartaRound = string.Empty;
                 atribuiuPrimeiraCarta = true;
-                LimparCartasJogadas(cartasJogadas);
-                LimparLabels(nomes);
+                LimparCartasJogadas();
+                LimparLabels(nomesDosJogadores);
             }
 
             foreach (string jogada in jogadas)
@@ -213,7 +217,7 @@ namespace SistemaAutonomo.Entidades
                     }
 
                     cartasJogadas.Add(carta);
-                    nomes.Add(nomeJogadorLabel);
+                    nomesDosJogadores.Add(nomeJogadorLabel);
                 }
             }
 
@@ -221,11 +225,11 @@ namespace SistemaAutonomo.Entidades
 
         public void ExibirCartaApostada()
         {
-            List<string> cartasApostadas = GerenciadorStrings.ObterCartasApostadas(idPartida);
+            List<string> informacoesApostas = GerenciadorStrings.ObterCartasApostadas(idPartida);
 
-            if (cartasApostadas == null) return;
+            if (informacoesApostas == null) return;
 
-            foreach (string aposta in cartasApostadas)
+            foreach(string aposta in informacoesApostas)
             {
                 int idJogador = int.Parse(aposta.Split(',')[0].Substring(2));
                 string naipeCarta = aposta.Split(',')[1];
@@ -260,20 +264,29 @@ namespace SistemaAutonomo.Entidades
 
                 formularioPartida.Controls.Add(nomeJogadorLabel);
 
-                cartasJogadas.Add(carta);
-                nomes.Add(nomeJogadorLabel);
+                cartasApostadas.Add(carta);
+                nomeDosJogadoresApostas.Add(nomeJogadorLabel);
                 
             }
 
         }
 
-        private void LimparCartasJogadas(List<Panel> cartasJogadas)
+        private void LimparCartasJogadas()
         {
             foreach (Panel carta in cartasJogadas)
             {
                 formularioPartida.Controls.Remove(carta);
             }
             cartasJogadas.Clear();
+        }
+
+        private void LimparCartasApostadas()
+        {
+            foreach (Panel carta in cartasJogadas)
+            {
+                formularioPartida.Controls.Remove(carta);
+            }
+            cartasApostadas.Clear();
         }
 
         private void LimparLabels(List<Label> nomes)
@@ -452,6 +465,8 @@ namespace SistemaAutonomo.Entidades
                 Renderizador.RemoverPanels();
                 Renderizador.ResetarPosicoes();
                 Renderizador.Renderizar();
+                LimparCartasApostadas();
+                LimparLabels(nomeDosJogadoresApostas);
             }
             if(rodada == "2")
             {

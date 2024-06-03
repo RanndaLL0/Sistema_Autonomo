@@ -190,12 +190,12 @@ namespace SistemaAutonomo.Entidades
 
         public void Apostar(string rodadaAtual)
         {
-            if(rodadaAtual == "7")
+            if(rodadaAtual == "9")
             {
-                int quantidaDeCopasMao = estrategia.QuantidadeCopas(Jogadores[IdJogadores[0]]);
                 List<int> todasAsCartasJogadas = estrategia.VerificaCartasJogadas();
                 int pontuacaoTurno = Jogadores[IdJogadores[0]].pontuacaoDoTurno;
                 int quantidadeDeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
+                foiApostado = true;
 
                 if (pontuacaoTurno > 4)
                 {
@@ -209,7 +209,6 @@ namespace SistemaAutonomo.Entidades
                     if(apostou) return;
                     EscolherCartaAposta(6, quantidadeDeCartas, 1, todasAsCartasJogadas);
                 }
-
             }
             else
             {
