@@ -18,6 +18,7 @@ namespace SistemaAutonomo.Entidades
         private Partida partida;
         private string rodada = string.Empty;
         public string naipePrimeiraCartaJogada = string.Empty;
+        private bool foiApostado = false;
 
         public Bot(Partida partida,int idPartida,Timer timer,Dictionary<int,Jogador> jogadores)
         {
@@ -42,6 +43,7 @@ namespace SistemaAutonomo.Entidades
             if (retornoBruto[0] == "")
             {
                 naipePrimeiraCartaJogada = string.Empty;
+                foiApostado = false;
                 return;
             }
 
@@ -59,7 +61,7 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
-        public void JogarCopas()
+        public void JogarCopasPrimeiraRodada()
         {
             int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
             for(int i = quantidadeCartas; i >= 1; i--)
@@ -71,6 +73,7 @@ namespace SistemaAutonomo.Entidades
                     return;
                 }
             }
+            JogarMaiorCartaPrimeiraRodada(quantidadeCartas);
         }
 
         public void JogarCopas(List<int> todasAsCartasJogadas)
@@ -102,6 +105,20 @@ namespace SistemaAutonomo.Entidades
             JogarCopas(todasAsCartasJogadas);
         }
 
+        public void JogarMaiorCarta(int quantidadeDeCartas)
+        {
+            for (int i = quantidadeDeCartas; i >= 1; i--)
+            {
+                if (Jogadores[IdJogadores[0]].Cartas.cartas[i].Naipe == char.Parse(naipePrimeiraCartaJogada))
+                {
+                    partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    naipePrimeiraCartaJogada = string.Empty;
+                    return;
+                }
+            }
+            JogarCopasPrimeiraRodada();
+        }
+
         public void JogarQualquerCarta(int quantidadeDeCartas, List<int> todasAsCartasJogadas)
         {
             for (int i = quantidadeDeCartas; i >= 1; i--)
@@ -116,22 +133,22 @@ namespace SistemaAutonomo.Entidades
             JogarCopas(todasAsCartasJogadas);
         }
 
-        public void JogarMaiorCarta(int quantidadeDeCartas)
+        public void JogarMaiorCartaPrimeiraRodada(int quantidadeDeCartas)
         {
             partida.JogarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, quantidadeDeCartas);
             naipePrimeiraCartaJogada = string.Empty;
             return;
         }
 
-        public void ComecarRound(int quantidadeDeCartas)
+        public void ComecarPrimeiraRodada(int quantidadeDeCartas)
         {
             int quantidadeCopas = estrategia.QuantidadeCopas(Jogadores[IdJogadores[0]]);
             if (quantidadeCopas != 0)
             {
-                JogarCopas();
+                JogarCopasPrimeiraRodada();
                 return;
             }
-            JogarMaiorCarta(quantidadeDeCartas);
+            JogarMaiorCartaPrimeiraRodada(quantidadeDeCartas);
         }
 
         public void ComecarRound(int quantidadeDeCartas,List<int>todasAsCartasJogadas)
@@ -174,6 +191,8 @@ namespace SistemaAutonomo.Entidades
                         if(!todasAsCartasJogadas.Contains(i))
                         {
                             partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha,i);
+                            foiApostado = true;
+                            break;
                         }
                     }
                 }
@@ -184,6 +203,8 @@ namespace SistemaAutonomo.Entidades
                         if (!todasAsCartasJogadas.Contains(i))
                         {
                             partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                            foiApostado = true;
+                            break;
                         }
                     }
                 }
@@ -209,17 +230,24 @@ namespace SistemaAutonomo.Entidades
 
                 if(naipePrimeiraCartaJogada == string.Empty && rodadaAtual == "1")
                 {
-                    ComecarRound(quantidadeCartas);
+                    ComecarPrimeiraRodada(quantidadeCartas);
                 }
                 else if(naipePrimeiraCartaJogada == string.Empty)
                 {
                     ComecarRound(quantidadeCartas,todasAsCartasJogadas);
                 }
+                else if(rodadaAtual == "1")
+                {
+                    JogarMaiorCarta(quantidadeCartas);
+                }
                 else
                 {
                     JogarMaiorCarta(quantidadeCartas,todasAsCartasJogadas);
                 }
-                Apostar(rodadaAtual);
+                if(!foiApostado)
+                {
+                    Apostar(rodadaAtual);
+                }
             }
         }
     }
