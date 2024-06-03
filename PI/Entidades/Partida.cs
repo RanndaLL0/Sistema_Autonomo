@@ -254,7 +254,7 @@ namespace SistemaAutonomo.Entidades
                     Label labePontuacaoTotal = (Label)controle;
                     labelsPontuacaoPartida.Add(labePontuacaoTotal);
                 }
-            }
+        }
 
             labelsPontuacaoPartida.Sort((a, b) =>
             {

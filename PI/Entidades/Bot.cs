@@ -17,7 +17,7 @@ namespace SistemaAutonomo.Entidades
         private int IdPartida;
         private Partida partida;
         private string rodada = string.Empty;
-        private string naipePrimeiraCartaJogada = string.Empty;
+        public string naipePrimeiraCartaJogada = string.Empty;
 
         public Bot(Partida partida,int idPartida,Timer timer,Dictionary<int,Jogador> jogadores)
         {
@@ -35,21 +35,28 @@ namespace SistemaAutonomo.Entidades
             timer.Enabled = true;
         }
 
-        public void PrimeiraCartaJogada(int idJogadorRodadaAtual, int rodadaAtual)
+        public void PrimeiraCartaJogada(int idJogadorRodadaAtual, string rodadaAtual)
         {
-            string[] retornoBruto = GerenciadorStrings.ObterJogadas(IdPartida, rodadaAtual);
-
+            string[] retornoBruto = GerenciadorStrings.ObterJogadas(IdPartida);
 
             if (retornoBruto[0] == "")
             {
                 naipePrimeiraCartaJogada = string.Empty;
-            }
-            else
-            {
-                string[] retornoTratado = retornoBruto[0].Split(',');
-                naipePrimeiraCartaJogada = retornoTratado[2];
+                return;
             }
 
+
+            for (int i = 0; i < retornoBruto.Length; i++)
+            {
+                string[] ultimaRodada = retornoBruto[i].Split(',');
+
+                if (rodadaAtual == ultimaRodada[0])
+                {
+                    naipePrimeiraCartaJogada = ultimaRodada[2];
+                    break;
+                }
+                naipePrimeiraCartaJogada = string.Empty;
+            }
         }
 
         public void JogarCopas()
@@ -140,7 +147,7 @@ namespace SistemaAutonomo.Entidades
 
         public void JogarQualquerCarta(List<int> todasAsCartasJogadas, int quantidadeDeCartas)
         {
-            for (int i = quantidadeDeCartas; i >= 1; i--)
+            for (int i = 1; i <= quantidadeDeCartas; i++)
             {
                 if (todasAsCartasJogadas != null && !todasAsCartasJogadas.Contains(i))
                 {
@@ -151,34 +158,68 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
+        public void Apostar(string rodadaAtual)
+        {
+            if(rodadaAtual == "7")
+            {
+                int quantidaDeCopasMao = estrategia.QuantidadeCopas(Jogadores[IdJogadores[0]]);
+                List<int> todasAsCartasJogadas = estrategia.VerificaCartasJogadas();
+                int pontuacaoTurno = Jogadores[IdJogadores[0]].pontuacaoDoTurno;
+                int quantidadeDeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
+
+                if (pontuacaoTurno > 4)
+                {
+                    for(int i = 6;i <= quantidadeDeCartas;i++)
+                    {
+                        if(!todasAsCartasJogadas.Contains(i))
+                        {
+                            partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha,i);
+                        }
+                    }
+                }
+                else if(pontuacaoTurno <= 4)
+                {
+                    for (int i = 5; i <= 1; i--)
+                    {
+                        if (!todasAsCartasJogadas.Contains(i))
+                        {
+                            partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, 0);
+            }
+        }
+
         public void TomarDecisao()
         {
-            List<int> TodasAsCartasJogadas = estrategia.VerificaCartasJogadas();
+            List<int> todasAsCartasJogadas = estrategia.VerificaCartasJogadas();
 
             string[] vez = GerenciadorStrings.ObterVez(IdPartida);
             int idJogadorRodadaAtual = int.Parse(vez[0].Split(',')[1]);
-            int rodadaAtual = int.Parse(vez[0].Split(',')[2]);
+            string rodadaAtual = vez[0].Split(',')[2];
 
             PrimeiraCartaJogada(idJogadorRodadaAtual, rodadaAtual);
-            if (IdJogadores[0] == idJogadorRodadaAtual)
+            if(IdJogadores[0] == idJogadorRodadaAtual)
             {
-
-                
                 int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
-                if (naipePrimeiraCartaJogada == string.Empty && rodadaAtual == 1)
+                if(naipePrimeiraCartaJogada == string.Empty && rodadaAtual == "1")
                 {
                     ComecarRound(quantidadeCartas);
-                    return;
                 }
                 else if(naipePrimeiraCartaJogada == string.Empty)
                 {
-                    ComecarRound(quantidadeCartas,TodasAsCartasJogadas);
+                    ComecarRound(quantidadeCartas,todasAsCartasJogadas);
                 }
                 else
                 {
-                    JogarMaiorCarta(quantidadeCartas,TodasAsCartasJogadas);
+                    JogarMaiorCarta(quantidadeCartas,todasAsCartasJogadas);
                 }
+                Apostar(rodadaAtual);
             }
         }
     }
