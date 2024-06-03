@@ -175,6 +175,19 @@ namespace SistemaAutonomo.Entidades
             }
         }
 
+        public bool EscolherCartaAposta(int inicio,int final,int incrementador,List<int> todasAsCartasJogadas)
+        {
+            for (int i = inicio; i != final; i += incrementador)
+            {
+                if (!todasAsCartasJogadas.Contains(i))
+                {
+                    partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void Apostar(string rodadaAtual)
         {
             if(rodadaAtual == "7")
@@ -186,28 +199,17 @@ namespace SistemaAutonomo.Entidades
 
                 if (pontuacaoTurno > 4)
                 {
-                    for(int i = 6;i <= quantidadeDeCartas;i++)
-                    {
-                        if(!todasAsCartasJogadas.Contains(i))
-                        {
-                            partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha,i);
-                            foiApostado = true;
-                            break;
-                        }
-                    }
+                    bool apostou = EscolherCartaAposta(6, quantidadeDeCartas, 1,todasAsCartasJogadas);
+                    if(apostou) return;
+                    EscolherCartaAposta(5, 1, -1, todasAsCartasJogadas);
                 }
-                else if(pontuacaoTurno <= 4)
+                else
                 {
-                    for (int i = 5; i <= 1; i--)
-                    {
-                        if (!todasAsCartasJogadas.Contains(i))
-                        {
-                            partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, i);
-                            foiApostado = true;
-                            break;
-                        }
-                    }
+                    bool apostou = EscolherCartaAposta(5, 1, -1, todasAsCartasJogadas);
+                    if(apostou) return;
+                    EscolherCartaAposta(6, quantidadeDeCartas, 1, todasAsCartasJogadas);
                 }
+
             }
             else
             {
@@ -232,13 +234,13 @@ namespace SistemaAutonomo.Entidades
                 {
                     ComecarPrimeiraRodada(quantidadeCartas);
                 }
-                else if(naipePrimeiraCartaJogada == string.Empty)
-                {
-                    ComecarRound(quantidadeCartas,todasAsCartasJogadas);
-                }
                 else if(rodadaAtual == "1")
                 {
                     JogarMaiorCarta(quantidadeCartas);
+                }
+                else if(naipePrimeiraCartaJogada == string.Empty)
+                {
+                    ComecarRound(quantidadeCartas,todasAsCartasJogadas);
                 }
                 else
                 {

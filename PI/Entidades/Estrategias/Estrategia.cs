@@ -37,7 +37,7 @@ namespace SistemaAutonomo.Entidades.Estrategias
         public List<int> VerificaCartasJogadas()
         {
             List<int> idsCartasJogadas = GerenciadorStrings.ObterJogadasPeloJogador(IdPartida, IdJogadorNaMaquina);
-            List<int> idsCartasApostadas = GerenciadorStrings.ObterIdsCartasApostadasJogador(IdPartida, IdJogadorNaMaquina);
+            List<int> idsCartasApostadas = GerenciadorStrings.ObterCartaApostadaJogadorMaquina(IdPartida, IdJogadorNaMaquina);
 
             if (idsCartasJogadas == null || idsCartasApostadas == null) { return null; }
 

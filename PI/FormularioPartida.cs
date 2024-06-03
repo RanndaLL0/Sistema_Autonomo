@@ -150,6 +150,8 @@ namespace lobby
             inicializadorPartida.partida.RemoverCartaApostada();
             inicializadorPartida.partida.RemoverCartaJogada();
             inicializadorPartida.partida.AtualizarTodosOsLabels();
+            inicializadorPartida.partida.ExibirCartaJogada();
+            inicializadorPartida.partida.ExibirCartaApostada();
             tmrTimer2.Enabled = true;
         }
     }

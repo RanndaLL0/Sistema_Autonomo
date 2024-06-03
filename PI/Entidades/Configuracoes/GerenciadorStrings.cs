@@ -111,7 +111,24 @@ namespace SistemaAutonomo.Entidades
 
         }
 
-        public static List<int> ObterIdsCartasApostadasJogador(int idPartida,int idJogadorMaquina)
+        public static Dictionary<int,int> ObterTodasAsApostas(int idPartida)
+        {
+            List<string> cartasApostadas = ObterCartasApostadas(idPartida);
+            if (cartasApostadas == null)
+            {
+                return null;
+            }
+            Dictionary<int,int> todasAsApostas = new Dictionary<int, int>();
+            foreach (string Carta in cartasApostadas)
+            {
+                int idJogador = int.Parse(Carta.Split(',')[0].Substring(2));
+                int idCarta = int.Parse(Carta.Split(',')[4]);
+                todasAsApostas[idJogador] = idCarta;
+            }
+            return todasAsApostas;
+        }
+
+        public static List<int> ObterCartaApostadaJogadorMaquina(int idPartida,int idJogadorMaquina)
         {
             List<string> cartasApostadas = ObterCartasApostadas(idPartida);
             if (cartasApostadas == null)

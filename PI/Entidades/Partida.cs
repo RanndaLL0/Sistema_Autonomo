@@ -217,6 +217,64 @@ namespace SistemaAutonomo.Entidades
 
         }
 
+        public void ExibirCartaApostada()
+        {
+            Dictionary<int, int> cartasApostadas = GerenciadorStrings.ObterTodasAsApostas(idPartida);
+
+            if (cartasApostadas == null) return;
+
+            foreach (int idJogadores in cartasApostadas.Keys)
+            {
+
+                string[] rodada = aposta.Split(',');
+                if (rodada[0] == ultimaRodada[0])
+                {
+                    string naipeCarta = rodada[2];
+                    string numeroCarta = rodada[3];
+                    string diretorioAtual = Directory.GetCurrentDirectory();
+                    string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
+
+                    Panel carta = new Panel();
+                    carta.BackgroundImage = Image.FromFile(caminhoImagem);
+                    carta.BackColor = Color.Transparent;
+                    carta.Height = 194;
+                    carta.Width = 125;
+                    carta.Left = x;
+                    carta.Top = 444;
+                    carta.BackgroundImageLayout = ImageLayout.Stretch;
+
+
+                    formularioPartida.Controls.Add(carta);
+
+
+                    Label nomeJogadorLabel = new Label();
+                    nomeJogadorLabel.Text = jogadores[int.Parse(rodada[1])].nome;
+                    nomeJogadorLabel.ForeColor = Color.White;
+                    nomeJogadorLabel.BackColor = Color.Transparent;
+                    nomeJogadorLabel.Font = new Font("Inter ExtraLight", 15);
+                    nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    nomeJogadorLabel.AutoSize = true;
+                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 2);
+                    nomeJogadorLabel.Top = carta.Top + carta.Height + 16;
+
+
+                    formularioPartida.Controls.Add(nomeJogadorLabel);
+
+                    x += 186;
+
+                    if (atribuiuPrimeiraCarta)
+                    {
+                        primeiraCartaRound = naipeCarta;
+                        atribuiuPrimeiraCarta = false;
+                    }
+
+                    cartasJogadas.Add(carta);
+                    nomes.Add(nomeJogadorLabel);
+                }
+            }
+
+        }
+
         private void LimparCartasJogadas(List<Panel> cartasJogadas)
         {
             foreach (Panel carta in cartasJogadas)

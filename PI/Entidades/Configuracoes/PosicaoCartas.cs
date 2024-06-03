@@ -13,9 +13,11 @@
     public int PulaLinhaY { get; set; }
     public string DesenhoCarta { get; set; }
     public string SilhuetaCarta { get; set; }
+    public int XCartaApostada { get; set; }
+    public int YCartaApostada { get; set; }
 
 
-    public PosicaoCartas(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY, string desenhoCarta,string silhuetaCarta)
+    public PosicaoCartas(int x, int xInicial, int y, int yInicial, int contador, int largura, int altura, int deslocamentoX, int deslocamentoY, int pulaLinhaX, int pulaLinhaY, string desenhoCarta,string silhuetaCarta,int xCartaApostada)
     {
         X = x;
         XInicial = xInicial;
@@ -30,5 +32,7 @@
         PulaLinhaY = pulaLinhaY;
         DesenhoCarta = desenhoCarta;
         SilhuetaCarta = silhuetaCarta;
+        XCartaApostada = xCartaApostada;
+        YCartaApostada= 62;
     }
 }

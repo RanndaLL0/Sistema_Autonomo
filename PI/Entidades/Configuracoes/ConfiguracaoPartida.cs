@@ -42,15 +42,15 @@ namespace SistemaAutonomo.Entidades
 
             if (quantidadeDeJogadores == 2)
             {
-                configuracoes.Add(new PosicaoCartas(x: 631, xInicial: 631, y: 769, yInicial: 769, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new PosicaoCartas(x: 1212, xInicial: 1212, y: 171, yInicial: 171, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
+                configuracoes.Add(new PosicaoCartas(x: 631, xInicial: 631, y: 769, yInicial: 769, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png", xCartaApostada: 109));
+                configuracoes.Add(new PosicaoCartas(x: 1212, xInicial: 1212, y: 171, yInicial: 171, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png", xCartaApostada: 226));
             }
             else
             {
-                configuracoes.Add(new PosicaoCartas(x: 631, xInicial: 631, y: 769, yInicial: 769, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new PosicaoCartas(x: 1527, xInicial: 1527, y: 843, yInicial: 843, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0, desenhoCarta: $"|esq.png", silhuetaCarta: $"|dir.png"));
-                configuracoes.Add(new PosicaoCartas(x: 1212, xInicial: 1212, y: 171, yInicial: 171, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png"));
-                configuracoes.Add(new PosicaoCartas(x: 247, xInicial: 247, y: 260, yInicial: 260, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0, desenhoCarta: $"|dir.png", silhuetaCarta: $"|dir.png"));
+                configuracoes.Add(new PosicaoCartas(x: 631, xInicial: 631, y: 769, yInicial: 769, contador: 0, largura: 91, altura: 137, deslocamentoX: 97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: 143, desenhoCarta: $"|.png", silhuetaCarta: $"|.png", xCartaApostada: 109));
+                configuracoes.Add(new PosicaoCartas(x: 1527, xInicial: 1527, y: 843, yInicial: 843, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: -97, pulaLinhaX: 143, pulaLinhaY: 0, desenhoCarta: $"|esq.png", silhuetaCarta: $"|dir.png", xCartaApostada: 226));
+                configuracoes.Add(new PosicaoCartas(x: 1212, xInicial: 1212, y: 171, yInicial: 171, contador: 0, largura: 91, altura: 137, deslocamentoX: -97, deslocamentoY: 0, pulaLinhaX: 0, pulaLinhaY: -143, desenhoCarta: $"|invertido.png", silhuetaCarta: $"|.png", xCartaApostada: 342));
+                configuracoes.Add(new PosicaoCartas(x: 247, xInicial: 247, y: 260, yInicial: 260, contador: 0, largura: 137, altura: 91, deslocamentoX: 0, deslocamentoY: 97, pulaLinhaX: -143, pulaLinhaY: 0, desenhoCarta: $"|dir.png", silhuetaCarta: $"|dir.png", xCartaApostada: 456));
             }
             return configuracoes;
         }
