@@ -21,7 +21,10 @@ namespace SistemaAutonomo.Entidades.Estrategias
 
         public int QuantidadeCopas(Jogador jogador)
         {
+            List<int> cartasJogadas = VerificaCartasJogadas();
             int quantidadeCopas = 0;
+            int quantidadeCopasUsadas = 0;
+
             int quantidadeCartas = ConfiguracaoPartida.QuantidadeCartasJogador(IdPartida);
 
             for(int i = 1; i <= quantidadeCartas; i++)
@@ -31,7 +34,21 @@ namespace SistemaAutonomo.Entidades.Estrategias
                     quantidadeCopas++;
                 }
             }
-            return quantidadeCopas;
+
+            if (cartasJogadas == null)
+            {
+                return quantidadeCopas;
+            }
+
+            for (int i = 0; i < cartasJogadas.Count; i++)
+            {
+                if (jogador.Cartas.cartas[cartasJogadas[i]].Naipe == 'C')
+                {
+                    quantidadeCopasUsadas++;
+                }
+            }
+
+            return quantidadeCopas - quantidadeCopasUsadas;
         }
 
         public List<int> VerificaCartasJogadas()
@@ -43,11 +60,9 @@ namespace SistemaAutonomo.Entidades.Estrategias
 
             List<int> idsTodasCartasJogadas = new List<int>();
 
-            if (idsCartasJogadas != null || idsCartasApostadas.Count == 0)
-            {
-                idsTodasCartasJogadas.AddRange(idsCartasJogadas);
-                idsTodasCartasJogadas.AddRange(idsCartasApostadas);
-            }
+            idsTodasCartasJogadas.AddRange(idsCartasJogadas);
+            idsTodasCartasJogadas.AddRange(idsCartasApostadas);
+            
             return idsTodasCartasJogadas;
         }
     }
