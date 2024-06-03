@@ -86,12 +86,6 @@ namespace SistemaAutonomo.Entidades
             return TratarEntrada(retornoBruto);
         }
 
-        public static string[] ObterJogadas(int idPartida, int round)
-        {
-            string retornoBruto = Jogo.ExibirJogadas2(idPartida, round);
-            return TratarEntrada(retornoBruto);
-        }
-
         public static List<string> ObterCartasApostadas(int idPartida)
         {
             string[] retornoBruto = ObterVez(idPartida);
@@ -109,23 +103,6 @@ namespace SistemaAutonomo.Entidades
             }
             return cartasApostadas;
 
-        }
-
-        public static Dictionary<int,int> ObterTodasAsApostas(int idPartida)
-        {
-            List<string> cartasApostadas = ObterCartasApostadas(idPartida);
-            if (cartasApostadas == null)
-            {
-                return null;
-            }
-            Dictionary<int,int> todasAsApostas = new Dictionary<int, int>();
-            foreach (string Carta in cartasApostadas)
-            {
-                int idJogador = int.Parse(Carta.Split(',')[0].Substring(2));
-                int idCarta = int.Parse(Carta.Split(',')[4]);
-                todasAsApostas[idJogador] = idCarta;
-            }
-            return todasAsApostas;
         }
 
         public static List<int> ObterCartaApostadaJogadorMaquina(int idPartida,int idJogadorMaquina)
@@ -146,14 +123,6 @@ namespace SistemaAutonomo.Entidades
                 }
             }
             return idCartasApostadasJogador;
-        }
-
-        public static string[] UltimaCartaJogada(int idPartida)
-        {
-            string[] retornoBruto = ObterJogadas(idPartida);
-            string[] ultimaJogada = retornoBruto[retornoBruto.Length - 1].Split(',');
-
-            return ultimaJogada;
         }
     }
 }

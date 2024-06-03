@@ -91,6 +91,7 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
+            ExibirCartaApostada();
             RemoverCartaApostada();
         }
 
@@ -104,6 +105,7 @@ namespace SistemaAutonomo.Entidades
                 return;
             }
 
+            ExibirCartaApostada();
             RemoverCartaApostada();
         }
 
@@ -196,7 +198,7 @@ namespace SistemaAutonomo.Entidades
                     nomeJogadorLabel.Font = new Font("Inter ExtraLight", 15);
                     nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
                     nomeJogadorLabel.AutoSize = true;
-                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 2);
+                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 4);
                     nomeJogadorLabel.Top = carta.Top + carta.Height + 16; 
 
                     
@@ -219,58 +221,48 @@ namespace SistemaAutonomo.Entidades
 
         public void ExibirCartaApostada()
         {
-            Dictionary<int, int> cartasApostadas = GerenciadorStrings.ObterTodasAsApostas(idPartida);
+            List<string> cartasApostadas = GerenciadorStrings.ObterCartasApostadas(idPartida);
 
             if (cartasApostadas == null) return;
 
-            foreach (int idJogadores in cartasApostadas.Keys)
+            foreach (string aposta in cartasApostadas)
             {
+                int idJogador = int.Parse(aposta.Split(',')[0].Substring(2));
+                string naipeCarta = aposta.Split(',')[1];
+                string numeroCarta = aposta.Split(',')[2];
 
-                string[] rodada = aposta.Split(',');
-                if (rodada[0] == ultimaRodada[0])
-                {
-                    string naipeCarta = rodada[2];
-                    string numeroCarta = rodada[3];
-                    string diretorioAtual = Directory.GetCurrentDirectory();
-                    string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
+                string diretorioAtual = Directory.GetCurrentDirectory();
+                string caminhoImagem = Path.Combine(diretorioAtual, "../../Cards/numeros/", $"{numeroCarta}{naipeCarta}.png");
 
-                    Panel carta = new Panel();
-                    carta.BackgroundImage = Image.FromFile(caminhoImagem);
-                    carta.BackColor = Color.Transparent;
-                    carta.Height = 194;
-                    carta.Width = 125;
-                    carta.Left = x;
-                    carta.Top = 444;
-                    carta.BackgroundImageLayout = ImageLayout.Stretch;
+                Panel carta = new Panel();
+                carta.BackgroundImage = Image.FromFile(caminhoImagem);
+                carta.BackColor = Color.Transparent;
+                carta.Height = 137;
+                carta.Width = 91;
+                carta.Left = jogadores[idJogador].Posicao.XCartaApostada;
+                carta.Top = jogadores[idJogador].Posicao.YCartaApostada;
+                carta.BackgroundImageLayout = ImageLayout.Stretch;
 
 
-                    formularioPartida.Controls.Add(carta);
+                formularioPartida.Controls.Add(carta);
 
 
-                    Label nomeJogadorLabel = new Label();
-                    nomeJogadorLabel.Text = jogadores[int.Parse(rodada[1])].nome;
-                    nomeJogadorLabel.ForeColor = Color.White;
-                    nomeJogadorLabel.BackColor = Color.Transparent;
-                    nomeJogadorLabel.Font = new Font("Inter ExtraLight", 15);
-                    nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
-                    nomeJogadorLabel.AutoSize = true;
-                    nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 2);
-                    nomeJogadorLabel.Top = carta.Top + carta.Height + 16;
+                Label nomeJogadorLabel = new Label();
+                nomeJogadorLabel.Text = jogadores[idJogador].nome;
+                nomeJogadorLabel.ForeColor = Color.White;
+                nomeJogadorLabel.BackColor = Color.Transparent;
+                nomeJogadorLabel.Font = new Font("Inter ExtraLight", 10);
+                nomeJogadorLabel.TextAlign = ContentAlignment.MiddleCenter;
+                nomeJogadorLabel.AutoSize = true;
+                nomeJogadorLabel.Left = carta.Left + (carta.Width / 2) - (nomeJogadorLabel.Width / 4);
+                nomeJogadorLabel.Top = carta.Top + carta.Height + 16;
 
 
-                    formularioPartida.Controls.Add(nomeJogadorLabel);
+                formularioPartida.Controls.Add(nomeJogadorLabel);
 
-                    x += 186;
-
-                    if (atribuiuPrimeiraCarta)
-                    {
-                        primeiraCartaRound = naipeCarta;
-                        atribuiuPrimeiraCarta = false;
-                    }
-
-                    cartasJogadas.Add(carta);
-                    nomes.Add(nomeJogadorLabel);
-                }
+                cartasJogadas.Add(carta);
+                nomes.Add(nomeJogadorLabel);
+                
             }
 
         }

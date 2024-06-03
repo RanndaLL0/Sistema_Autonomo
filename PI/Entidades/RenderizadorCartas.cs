@@ -134,6 +134,7 @@ namespace SistemaAutonomo.Entidades
                             }
                         }
                     }
+                    
                     carta.BackgroundImageLayout = ImageLayout.Stretch;
                     jogador.Cartas.cartas[i].ImagemDaCarta = carta;
                     formularioPartida.Controls.Add(jogador.Cartas.cartas[i].ImagemDaCarta);

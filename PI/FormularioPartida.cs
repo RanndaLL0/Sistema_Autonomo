@@ -38,33 +38,35 @@ namespace lobby
             IdPartida = idPartida;
             VerificarVez();
             inicializadorPartida = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
+            inicializadorPartida.partida.ExibirCartaJogada();
+            inicializadorPartida.partida.ExibirCartaApostada();
             //AtualizarCartas();
             txtIdJogador.Text = JogadorNaMaquina[0];
             txtSenhaJogador.Text = JogadorNaMaquina[1];
             lblVersao.Text = Jogo.Versao;
         }
 
-        private void AtualizarCartas()
-        {
-            string CartasList = Jogo.ConsultarMao(IdPartida);
-            if (CartasList.Length > 4 && CartasList.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            CartasList = CartasList.Replace("\r", "");
-            if (CartasList.Length > 0)
-                CartasList = CartasList.Substring(0, CartasList.Length - 1);
+        //private void AtualizarCartas()
+        //{
+        //    string CartasList = Jogo.ConsultarMao(IdPartida);
+        //    if (CartasList.Length > 4 && CartasList.Substring(0, 4) == "ERRO")
+        //    {
+        //        MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+        //    CartasList = CartasList.Replace("\r", "");
+        //    if (CartasList.Length > 0)
+        //        CartasList = CartasList.Substring(0, CartasList.Length - 1);
 
-            string[] Cartas = CartasList.Split('\n');
+        //    string[] Cartas = CartasList.Split('\n');
 
-            lstCartas.Items.Clear();
+        //    lstCartas.Items.Clear();
 
-            for (int i = 0; i < Cartas.Length; i++)
-            {
-                lstCartas.Items.Add(Cartas[i]);
-            }
-        }
+        //    for (int i = 0; i < Cartas.Length; i++)
+        //    {
+        //        lstCartas.Items.Add(Cartas[i]);
+        //    }
+        //}
 
         private void VerificarVez()
         {
@@ -107,27 +109,27 @@ namespace lobby
         }
 
 
-        private bool JogarCopas()
-        {
-            foreach (string carta in lstCartas.Items)
-            {
-                string[] pedacoCarta = carta.ToString().Split(',');
+        //private bool JogarCopas()
+        //{
+        //    foreach (string carta in lstCartas.Items)
+        //    {
+        //        string[] pedacoCarta = carta.ToString().Split(',');
 
-                if (pedacoCarta[2] == "C" && pedacoCarta[0] == JogadorNaMaquina[0])
-                {
-                    txtIdCarta.Text = pedacoCarta[1];
-                    string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
+        //        if (pedacoCarta[2] == "C" && pedacoCarta[0] == JogadorNaMaquina[0])
+        //        {
+        //            txtIdCarta.Text = pedacoCarta[1];
+        //            string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
 
-                    if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-                    {
-                        continue;
-                    }
-                    string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-                    return true;
-                }
-            }
-            return false;
-        }
+        //            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
+        //            {
+        //                continue;
+        //            }
+        //            string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
 
         private void btnStartTimer_Click(object sender, EventArgs e)
         {

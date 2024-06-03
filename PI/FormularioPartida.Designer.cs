@@ -58,8 +58,6 @@
             this.txtIdCarta = new System.Windows.Forms.TextBox();
             this.btnJogar = new System.Windows.Forms.Button();
             this.btnApostar = new System.Windows.Forms.Button();
-            this.lstCartas = new System.Windows.Forms.ListBox();
-            this.btnAtualizarCartas = new System.Windows.Forms.Button();
             this.tmrTimer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -98,7 +96,7 @@
             // 
             // btnStartTimer
             // 
-            this.btnStartTimer.Location = new System.Drawing.Point(137, 497);
+            this.btnStartTimer.Location = new System.Drawing.Point(429, 487);
             this.btnStartTimer.Name = "btnStartTimer";
             this.btnStartTimer.Size = new System.Drawing.Size(185, 53);
             this.btnStartTimer.TabIndex = 29;
@@ -285,7 +283,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(369, 188);
+            this.label2.Location = new System.Drawing.Point(435, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 5;
@@ -293,7 +291,7 @@
             // 
             // txtIdJogador
             // 
-            this.txtIdJogador.Location = new System.Drawing.Point(450, 185);
+            this.txtIdJogador.Location = new System.Drawing.Point(516, 313);
             this.txtIdJogador.Name = "txtIdJogador";
             this.txtIdJogador.Size = new System.Drawing.Size(78, 20);
             this.txtIdJogador.TabIndex = 4;
@@ -301,7 +299,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(344, 225);
+            this.label3.Location = new System.Drawing.Point(410, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 7;
@@ -309,7 +307,7 @@
             // 
             // txtSenhaJogador
             // 
-            this.txtSenhaJogador.Location = new System.Drawing.Point(450, 222);
+            this.txtSenhaJogador.Location = new System.Drawing.Point(516, 350);
             this.txtSenhaJogador.Name = "txtSenhaJogador";
             this.txtSenhaJogador.Size = new System.Drawing.Size(78, 20);
             this.txtSenhaJogador.TabIndex = 6;
@@ -317,7 +315,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 262);
+            this.label4.Location = new System.Drawing.Point(442, 390);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -325,14 +323,14 @@
             // 
             // txtIdCarta
             // 
-            this.txtIdCarta.Location = new System.Drawing.Point(450, 259);
+            this.txtIdCarta.Location = new System.Drawing.Point(516, 387);
             this.txtIdCarta.Name = "txtIdCarta";
             this.txtIdCarta.Size = new System.Drawing.Size(78, 20);
             this.txtIdCarta.TabIndex = 9;
             // 
             // btnJogar
             // 
-            this.btnJogar.Location = new System.Drawing.Point(347, 300);
+            this.btnJogar.Location = new System.Drawing.Point(413, 428);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(75, 23);
             this.btnJogar.TabIndex = 3;
@@ -342,31 +340,13 @@
             // 
             // btnApostar
             // 
-            this.btnApostar.Location = new System.Drawing.Point(495, 300);
+            this.btnApostar.Location = new System.Drawing.Point(561, 428);
             this.btnApostar.Name = "btnApostar";
             this.btnApostar.Size = new System.Drawing.Size(75, 23);
             this.btnApostar.TabIndex = 10;
             this.btnApostar.Text = "Apostar";
             this.btnApostar.UseVisualStyleBackColor = true;
             this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
-            // 
-            // lstCartas
-            // 
-            this.lstCartas.FormattingEnabled = true;
-            this.lstCartas.Location = new System.Drawing.Point(137, 30);
-            this.lstCartas.Name = "lstCartas";
-            this.lstCartas.Size = new System.Drawing.Size(185, 394);
-            this.lstCartas.TabIndex = 0;
-            // 
-            // btnAtualizarCartas
-            // 
-            this.btnAtualizarCartas.Location = new System.Drawing.Point(177, 449);
-            this.btnAtualizarCartas.Name = "btnAtualizarCartas";
-            this.btnAtualizarCartas.Size = new System.Drawing.Size(99, 34);
-            this.btnAtualizarCartas.TabIndex = 20;
-            this.btnAtualizarCartas.Text = "Atualizar Cartas";
-            this.btnAtualizarCartas.UseVisualStyleBackColor = true;
-            this.btnAtualizarCartas.Click += new System.EventHandler(this.btnAtualizarCartas_Click);
             // 
             // tmrTimer2
             // 
@@ -400,7 +380,6 @@
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.lblHelsinque);
-            this.Controls.Add(this.btnAtualizarCartas);
             this.Controls.Add(this.btnApostar);
             this.Controls.Add(this.txtIdCarta);
             this.Controls.Add(this.label4);
@@ -409,7 +388,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdJogador);
             this.Controls.Add(this.btnJogar);
-            this.Controls.Add(this.lstCartas);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioPartida";
@@ -451,8 +429,6 @@
         private System.Windows.Forms.TextBox txtIdCarta;
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.Button btnApostar;
-        private System.Windows.Forms.ListBox lstCartas;
-        private System.Windows.Forms.Button btnAtualizarCartas;
         private System.Windows.Forms.Timer tmrTimer2;
     }
 }
