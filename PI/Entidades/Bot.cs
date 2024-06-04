@@ -43,7 +43,6 @@ namespace SistemaAutonomo.Entidades
             if (retornoBruto[0] == "")
             {
                 naipePrimeiraCartaJogada = string.Empty;
-                foiApostado = false;
                 return;
             }
 
@@ -232,6 +231,7 @@ namespace SistemaAutonomo.Entidades
             else
             {
                 partida.ApostarCarta(IdJogadores[0], Jogadores[IdJogadores[0]].senha, 0);
+                foiApostado = false;
             }
         }
 
@@ -265,6 +265,12 @@ namespace SistemaAutonomo.Entidades
                 {
                     JogarMaiorCarta(quantidadeCartas,todasAsCartasJogadas);
                 }
+
+                if(foiApostado && rodadaAtual == "1")
+                {
+                    foiApostado = false;
+                }
+
                 if(!foiApostado)
                 {
                     Apostar(rodadaAtual);
