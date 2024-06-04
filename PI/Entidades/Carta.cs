@@ -17,12 +17,6 @@ namespace SistemaAutonomo.Entidades
         {
             Naipe = naipe;
             IdDaCarta = idDaCarta;
-            ExibirCarta();
-        }
-
-        public void ExibirCarta() 
-        {
-           
         }
 
     }

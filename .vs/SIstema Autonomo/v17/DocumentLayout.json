@@ -1,70 +1,102 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\",
+  "WorkspaceRootPath": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formulariocriarpartida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariocriarpartida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formularioentrada.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formularioentrada.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\formulariomenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariomenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\renderizadorcartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\renderizadorcartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\matheus\\source\\repos\\sistema autonomo\\pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\jogador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\jogador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\entidades\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\inicializadorpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\inicializadorpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\cartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\cartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\entidades\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\pi\\entidades\\estrategias\\estrategia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\estrategias\\comecarrodada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\estrategias\\comecarrodada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\estrategias\\comecarturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\estrategias\\comecarturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\estrategias\\responderprimeiroturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\estrategias\\responderprimeiroturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\estrategias\\responderturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\estrategias\\responderturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\configuracoes\\posicaocartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\configuracoes\\posicaocartas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariocriarpartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formularioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariopartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariopartida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariopartida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\formulariopartida.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\formulariopartida.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|c:\\users\\star\\source\\sistema_autonomo\\sistema_autonomo\\pi\\entidades\\estrategias\\estrategia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\entidades\\estrategias\\estrategia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853852F3-7EA4-40F2-B7C7-B688C4979E27}|PI\\Sistema Autonomo.csproj|solutionrelative:pi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,11 +106,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 24,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PosicaoCartas.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\PosicaoCartas.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Configuracoes\\PosicaoCartas.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Configuracoes\\PosicaoCartas.cs",
+              "RelativeToolTip": "PI\\Entidades\\Configuracoes\\PosicaoCartas.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAUwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:39:55.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Carta.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Carta.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Carta.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Carta.cs",
+              "RelativeToolTip": "PI\\Entidades\\Carta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:23:01.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FormularioPartida.resx",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.resx",
+              "RelativeDocumentMoniker": "PI\\FormularioPartida.resx",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.resx",
+              "RelativeToolTip": "PI\\FormularioPartida.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-06-04T16:52:58.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FormularioPartida.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.Designer.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioPartida.Designer.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.Designer.cs",
+              "RelativeToolTip": "PI\\FormularioPartida.Designer.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAowGIAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:52:54.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Cartas.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Cartas.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Cartas.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Cartas.cs",
+              "RelativeToolTip": "PI\\Entidades\\Cartas.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:52:37.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InicializadorPartida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\InicializadorPartida.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\InicializadorPartida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\InicializadorPartida.cs",
+              "RelativeToolTip": "PI\\Entidades\\InicializadorPartida.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:52:36.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RenderizadorCartas.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\RenderizadorCartas.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\RenderizadorCartas.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\RenderizadorCartas.cs",
+              "RelativeToolTip": "PI\\Entidades\\RenderizadorCartas.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAuwGIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:52:34.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Jogador.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Jogador.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Jogador.cs",
+              "RelativeToolTip": "PI\\Entidades\\Jogador.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T16:05:45.362Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -90,79 +221,181 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
+              "Title": "FormularioMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioMenu.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioMenu.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioMenu.cs",
+              "RelativeToolTip": "PI\\FormularioMenu.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:44:20.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FormularioPartida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioPartida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.cs",
+              "RelativeToolTip": "PI\\FormularioPartida.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAIwDcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:42:57.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FormularioEntrada.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioEntrada.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioEntrada.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioEntrada.cs",
+              "RelativeToolTip": "PI\\FormularioEntrada.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI8AAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:42:31.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Partida.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Partida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Partida.cs",
               "RelativeDocumentMoniker": "PI\\Entidades\\Partida.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Partida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Partida.cs",
               "RelativeToolTip": "PI\\Entidades\\Partida.cs",
-              "ViewState": "AQIAAKYBAAAAAAAAAAAqwLUBAAAcAAAA",
+              "ViewState": "AQIAAKYBAAAAAAAAAAAAAM4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T10:35:25.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormularioPartida.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioPartida.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioPartida.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioPartida.cs",
-              "RelativeToolTip": "PI\\FormularioPartida.cs",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAYwIwAAAAoAAAA",
+              "DocumentIndex": 22,
+              "Title": "Estrategia.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\Estrategia.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\Estrategia.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\Estrategia.cs",
+              "RelativeToolTip": "PI\\Entidades\\Estrategias\\Estrategia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T10:30:18.419Z",
+              "WhenOpened": "2024-06-04T15:41:05.337Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ResponderTurno.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ResponderTurno.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\ResponderTurno.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ResponderTurno.cs",
+              "RelativeToolTip": "PI\\Entidades\\Estrategias\\ResponderTurno.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAwwDUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:38:23.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ComecarTurno.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ComecarTurno.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\ComecarTurno.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ComecarTurno.cs",
+              "RelativeToolTip": "PI\\Entidades\\Estrategias\\ComecarTurno.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAACGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:37:49.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ResponderPrimeiroTurno.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ResponderPrimeiroTurno.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\ResponderPrimeiroTurno.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ResponderPrimeiroTurno.cs",
+              "RelativeToolTip": "PI\\Entidades\\Estrategias\\ResponderPrimeiroTurno.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAACoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:30:17.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ComecarRodada.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ComecarRodada.cs",
+              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\ComecarRodada.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Estrategias\\ComecarRodada.cs",
+              "RelativeToolTip": "PI\\Entidades\\Estrategias\\ComecarRodada.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAIAzwBcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:29:52.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormularioCriarPartida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioCriarPartida.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioCriarPartida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioCriarPartida.cs",
+              "RelativeToolTip": "PI\\FormularioCriarPartida.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAA9wC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:12:03.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormularioCriarPartida.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioCriarPartida.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioCriarPartida.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioCriarPartida.cs [Design]",
+              "RelativeToolTip": "PI\\FormularioCriarPartida.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T15:11:59.353Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FormularioEntrada.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioEntrada.cs",
               "RelativeDocumentMoniker": "PI\\FormularioEntrada.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.cs [Design]",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioEntrada.cs [Design]",
               "RelativeToolTip": "PI\\FormularioEntrada.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:47:58.237Z",
+              "WhenOpened": "2024-06-04T15:11:50.47Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormularioEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioEntrada.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.cs",
-              "RelativeToolTip": "PI\\FormularioEntrada.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAADwv40AAAAMAAAA",
+              "DocumentIndex": 3,
+              "Title": "FormularioMenu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioMenu.cs",
+              "RelativeDocumentMoniker": "PI\\FormularioMenu.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioMenu.cs [Design]",
+              "RelativeToolTip": "PI\\FormularioMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:22:07.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormularioCriarPartida.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioCriarPartida.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioCriarPartida.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioCriarPartida.cs",
-              "RelativeToolTip": "PI\\FormularioCriarPartida.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAwwCoAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:35:42.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T15:11:49.37Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FormularioPartida.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioPartida.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.cs",
               "RelativeDocumentMoniker": "PI\\FormularioPartida.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioPartida.cs [Design]",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\FormularioPartida.cs [Design]",
               "RelativeToolTip": "PI\\FormularioPartida.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T05:19:48.581Z",
@@ -170,129 +403,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Lobby.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Lobby.cs",
-              "RelativeDocumentMoniker": "PI\\Lobby.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Lobby.cs",
-              "RelativeToolTip": "PI\\Lobby.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAuwIUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:28:36.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormularioEntrada.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.Designer.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioEntrada.Designer.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioEntrada.Designer.cs",
-              "RelativeToolTip": "PI\\FormularioEntrada.Designer.cs",
-              "ViewState": "AQIAACkBAAAAAAAAAAAAACoBAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:22:29.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormularioCriarPartida.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioCriarPartida.Designer.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioCriarPartida.Designer.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioCriarPartida.Designer.cs",
-              "RelativeToolTip": "PI\\FormularioCriarPartida.Designer.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAuwLAAAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:23:28.692Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Lobby.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Lobby.cs",
-              "RelativeDocumentMoniker": "PI\\Lobby.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Lobby.cs [Design]",
-              "RelativeToolTip": "PI\\Lobby.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T02:09:51.467Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormularioMenu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioMenu.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.cs [Design]",
-              "RelativeToolTip": "PI\\FormularioMenu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:18:14.909Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FormularioMenu.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.Designer.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioMenu.Designer.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.Designer.cs",
-              "RelativeToolTip": "PI\\FormularioMenu.Designer.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAABQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:28:44.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Program.cs",
               "RelativeDocumentMoniker": "PI\\Program.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Program.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Program.cs",
               "RelativeToolTip": "PI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T08:32:13.055Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FormularioMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.cs",
-              "RelativeDocumentMoniker": "PI\\FormularioMenu.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\FormularioMenu.cs",
-              "RelativeToolTip": "PI\\FormularioMenu.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAABZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T09:43:31.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "Bot.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Bot.cs",
+              "DocumentMoniker": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Bot.cs",
               "RelativeDocumentMoniker": "PI\\Entidades\\Bot.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Bot.cs",
+              "ToolTip": "C:\\Users\\Star\\source\\Sistema_Autonomo\\Sistema_Autonomo\\PI\\Entidades\\Bot.cs",
               "RelativeToolTip": "PI\\Entidades\\Bot.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAK8AAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:32:25.459Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Estrategia.cs",
-              "DocumentMoniker": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Estrategias\\Estrategia.cs",
-              "RelativeDocumentMoniker": "PI\\Entidades\\Estrategias\\Estrategia.cs",
-              "ToolTip": "C:\\Users\\Matheus\\source\\repos\\Sistema Autonomo\\PI\\Entidades\\Estrategias\\Estrategia.cs",
-              "RelativeToolTip": "PI\\Entidades\\Estrategias\\Estrategia.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAuwDIAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:50:09.061Z"
+              "WhenOpened": "2024-06-03T23:32:25.459Z",
+              "EditorCaption": ""
             }
           ]
         },

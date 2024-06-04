@@ -29,7 +29,8 @@ namespace lobby
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-            //Mesa mesa = new Mesa(JogadorNaMaquina,IdPartida);
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(FormularioPartida_KeyDown);
         }
 
         public void IniciarGame(int idPartida, string[] jogadorNaMaquina)
@@ -40,31 +41,7 @@ namespace lobby
             inicializadorPartida = new InicializadorPartida(JogadorNaMaquina, IdPartida,this);
             inicializadorPartida.partida.ExibirCartaJogada();
             inicializadorPartida.partida.ExibirCartaApostada();
-            //AtualizarCartas();
-            //lblVersao.Text = Jogo.Versao;
         }
-
-        //private void AtualizarCartas()
-        //{
-        //    string CartasList = Jogo.ConsultarMao(IdPartida);
-        //    if (CartasList.Length > 4 && CartasList.Substring(0, 4) == "ERRO")
-        //    {
-        //        MessageBox.Show($"Ocorreu um erro ao verificar ao consultar mão:\n{CartasList.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-        //    CartasList = CartasList.Replace("\r", "");
-        //    if (CartasList.Length > 0)
-        //        CartasList = CartasList.Substring(0, CartasList.Length - 1);
-
-        //    string[] Cartas = CartasList.Split('\n');
-
-        //    lstCartas.Items.Clear();
-
-        //    for (int i = 0; i < Cartas.Length; i++)
-        //    {
-        //        lstCartas.Items.Add(Cartas[i]);
-        //    }
-        //}
 
         private void VerificarVez()
         {
@@ -76,60 +53,9 @@ namespace lobby
             }
 
             string[] dadosVez = retornoVez.Split(',');
-            //lblPartidaStatus.Text = dadosVez[0];
-            //lblIDVez.Text = dadosVez[1];
-            //lblRodadaVez.Text = dadosVez[2];
-            //lblStatusVez.Text = dadosVez[3];
-
-        }
-        private void btnJogar_Click(object sender, EventArgs e)
-        {
-            inicializadorPartida.partida.JogarCarta();
         }
 
-
-        private void btnApostar_Click(object sender, EventArgs e)
-        {
-            inicializadorPartida.partida.ApostarCarta();
-        }
-
-        private void btnAtualizarVez_Click(object sender, EventArgs e)
-        {
-            //VerificarVez();
-            //AtualizarCartas();
-        }
-
-        private void btnAtualizarCartas_Click(object sender, EventArgs e)
-        {
-            inicializadorPartida.partida.RemoverCartaJogada();
-            inicializadorPartida.partida.ExibirCartaJogada();
-            inicializadorPartida.partida.AtualizarEstadoPartida();
-        }
-
-
-        //private bool JogarCopas()
-        //{
-        //    foreach (string carta in lstCartas.Items)
-        //    {
-        //        string[] pedacoCarta = carta.ToString().Split(',');
-
-        //        if (pedacoCarta[2] == "C" && pedacoCarta[0] == JogadorNaMaquina[0])
-        //        {
-        //            txtIdCarta.Text = pedacoCarta[1];
-        //            string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(pedacoCarta[1]));
-
-        //            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-        //            {
-        //                continue;
-        //            }
-        //            string retornoAposta = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32("0"));
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-
-        private void btnStartTimer_Click(object sender, EventArgs e)
+        public void btnStartTimer_Click(object sender, EventArgs e)
         {
             inicializadorPartida.InicializarBot(tmrTimer);
         }
@@ -153,6 +79,14 @@ namespace lobby
             inicializadorPartida.partida.ExibirCartaJogada();
             inicializadorPartida.partida.ExibirCartaApostada();
             tmrTimer2.Enabled = true;
+        }
+
+        private void FormularioPartida_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

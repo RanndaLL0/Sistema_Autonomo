@@ -12,7 +12,7 @@ namespace SistemaAutonomo.Entidades
 {
     public class Jogador
     {
-        private int id;
+        public int id;
         public string nome { get;}
         public int pontuacaoDaPartida { get; set; }
         public int pontuacaoDoTurno { get; set; }
@@ -68,11 +68,6 @@ namespace SistemaAutonomo.Entidades
             string diretorioAtual = Directory.GetCurrentDirectory();
             string caminhoCarta = path.Replace('|', naipeCarta);
             Cartas.cartas[idCarta].ImagemDaCarta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminhoCarta));
-        }
-
-        public void Apostar()
-        {
-
         }
     }
 }

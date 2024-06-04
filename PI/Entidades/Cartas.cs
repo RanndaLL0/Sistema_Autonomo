@@ -24,12 +24,5 @@ namespace SistemaAutonomo.Entidades
         {
             cartas.Add(idCarta, new Carta(naipe, idCarta));
         }
-
-        public void RemoverCarta(int idCarta,Form game,string path,char naipeCarta)
-        {
-            string diretorioAtual = Directory.GetCurrentDirectory();
-            string caminhoCarta = path.Replace('|', naipeCarta);
-            cartas[idCarta].ImagemDaCarta.BackgroundImage = Image.FromFile(Path.Combine(diretorioAtual, "../../Cards/Empty Space/", caminhoCarta));
-        }
     }
 }

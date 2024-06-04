@@ -31,7 +31,6 @@ C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\Sistema Auto
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.dll
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\bin\Debug\MagicTrickServer.xml
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.AssemblyReference.cache
-C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\lobby.Lobby.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.Properties.Resources.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.GenerateResource.cache
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\Sistema Autonomo.csproj.CoreCompileInputs.cache
@@ -57,3 +56,6 @@ C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\lobby.FormularioPart
 C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioEntrada.resources
 C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioMenu.resources
 C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioCriarPartida.resources
+C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioCriarPartida.resources
+C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioEntrada.resources
+C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioMenu.resources

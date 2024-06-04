@@ -56,7 +56,11 @@
     <Compile Include="Entidades\Carta.cs" />
     <Compile Include="Entidades\Bot.cs" />
     <Compile Include="Entidades\Configuracoes\GerenciadorStrings.cs" />
+    <Compile Include="Entidades\Estrategias\ComecarRodada.cs" />
+    <Compile Include="Entidades\Estrategias\ComecarTurno.cs" />
     <Compile Include="Entidades\Estrategias\Estrategia.cs" />
+    <Compile Include="Entidades\Estrategias\ResponderPrimeiroTurno.cs" />
+    <Compile Include="Entidades\Estrategias\ResponderTurno.cs" />
     <Compile Include="Entidades\Jogador.cs" />
     <Compile Include="Entidades\InicializadorPartida.cs" />
     <Compile Include="Entidades\Partida.cs" />
@@ -81,12 +85,6 @@
     <Compile Include="FormularioMenu.Designer.cs">
       <DependentUpon>FormularioMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lobby.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Lobby.Designer.cs">
-      <DependentUpon>Lobby.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormularioPartida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPartida.resx">
       <DependentUpon>FormularioPartida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lobby.resx">
-      <DependentUpon>Lobby.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

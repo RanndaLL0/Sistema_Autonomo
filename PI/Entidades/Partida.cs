@@ -47,24 +47,6 @@ namespace SistemaAutonomo.Entidades
             Renderizador.Renderizar();
         }
 
-        public void JogarCarta()
-        {
-
-            TextBox txtIdJogador = formularioPartida.Controls.Find("txtIdJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtSenhaJogador = formularioPartida.Controls.Find("txtSenhaJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtIdCarta = formularioPartida.Controls.Find("txtIdCarta", true).FirstOrDefault() as TextBox;
-
-            string retornoJogada = Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
-            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao jogar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            RemoverCartaJogada();
-            ExibirCartaJogada();
-        }
-
         public void JogarCarta(int idJogador,string senhaJogador,int idCarta)
         {
 
@@ -78,25 +60,6 @@ namespace SistemaAutonomo.Entidades
             RemoverCartaJogada();
             ExibirCartaJogada();
             AtualizarEstadoPartida();
-        }
-
-
-        public void ApostarCarta()
-        {
-
-            TextBox txtIdJogador = formularioPartida.Controls.Find("txtIdJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtSenhaJogador = formularioPartida.Controls.Find("txtSenhaJogador", true).FirstOrDefault() as TextBox;
-            TextBox txtIdCarta = formularioPartida.Controls.Find("txtIdCarta", true).FirstOrDefault() as TextBox;
-
-            string retornoJogada = Jogo.Apostar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtIdCarta.Text));
-            if (retornoJogada.Length > 4 && retornoJogada.Substring(0, 4) == "ERRO")
-            {
-                MessageBox.Show($"Ocorreu um erro ao apostar:\n{retornoJogada.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ExibirCartaApostada();
-            RemoverCartaApostada();
         }
 
         public void ApostarCarta(int idJogador, string senhaJogador, int idCarta)

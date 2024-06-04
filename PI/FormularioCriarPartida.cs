@@ -16,7 +16,6 @@ namespace SistemaAutonomo
         public FormularioCriarPartida()
         {
             InitializeComponent();
-
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
@@ -35,8 +34,11 @@ namespace SistemaAutonomo
                 MessageBox.Show($"Ocorreu um erro ao criar a partida:\n{retornoCriacao.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //FormularioEntrada formularioEntrada = new FormularioEntrada();
-            //formularioEntrada.ShowDialog();
+            else
+            {
+             FormularioEntrada formularioEntrada = new FormularioEntrada();
+             formularioEntrada.ShowDialog();
+            }
 
         }
 
