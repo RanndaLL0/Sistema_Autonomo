@@ -41,9 +41,7 @@ namespace lobby
             inicializadorPartida.partida.ExibirCartaJogada();
             inicializadorPartida.partida.ExibirCartaApostada();
             //AtualizarCartas();
-            txtIdJogador.Text = JogadorNaMaquina[0];
-            txtSenhaJogador.Text = JogadorNaMaquina[1];
-            lblVersao.Text = Jogo.Versao;
+            //lblVersao.Text = Jogo.Versao;
         }
 
         //private void AtualizarCartas()

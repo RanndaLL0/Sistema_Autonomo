@@ -63,6 +63,24 @@
     <Compile Include="Entidades\Configuracoes\PosicaoCartas.cs" />
     <Compile Include="Entidades\Configuracoes\ConfiguracaoPartida.cs" />
     <Compile Include="Entidades\RenderizadorCartas.cs" />
+    <Compile Include="FormularioCriarPartida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioCriarPartida.Designer.cs">
+      <DependentUpon>FormularioCriarPartida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioEntrada.Designer.cs">
+      <DependentUpon>FormularioEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMenu.Designer.cs">
+      <DependentUpon>FormularioMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +95,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioCriarPartida.resx">
+      <DependentUpon>FormularioCriarPartida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioEntrada.resx">
+      <DependentUpon>FormularioEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMenu.resx">
+      <DependentUpon>FormularioMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioPartida.resx">
       <DependentUpon>FormularioPartida.cs</DependentUpon>
     </EmbeddedResource>

@@ -81,7 +81,7 @@ namespace lobby
         private void btnListJogadores_Click(object sender, EventArgs e)
         {
 
-            if (lstPartsEncontradas.SelectedItem != null) // Verifica se há uma partida selecionada na primeira ListBox
+            if (lstPartsEncontradas.SelectedItem != null)
             {
                 listarJogadores();
             }
@@ -109,9 +109,7 @@ namespace lobby
                 MessageBox.Show($"Ocorreu um erro ao criar a partida:\n{retornoCriacao.Substring(5)}", "MagicTrick", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            listarPartida();
             txtID.Text = retornoCriacao;
-
 
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lobby));
             this.btnPartidas = new System.Windows.Forms.Button();
             this.lstPartsEncontradas = new System.Windows.Forms.ListBox();
             this.lstJogadores = new System.Windows.Forms.ListBox();
@@ -69,10 +70,12 @@
             // 
             // lstPartsEncontradas
             // 
+            this.lstPartsEncontradas.BackColor = System.Drawing.Color.Black;
+            this.lstPartsEncontradas.ForeColor = System.Drawing.SystemColors.Info;
             this.lstPartsEncontradas.FormattingEnabled = true;
             this.lstPartsEncontradas.Location = new System.Drawing.Point(25, 90);
             this.lstPartsEncontradas.Name = "lstPartsEncontradas";
-            this.lstPartsEncontradas.Size = new System.Drawing.Size(181, 277);
+            this.lstPartsEncontradas.Size = new System.Drawing.Size(181, 355);
             this.lstPartsEncontradas.TabIndex = 1;
             this.lstPartsEncontradas.SelectedIndexChanged += new System.EventHandler(this.lstPartsEncontradas_SelectedIndexChanged);
             // 
@@ -97,7 +100,7 @@
             // lblVersao
             // 
             this.lblVersao.AutoSize = true;
-            this.lblVersao.Location = new System.Drawing.Point(707, 440);
+            this.lblVersao.Location = new System.Drawing.Point(856, 538);
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(0, 13);
             this.lblVersao.TabIndex = 4;
@@ -250,7 +253,7 @@
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(662, 440);
+            this.lblVersion.Location = new System.Drawing.Point(811, 538);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(42, 13);
             this.lblVersion.TabIndex = 26;
@@ -299,7 +302,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(772, 477);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(901, 560);
             this.Controls.Add(this.btnEntrarPartida);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -327,6 +331,7 @@
             this.Controls.Add(this.lstJogadores);
             this.Controls.Add(this.lstPartsEncontradas);
             this.Controls.Add(this.btnPartidas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(788, 516);
             this.Name = "Lobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

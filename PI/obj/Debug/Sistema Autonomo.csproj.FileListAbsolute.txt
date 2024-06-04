@@ -54,3 +54,6 @@ C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\Sistema Auton
 C:\Users\felipe.rvictor\source\repos\Sistema_Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources
 C:\Users\Star\source\Sistema_Autonomo\Sistema_Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources
 C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\lobby.FormularioPartida.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioEntrada.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioMenu.resources
+C:\Users\Matheus\source\repos\Sistema Autonomo\PI\obj\Debug\SistemaAutonomo.FormularioCriarPartida.resources

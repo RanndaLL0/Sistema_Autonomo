@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPartida));
             this.lblHelsinque = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersao = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.lblNomeJ1 = new System.Windows.Forms.Label();
             this.lblNomeJ2 = new System.Windows.Forms.Label();
             this.lblNomeJ4 = new System.Windows.Forms.Label();
-            this.lblNomeJ3 = new System.Windows.Forms.Label();
             this.lblJogadorVez = new System.Windows.Forms.Label();
             this.lblRodada = new System.Windows.Forms.Label();
             this.lblStatusPartida = new System.Windows.Forms.Label();
@@ -50,15 +50,8 @@
             this.lblPontuacaoTotalJ4 = new System.Windows.Forms.Label();
             this.lblPontuacaoTotalJ2 = new System.Windows.Forms.Label();
             this.lblPontuacaoTurnoJ2 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIdJogador = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSenhaJogador = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtIdCarta = new System.Windows.Forms.TextBox();
-            this.btnJogar = new System.Windows.Forms.Button();
-            this.btnApostar = new System.Windows.Forms.Button();
             this.tmrTimer2 = new System.Windows.Forms.Timer(this.components);
+            this.lblNomeJ3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHelsinque
@@ -70,6 +63,7 @@
             this.lblHelsinque.TabIndex = 22;
             this.lblHelsinque.Text = "Budapeste";
             this.lblHelsinque.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHelsinque.Visible = false;
             // 
             // lblVersion
             // 
@@ -80,6 +74,7 @@
             this.lblVersion.Size = new System.Drawing.Size(45, 14);
             this.lblVersion.TabIndex = 28;
             this.lblVersion.Text = "versão:";
+            this.lblVersion.Visible = false;
             // 
             // lblVersao
             // 
@@ -96,12 +91,16 @@
             // 
             // btnStartTimer
             // 
-            this.btnStartTimer.Location = new System.Drawing.Point(429, 487);
+            this.btnStartTimer.BackColor = System.Drawing.Color.Black;
+            this.btnStartTimer.FlatAppearance.BorderSize = 0;
+            this.btnStartTimer.Font = new System.Drawing.Font("Inter SemiBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnStartTimer.ForeColor = System.Drawing.Color.White;
+            this.btnStartTimer.Location = new System.Drawing.Point(413, 984);
             this.btnStartTimer.Name = "btnStartTimer";
             this.btnStartTimer.Size = new System.Drawing.Size(185, 53);
             this.btnStartTimer.TabIndex = 29;
             this.btnStartTimer.Text = "Iniciar Timer";
-            this.btnStartTimer.UseVisualStyleBackColor = true;
+            this.btnStartTimer.UseVisualStyleBackColor = false;
             this.btnStartTimer.Click += new System.EventHandler(this.btnStartTimer_Click);
             // 
             // lblNomeJ1
@@ -136,17 +135,6 @@
             this.lblNomeJ4.Name = "lblNomeJ4";
             this.lblNomeJ4.Size = new System.Drawing.Size(0, 21);
             this.lblNomeJ4.TabIndex = 36;
-            // 
-            // lblNomeJ3
-            // 
-            this.lblNomeJ3.AutoSize = true;
-            this.lblNomeJ3.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeJ3.Font = new System.Drawing.Font("Inter ExtraLight", 13.75F);
-            this.lblNomeJ3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblNomeJ3.Location = new System.Drawing.Point(636, 320);
-            this.lblNomeJ3.Name = "lblNomeJ3";
-            this.lblNomeJ3.Size = new System.Drawing.Size(0, 23);
-            this.lblNomeJ3.TabIndex = 37;
             // 
             // lblJogadorVez
             // 
@@ -280,78 +268,21 @@
             this.lblPontuacaoTurnoJ2.Size = new System.Drawing.Size(0, 21);
             this.lblPontuacaoTurnoJ2.TabIndex = 48;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(435, 316);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Id do Jogador:";
-            // 
-            // txtIdJogador
-            // 
-            this.txtIdJogador.Location = new System.Drawing.Point(516, 313);
-            this.txtIdJogador.Name = "txtIdJogador";
-            this.txtIdJogador.Size = new System.Drawing.Size(78, 20);
-            this.txtIdJogador.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(410, 353);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Senha do Jogador: ";
-            // 
-            // txtSenhaJogador
-            // 
-            this.txtSenhaJogador.Location = new System.Drawing.Point(516, 350);
-            this.txtSenhaJogador.Name = "txtSenhaJogador";
-            this.txtSenhaJogador.Size = new System.Drawing.Size(78, 20);
-            this.txtSenhaJogador.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(442, 390);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Id da Carta:";
-            // 
-            // txtIdCarta
-            // 
-            this.txtIdCarta.Location = new System.Drawing.Point(516, 387);
-            this.txtIdCarta.Name = "txtIdCarta";
-            this.txtIdCarta.Size = new System.Drawing.Size(78, 20);
-            this.txtIdCarta.TabIndex = 9;
-            // 
-            // btnJogar
-            // 
-            this.btnJogar.Location = new System.Drawing.Point(413, 428);
-            this.btnJogar.Name = "btnJogar";
-            this.btnJogar.Size = new System.Drawing.Size(75, 23);
-            this.btnJogar.TabIndex = 3;
-            this.btnJogar.Text = "Jogar";
-            this.btnJogar.UseVisualStyleBackColor = true;
-            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
-            // 
-            // btnApostar
-            // 
-            this.btnApostar.Location = new System.Drawing.Point(561, 428);
-            this.btnApostar.Name = "btnApostar";
-            this.btnApostar.Size = new System.Drawing.Size(75, 23);
-            this.btnApostar.TabIndex = 10;
-            this.btnApostar.Text = "Apostar";
-            this.btnApostar.UseVisualStyleBackColor = true;
-            this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
-            // 
             // tmrTimer2
             // 
             this.tmrTimer2.Interval = 1000;
             this.tmrTimer2.Tick += new System.EventHandler(this.tmrTimer2_Tick);
+            // 
+            // lblNomeJ3
+            // 
+            this.lblNomeJ3.AutoSize = true;
+            this.lblNomeJ3.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJ3.Font = new System.Drawing.Font("Inter ExtraLight", 13.75F);
+            this.lblNomeJ3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblNomeJ3.Location = new System.Drawing.Point(636, 320);
+            this.lblNomeJ3.Name = "lblNomeJ3";
+            this.lblNomeJ3.Size = new System.Drawing.Size(0, 23);
+            this.lblNomeJ3.TabIndex = 50;
             // 
             // FormularioPartida
             // 
@@ -360,6 +291,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::SistemaAutonomo.Properties.Resources.FormularioPartida;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.lblNomeJ3);
             this.Controls.Add(this.lblPontuacaoTotalJ2);
             this.Controls.Add(this.lblPontuacaoTurnoJ2);
             this.Controls.Add(this.lblPontuacaoTotalJ4);
@@ -372,7 +304,6 @@
             this.Controls.Add(this.lblStatusPartida);
             this.Controls.Add(this.lblRodada);
             this.Controls.Add(this.lblJogadorVez);
-            this.Controls.Add(this.lblNomeJ3);
             this.Controls.Add(this.lblNomeJ4);
             this.Controls.Add(this.lblNomeJ2);
             this.Controls.Add(this.lblNomeJ1);
@@ -380,20 +311,15 @@
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.lblHelsinque);
-            this.Controls.Add(this.btnApostar);
-            this.Controls.Add(this.txtIdCarta);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtSenhaJogador);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIdJogador);
-            this.Controls.Add(this.btnJogar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioPartida";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game";
+            this.Text = "Formulario Partida";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +334,6 @@
         private System.Windows.Forms.Label lblNomeJ1;
         private System.Windows.Forms.Label lblNomeJ2;
         private System.Windows.Forms.Label lblNomeJ4;
-        private System.Windows.Forms.Label lblNomeJ3;
         private System.Windows.Forms.Label lblJogadorVez;
         private System.Windows.Forms.Label lblRodada;
         private System.Windows.Forms.Label lblStatusPartida;
@@ -421,14 +346,7 @@
         private System.Windows.Forms.Label lblPontuacaoTotalJ4;
         private System.Windows.Forms.Label lblPontuacaoTotalJ2;
         private System.Windows.Forms.Label lblPontuacaoTurnoJ2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdJogador;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSenhaJogador;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtIdCarta;
-        private System.Windows.Forms.Button btnJogar;
-        private System.Windows.Forms.Button btnApostar;
         private System.Windows.Forms.Timer tmrTimer2;
+        private System.Windows.Forms.Label lblNomeJ3;
     }
 }

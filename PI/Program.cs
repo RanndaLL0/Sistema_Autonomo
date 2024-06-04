@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaAutonomo;
+using System;
 using System.Windows.Forms;
 
 namespace lobby
@@ -10,7 +11,7 @@ namespace lobby
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Lobby()); 
+            Application.Run(new FormularioMenu());
         }
     }
 }
